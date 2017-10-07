@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Draft" representedClassName="Draft" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Wheel" representedClassName="Wheel" syncable="YES" codeGenerationType="class">
+        <attribute name="col1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="col8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Wheel" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Draft" positionX="-63" positionY="54" width="128" height="60"/>
+    </elements>
+</model>

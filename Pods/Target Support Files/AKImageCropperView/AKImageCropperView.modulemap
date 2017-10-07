@@ -1,0 +1,6 @@
+framework module AKImageCropperView {
+  umbrella header "AKImageCropperView-umbrella.h"
+
+  export *
+  module * { export * }
+}

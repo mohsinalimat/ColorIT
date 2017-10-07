@@ -1,0 +1,1076 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		522360CC1E1A393B00EC24C3 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522360CB1E1A393B00EC24C3 /* ColorViewController.m */; };
+		522360CE1E1A49B000EC24C3 /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522360CD1E1A49B000EC24C3 /* ColorListViewController.swift */; };
+		522675FD1E13D54A0009E181 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522675FC1E13D54A0009E181 /* ColorView.swift */; };
+		5279F3491E0A771700782CAB /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5279F3481E0A771700782CAB /* PopUpViewController.swift */; };
+		5279F34B1E0A777D00782CAB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5279F34A1E0A777D00782CAB /* SettingsViewController.swift */; };
+		5294D7D81E123E7600A35F8B /* CircularColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294D7D71E123E7600A35F8B /* CircularColor.swift */; };
+		5294D7DA1E1264DB00A35F8B /* WhellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5294D7D91E1264DB00A35F8B /* WhellController.swift */; };
+		52A0BD351E07C70D008E1A60 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0BD341E07C70D008E1A60 /* TabViewController.swift */; };
+		52A0BD371E07EBC9008E1A60 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0BD361E07EBC9008E1A60 /* MenuViewController.swift */; };
+		52BEE9E71E05157700637559 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEE9E61E05157700637559 /* main.m */; };
+		52BEE9EA1E05157700637559 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEE9E91E05157700637559 /* AppDelegate.m */; };
+		52BEE9ED1E05157700637559 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEE9EC1E05157700637559 /* ViewController.m */; };
+		52BEE9F01E05157700637559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BEE9EE1E05157700637559 /* Main.storyboard */; };
+		52BEE9F21E05157700637559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BEE9F11E05157700637559 /* Assets.xcassets */; };
+		52BEE9F51E05157700637559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BEE9F31E05157700637559 /* LaunchScreen.storyboard */; };
+		52BEEA001E05157800637559 /* ColoringBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEE9FF1E05157800637559 /* ColoringBookTests.m */; };
+		52BEEA0B1E05157800637559 /* ColoringBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEEA0A1E05157800637559 /* ColoringBookUITests.m */; };
+		52BEEBFB1E05423600637559 /* PageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEEBFA1E05423600637559 /* PageItemController.m */; };
+		52BEEBFE1E0553FF00637559 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BEEBFD1E0553FF00637559 /* DrawerViewController.m */; };
+		52EC16C51E1BB15500AA7204 /* FloodFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC16C21E1BB15500AA7204 /* FloodFill.m */; };
+		52EC16C61E1BB15500AA7204 /* ImageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC16C41E1BB15500AA7204 /* ImageCanvas.m */; };
+		52FB14ED1E0923740067BD4B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB14EC1E0923740067BD4B /* TableViewController.swift */; };
+		52FB14EF1E09238E0067BD4B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB14EE1E09238E0067BD4B /* TableViewCell.swift */; };
+		52FF6A151E1786D600CA0868 /* ColorPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF6A141E1786D600CA0868 /* ColorPick.swift */; };
+		716EF98EBF4EDE7FEA280979 /* Pods_ColoringBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B473137622193018E996F5FF /* Pods_ColoringBook.framework */; };
+		8406551F1F825905007DFC9D /* DataMGMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406551E1F825905007DFC9D /* DataMGMT.swift */; };
+		842A896B1F70EDC400730DA6 /* FloodFillImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A89651F70EDC400730DA6 /* FloodFillImageView.m */; };
+		842A896C1F70EDC400730DA6 /* LinkedListStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A89671F70EDC400730DA6 /* LinkedListStack.m */; };
+		842A896D1F70EDC400730DA6 /* UIImage+FloodFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A89691F70EDC400730DA6 /* UIImage+FloodFill.m */; };
+		842A8A471F70EEEB00730DA6 /* Birds2.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A3E1F70EEEB00730DA6 /* Birds2.png */; };
+		842A8A481F70EEEB00730DA6 /* Animals1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A3F1F70EEEB00730DA6 /* Animals1.png */; };
+		842A8A491F70EEEB00730DA6 /* Animals2.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A401F70EEEB00730DA6 /* Animals2.png */; };
+		842A8A4A1F70EEEB00730DA6 /* Fashion1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A411F70EEEB00730DA6 /* Fashion1.png */; };
+		842A8A4B1F70EEEB00730DA6 /* Culture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A421F70EEEB00730DA6 /* Culture1.png */; };
+		842A8A4C1F70EEEB00730DA6 /* Culture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A431F70EEEB00730DA6 /* Culture2.png */; };
+		842A8A4D1F70EEEB00730DA6 /* Christmas1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A441F70EEEB00730DA6 /* Christmas1.png */; };
+		842A8A4E1F70EEEB00730DA6 /* Comics1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A451F70EEEB00730DA6 /* Comics1.png */; };
+		842A8A501F70F16000730DA6 /* Birds1.png in Resources */ = {isa = PBXBuildFile; fileRef = 842A8A4F1F70F16000730DA6 /* Birds1.png */; };
+		844F1A8A1F7276BF003E8919 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 844F1A891F7276BF003E8919 /* Podfile */; };
+		845041A31F836E0700B7AE2C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845041A21F836E0700B7AE2C /* MoreViewController.swift */; };
+		845041A61F83755E00B7AE2C /* promoImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041A51F83755E00B7AE2C /* promoImage1.png */; };
+		845041B41F8375B300B7AE2C /* promoImage8.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041B31F8375B300B7AE2C /* promoImage8.png */; };
+		845041B61F83763C00B7AE2C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845041B51F83763C00B7AE2C /* Reachability.swift */; };
+		845041B81F838D4F00B7AE2C /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041B71F838D4F00B7AE2C /* cross.png */; };
+		845041BA1F83930E00B7AE2C /* promoImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041B91F83930E00B7AE2C /* promoImage2.png */; };
+		845041BC1F83937100B7AE2C /* promoImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041BB1F83937100B7AE2C /* promoImage3.png */; };
+		845041BE1F83939800B7AE2C /* promoImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041BD1F83939800B7AE2C /* promoImage4.png */; };
+		845041C01F8393E600B7AE2C /* promoImage5.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041BF1F8393E600B7AE2C /* promoImage5.png */; };
+		845041C21F83941C00B7AE2C /* promoImage6.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041C11F83941C00B7AE2C /* promoImage6.png */; };
+		845041C41F83944C00B7AE2C /* promoImage7.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041C31F83944C00B7AE2C /* promoImage7.png */; };
+		845041C71F839DB000B7AE2C /* Fashion2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041C51F839DB000B7AE2C /* Fashion2.png */; };
+		845041C81F839DB000B7AE2C /* Fashion3.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041C61F839DB000B7AE2C /* Fashion3.png */; };
+		845041DD1F83A48200B7AE2C /* xxxSemiworks-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041D71F83A48200B7AE2C /* xxxSemiworks-1.png */; };
+		845041DE1F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041D81F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg */; };
+		845041DF1F83A48200B7AE2C /* xxxshutterstock_508600018-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041D91F83A48200B7AE2C /* xxxshutterstock_508600018-[Converted].jpg */; };
+		845041E01F83A48200B7AE2C /* xxxshutterstock_616091735.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041DA1F83A48200B7AE2C /* xxxshutterstock_616091735.jpg */; };
+		845041E11F83A48200B7AE2C /* xxxworks3.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041DB1F83A48200B7AE2C /* xxxworks3.png */; };
+		845041E21F83A48200B7AE2C /* xxxworks6.png in Resources */ = {isa = PBXBuildFile; fileRef = 845041DC1F83A48200B7AE2C /* xxxworks6.png */; };
+		845041F11F83AB4E00B7AE2C /* shutterstock_281143067-[Converted]1xx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E31F83AB4E00B7AE2C /* shutterstock_281143067-[Converted]1xx.jpg */; };
+		845041F21F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E41F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg */; };
+		845041F31F83AB4E00B7AE2C /* shutterstock_327716645-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E51F83AB4E00B7AE2C /* shutterstock_327716645-[Converted].jpg */; };
+		845041F41F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E61F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg */; };
+		845041F51F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png in Resources */ = {isa = PBXBuildFile; fileRef = 845041E71F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png */; };
+		845041F61F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E81F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg */; };
+		845041F71F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041E91F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg */; };
+		845041F81F83AB4E00B7AE2C /* shutterstock_396296125-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041EA1F83AB4E00B7AE2C /* shutterstock_396296125-[Converted].jpg */; };
+		845041F91F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041EB1F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg */; };
+		845041FA1F83AB4E00B7AE2C /* shutterstock_400313902-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041EC1F83AB4E00B7AE2C /* shutterstock_400313902-[Converted].jpg */; };
+		845041FB1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041ED1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg */; };
+		845041FC1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041EE1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg */; };
+		845041FD1F83AB4E00B7AE2C /* shutterstock_478145179-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041EF1F83AB4E00B7AE2C /* shutterstock_478145179-[Converted].jpg */; };
+		845041FE1F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845041F01F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg */; };
+		84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84963F4A1F7933ED00391086 /* NewViewController.swift */; };
+		84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A87C411F7B7F21004A0F51 /* UIViewModel.swift */; };
+		84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A87C461F7BB594004A0F51 /* MenuViewCell.swift */; };
+		84A87C491F7BB594004A0F51 /* MenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C471F7BB594004A0F51 /* MenuViewCell.xib */; };
+		84A87C541F7BC455004A0F51 /* Animals.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C4E1F7BC455004A0F51 /* Animals.png */; };
+		84A87C551F7BC455004A0F51 /* Birds.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C4F1F7BC455004A0F51 /* Birds.png */; };
+		84A87C561F7BC455004A0F51 /* Christmas.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C501F7BC455004A0F51 /* Christmas.png */; };
+		84A87C571F7BC455004A0F51 /* Comics.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C511F7BC455004A0F51 /* Comics.png */; };
+		84A87C581F7BC455004A0F51 /* Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C521F7BC455004A0F51 /* Culture.png */; };
+		84A87C591F7BC455004A0F51 /* Fashion.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C531F7BC455004A0F51 /* Fashion.png */; };
+		84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA53E1F851F700048FB63 /* CFNetwork.framework */; };
+		84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA5401F851F780048FB63 /* WebKit.framework */; };
+		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
+		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
+		8E825E861F7D1C5500DD7D0E /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */; };
+		8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E831F7D1C5500DD7D0E /* CustomWhellViewController.swift */; };
+		8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E841F7D1C5500DD7D0E /* customWhellView.swift */; };
+		8E825E891F7D1C5500DD7D0E /* Color_Palette_Name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */; };
+		8E825E8B1F7D2A0D00DD7D0E /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */; };
+		8E9BF1921F6D525E0051D734 /* ColoringBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E9BF1901F6D525E0051D734 /* ColoringBook.xcdatamodeld */; };
+		8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9BF1941F6D527F0051D734 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52BEE9FC1E05157800637559 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BEE9DA1E05157700637559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52BEE9E11E05157700637559;
+			remoteInfo = ColoringBook;
+		};
+		52BEEA071E05157800637559 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BEE9DA1E05157700637559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52BEE9E11E05157700637559;
+			remoteInfo = ColoringBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		522360CA1E1A393B00EC24C3 /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
+		522360CB1E1A393B00EC24C3 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
+		522360CD1E1A49B000EC24C3 /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
+		522675FC1E13D54A0009E181 /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		5279F3481E0A771700782CAB /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		5279F34A1E0A777D00782CAB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5294D7D71E123E7600A35F8B /* CircularColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularColor.swift; sourceTree = "<group>"; };
+		5294D7D91E1264DB00A35F8B /* WhellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhellController.swift; sourceTree = "<group>"; };
+		52A0BD331E07C70C008E1A60 /* ColoringBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColoringBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		52A0BD341E07C70D008E1A60 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		52A0BD361E07EBC9008E1A60 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		52BEE9E21E05157700637559 /* ColoringBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColoringBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BEE9E61E05157700637559 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52BEE9E81E05157700637559 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52BEE9E91E05157700637559 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52BEE9EB1E05157700637559 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		52BEE9EC1E05157700637559 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		52BEE9EF1E05157700637559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52BEE9F11E05157700637559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52BEE9F41E05157700637559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52BEE9F61E05157700637559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BEE9FB1E05157800637559 /* ColoringBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColoringBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BEE9FF1E05157800637559 /* ColoringBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColoringBookTests.m; sourceTree = "<group>"; };
+		52BEEA011E05157800637559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BEEA061E05157800637559 /* ColoringBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColoringBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BEEA0A1E05157800637559 /* ColoringBookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColoringBookUITests.m; sourceTree = "<group>"; };
+		52BEEA0C1E05157800637559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BEEBF91E05423600637559 /* PageItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageItemController.h; sourceTree = "<group>"; };
+		52BEEBFA1E05423600637559 /* PageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageItemController.m; sourceTree = "<group>"; };
+		52BEEBFC1E0553FF00637559 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		52BEEBFD1E0553FF00637559 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		52EC16C11E1BB15500AA7204 /* FloodFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloodFill.h; sourceTree = "<group>"; };
+		52EC16C21E1BB15500AA7204 /* FloodFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloodFill.m; sourceTree = "<group>"; };
+		52EC16C31E1BB15500AA7204 /* ImageCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCanvas.h; sourceTree = "<group>"; };
+		52EC16C41E1BB15500AA7204 /* ImageCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCanvas.m; sourceTree = "<group>"; };
+		52EC16CE1E1BB1B100AA7204 /* ColoringBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColoringBook-Prefix.pch"; sourceTree = "<group>"; };
+		52FB14EC1E0923740067BD4B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		52FB14EE1E09238E0067BD4B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		52FF6A141E1786D600CA0868 /* ColorPick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPick.swift; sourceTree = "<group>"; };
+		8406551E1F825905007DFC9D /* DataMGMT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMGMT.swift; sourceTree = "<group>"; };
+		842A89641F70EDC400730DA6 /* FloodFillImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloodFillImageView.h; sourceTree = "<group>"; };
+		842A89651F70EDC400730DA6 /* FloodFillImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloodFillImageView.m; sourceTree = "<group>"; };
+		842A89661F70EDC400730DA6 /* LinkedListStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedListStack.h; sourceTree = "<group>"; };
+		842A89671F70EDC400730DA6 /* LinkedListStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedListStack.m; sourceTree = "<group>"; };
+		842A89681F70EDC400730DA6 /* UIImage+FloodFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FloodFill.h"; sourceTree = "<group>"; };
+		842A89691F70EDC400730DA6 /* UIImage+FloodFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FloodFill.m"; sourceTree = "<group>"; };
+		842A8A3E1F70EEEB00730DA6 /* Birds2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birds2.png; sourceTree = "<group>"; };
+		842A8A3F1F70EEEB00730DA6 /* Animals1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Animals1.png; sourceTree = "<group>"; };
+		842A8A401F70EEEB00730DA6 /* Animals2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Animals2.png; sourceTree = "<group>"; };
+		842A8A411F70EEEB00730DA6 /* Fashion1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fashion1.png; sourceTree = "<group>"; };
+		842A8A421F70EEEB00730DA6 /* Culture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Culture1.png; sourceTree = "<group>"; };
+		842A8A431F70EEEB00730DA6 /* Culture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Culture2.png; sourceTree = "<group>"; };
+		842A8A441F70EEEB00730DA6 /* Christmas1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas1.png; sourceTree = "<group>"; };
+		842A8A451F70EEEB00730DA6 /* Comics1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comics1.png; sourceTree = "<group>"; };
+		842A8A4F1F70F16000730DA6 /* Birds1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birds1.png; sourceTree = "<group>"; };
+		844F1A891F7276BF003E8919 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		845041A21F836E0700B7AE2C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		845041A51F83755E00B7AE2C /* promoImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage1.png; sourceTree = "<group>"; };
+		845041B31F8375B300B7AE2C /* promoImage8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage8.png; sourceTree = "<group>"; };
+		845041B51F83763C00B7AE2C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		845041B71F838D4F00B7AE2C /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		845041B91F83930E00B7AE2C /* promoImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage2.png; sourceTree = "<group>"; };
+		845041BB1F83937100B7AE2C /* promoImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage3.png; sourceTree = "<group>"; };
+		845041BD1F83939800B7AE2C /* promoImage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage4.png; sourceTree = "<group>"; };
+		845041BF1F8393E600B7AE2C /* promoImage5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage5.png; sourceTree = "<group>"; };
+		845041C11F83941C00B7AE2C /* promoImage6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage6.png; sourceTree = "<group>"; };
+		845041C31F83944C00B7AE2C /* promoImage7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promoImage7.png; sourceTree = "<group>"; };
+		845041C51F839DB000B7AE2C /* Fashion2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fashion2.png; path = Category/Fashion2.png; sourceTree = "<group>"; };
+		845041C61F839DB000B7AE2C /* Fashion3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fashion3.png; path = Category/Fashion3.png; sourceTree = "<group>"; };
+		845041D71F83A48200B7AE2C /* xxxSemiworks-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xxxSemiworks-1.png"; sourceTree = "<group>"; };
+		845041D81F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "xxxshutterstock_489522169-[Converted].jpg"; sourceTree = "<group>"; };
+		845041D91F83A48200B7AE2C /* xxxshutterstock_508600018-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "xxxshutterstock_508600018-[Converted].jpg"; sourceTree = "<group>"; };
+		845041DA1F83A48200B7AE2C /* xxxshutterstock_616091735.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xxxshutterstock_616091735.jpg; sourceTree = "<group>"; };
+		845041DB1F83A48200B7AE2C /* xxxworks3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxworks3.png; sourceTree = "<group>"; };
+		845041DC1F83A48200B7AE2C /* xxxworks6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xxxworks6.png; sourceTree = "<group>"; };
+		845041E31F83AB4E00B7AE2C /* shutterstock_281143067-[Converted]1xx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_281143067-[Converted]1xx.jpg"; sourceTree = "<group>"; };
+		845041E41F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_285644417-[Converted].jpg"; sourceTree = "<group>"; };
+		845041E51F83AB4E00B7AE2C /* shutterstock_327716645-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_327716645-[Converted].jpg"; sourceTree = "<group>"; };
+		845041E61F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_328071368-[Converted].jpg"; sourceTree = "<group>"; };
+		845041E71F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shutterstock_389612521-[Converted].png"; sourceTree = "<group>"; };
+		845041E81F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_390780931-[Converted].jpg"; sourceTree = "<group>"; };
+		845041E91F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_395905720-[Converted].jpg"; sourceTree = "<group>"; };
+		845041EA1F83AB4E00B7AE2C /* shutterstock_396296125-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_396296125-[Converted].jpg"; sourceTree = "<group>"; };
+		845041EB1F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_398779984-[Converted].jpg"; sourceTree = "<group>"; };
+		845041EC1F83AB4E00B7AE2C /* shutterstock_400313902-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_400313902-[Converted].jpg"; sourceTree = "<group>"; };
+		845041ED1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_449997736-[Converted].jpg"; sourceTree = "<group>"; };
+		845041EE1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_450844078-[Converted].jpg"; sourceTree = "<group>"; };
+		845041EF1F83AB4E00B7AE2C /* shutterstock_478145179-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_478145179-[Converted].jpg"; sourceTree = "<group>"; };
+		845041F01F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shutterstock_496343161-[Converted].jpg"; sourceTree = "<group>"; };
+		84963F4A1F7933ED00391086 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		84A87C411F7B7F21004A0F51 /* UIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewModel.swift; sourceTree = "<group>"; };
+		84A87C461F7BB594004A0F51 /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		84A87C471F7BB594004A0F51 /* MenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewCell.xib; sourceTree = "<group>"; };
+		84A87C4E1F7BC455004A0F51 /* Animals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Animals.png; sourceTree = "<group>"; };
+		84A87C4F1F7BC455004A0F51 /* Birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birds.png; sourceTree = "<group>"; };
+		84A87C501F7BC455004A0F51 /* Christmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas.png; sourceTree = "<group>"; };
+		84A87C511F7BC455004A0F51 /* Comics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comics.png; sourceTree = "<group>"; };
+		84A87C521F7BC455004A0F51 /* Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Culture.png; sourceTree = "<group>"; };
+		84A87C531F7BC455004A0F51 /* Fashion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fashion.png; sourceTree = "<group>"; };
+		84BAA53E1F851F700048FB63 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		84BAA5401F851F780048FB63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		8E825E831F7D1C5500DD7D0E /* CustomWhellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWhellViewController.swift; sourceTree = "<group>"; };
+		8E825E841F7D1C5500DD7D0E /* customWhellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customWhellView.swift; sourceTree = "<group>"; };
+		8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Color_Palette_Name.txt; sourceTree = "<group>"; };
+		8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
+		8E9BF1911F6D525E0051D734 /* ColoringBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColoringBook.xcdatamodel; sourceTree = "<group>"; };
+		8E9BF1941F6D527F0051D734 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B473137622193018E996F5FF /* Pods_ColoringBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColoringBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07F809D490147B6E03FC805 /* Pods-ColoringBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColoringBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColoringBook/Pods-ColoringBook.debug.xcconfig"; sourceTree = "<group>"; };
+		EBB52CB1EE3529423B102848 /* Pods-ColoringBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColoringBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColoringBook/Pods-ColoringBook.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52BEE9DF1E05157700637559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */,
+				84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */,
+				8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */,
+				716EF98EBF4EDE7FEA280979 /* Pods_ColoringBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEE9F81E05157800637559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEEA031E05157800637559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		024326D1984ED67C0EFF2E04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07F809D490147B6E03FC805 /* Pods-ColoringBook.debug.xcconfig */,
+				EBB52CB1EE3529423B102848 /* Pods-ColoringBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52A0BD321E07C6C2008E1A60 /* swiftCode */ = {
+			isa = PBXGroup;
+			children = (
+				52A0BD331E07C70C008E1A60 /* ColoringBook-Bridging-Header.h */,
+				52A0BD341E07C70D008E1A60 /* TabViewController.swift */,
+				52A0BD361E07EBC9008E1A60 /* MenuViewController.swift */,
+				52FB14EC1E0923740067BD4B /* TableViewController.swift */,
+				52FB14EE1E09238E0067BD4B /* TableViewCell.swift */,
+				5279F3481E0A771700782CAB /* PopUpViewController.swift */,
+				5279F34A1E0A777D00782CAB /* SettingsViewController.swift */,
+				5294D7D71E123E7600A35F8B /* CircularColor.swift */,
+				5294D7D91E1264DB00A35F8B /* WhellController.swift */,
+				522675FC1E13D54A0009E181 /* ColorView.swift */,
+				52FF6A141E1786D600CA0868 /* ColorPick.swift */,
+				522360CD1E1A49B000EC24C3 /* ColorListViewController.swift */,
+				8E70DC1D1F6F8ED2002842BF /* Palette.swift */,
+				8E70DC231F6FD2D3002842BF /* Extensions.swift */,
+				8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */,
+				8E825E831F7D1C5500DD7D0E /* CustomWhellViewController.swift */,
+				8E825E841F7D1C5500DD7D0E /* customWhellView.swift */,
+				8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */,
+				8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */,
+			);
+			name = swiftCode;
+			sourceTree = "<group>";
+		};
+		52BEE9D91E05157700637559 = {
+			isa = PBXGroup;
+			children = (
+				844F1A891F7276BF003E8919 /* Podfile */,
+				8E9BF1901F6D525E0051D734 /* ColoringBook.xcdatamodeld */,
+				52BEE9E41E05157700637559 /* ColoringBook */,
+				52BEE9FE1E05157800637559 /* ColoringBookTests */,
+				52BEEA091E05157800637559 /* ColoringBookUITests */,
+				52BEE9E31E05157700637559 /* Products */,
+				8E9BF1931F6D527F0051D734 /* Frameworks */,
+				024326D1984ED67C0EFF2E04 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		52BEE9E31E05157700637559 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52BEE9E21E05157700637559 /* ColoringBook.app */,
+				52BEE9FB1E05157800637559 /* ColoringBookTests.xctest */,
+				52BEEA061E05157800637559 /* ColoringBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52BEE9E41E05157700637559 /* ColoringBook */ = {
+			isa = PBXGroup;
+			children = (
+				842A89621F70EDC400730DA6 /* UIImage Scanline Floodfill */,
+				52EC16C01E1BB14700AA7204 /* imageVU */,
+				52A0BD321E07C6C2008E1A60 /* swiftCode */,
+				842A8A3C1F70EEB800730DA6 /* Images */,
+				52BEE9E81E05157700637559 /* AppDelegate.h */,
+				52BEE9E91E05157700637559 /* AppDelegate.m */,
+				52BEE9EB1E05157700637559 /* ViewController.h */,
+				52BEE9EC1E05157700637559 /* ViewController.m */,
+				52BEE9EE1E05157700637559 /* Main.storyboard */,
+				52BEE9F11E05157700637559 /* Assets.xcassets */,
+				52BEE9F31E05157700637559 /* LaunchScreen.storyboard */,
+				52BEE9F61E05157700637559 /* Info.plist */,
+				52BEE9E51E05157700637559 /* Supporting Files */,
+				84A87C431F7BB4FD004A0F51 /* XIBs */,
+				84A87C401F7B7EE2004A0F51 /* Models */,
+				84963F491F79339B00391086 /* NewSwiftVC */,
+				52BEEBF91E05423600637559 /* PageItemController.h */,
+				52BEEBFA1E05423600637559 /* PageItemController.m */,
+				52BEEBFC1E0553FF00637559 /* DrawerViewController.h */,
+				52BEEBFD1E0553FF00637559 /* DrawerViewController.m */,
+				522360CA1E1A393B00EC24C3 /* ColorViewController.h */,
+				522360CB1E1A393B00EC24C3 /* ColorViewController.m */,
+			);
+			path = ColoringBook;
+			sourceTree = "<group>";
+		};
+		52BEE9E51E05157700637559 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52BEE9E61E05157700637559 /* main.m */,
+				52EC16CE1E1BB1B100AA7204 /* ColoringBook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52BEE9FE1E05157800637559 /* ColoringBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				52BEE9FF1E05157800637559 /* ColoringBookTests.m */,
+				52BEEA011E05157800637559 /* Info.plist */,
+			);
+			path = ColoringBookTests;
+			sourceTree = "<group>";
+		};
+		52BEEA091E05157800637559 /* ColoringBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52BEEA0A1E05157800637559 /* ColoringBookUITests.m */,
+				52BEEA0C1E05157800637559 /* Info.plist */,
+			);
+			path = ColoringBookUITests;
+			sourceTree = "<group>";
+		};
+		52EC16C01E1BB14700AA7204 /* imageVU */ = {
+			isa = PBXGroup;
+			children = (
+				52EC16C11E1BB15500AA7204 /* FloodFill.h */,
+				52EC16C21E1BB15500AA7204 /* FloodFill.m */,
+				52EC16C31E1BB15500AA7204 /* ImageCanvas.h */,
+				52EC16C41E1BB15500AA7204 /* ImageCanvas.m */,
+			);
+			name = imageVU;
+			sourceTree = "<group>";
+		};
+		842A89621F70EDC400730DA6 /* UIImage Scanline Floodfill */ = {
+			isa = PBXGroup;
+			children = (
+				842A89641F70EDC400730DA6 /* FloodFillImageView.h */,
+				842A89651F70EDC400730DA6 /* FloodFillImageView.m */,
+				842A89661F70EDC400730DA6 /* LinkedListStack.h */,
+				842A89671F70EDC400730DA6 /* LinkedListStack.m */,
+				842A89681F70EDC400730DA6 /* UIImage+FloodFill.h */,
+				842A89691F70EDC400730DA6 /* UIImage+FloodFill.m */,
+			);
+			path = "UIImage Scanline Floodfill";
+			sourceTree = "<group>";
+		};
+		842A8A3C1F70EEB800730DA6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				845041D61F83A48200B7AE2C /* Coloring Page */,
+				84A87C4D1F7BC455004A0F51 /* Category */,
+				845041C51F839DB000B7AE2C /* Fashion2.png */,
+				845041C61F839DB000B7AE2C /* Fashion3.png */,
+				842A8A4F1F70F16000730DA6 /* Birds1.png */,
+				842A8A3E1F70EEEB00730DA6 /* Birds2.png */,
+				842A8A3F1F70EEEB00730DA6 /* Animals1.png */,
+				842A8A401F70EEEB00730DA6 /* Animals2.png */,
+				842A8A411F70EEEB00730DA6 /* Fashion1.png */,
+				842A8A421F70EEEB00730DA6 /* Culture1.png */,
+				842A8A431F70EEEB00730DA6 /* Culture2.png */,
+				842A8A441F70EEEB00730DA6 /* Christmas1.png */,
+				842A8A451F70EEEB00730DA6 /* Comics1.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		845041A41F836F9300B7AE2C /* MoreApps */ = {
+			isa = PBXGroup;
+			children = (
+				845041A51F83755E00B7AE2C /* promoImage1.png */,
+				845041B91F83930E00B7AE2C /* promoImage2.png */,
+				845041BB1F83937100B7AE2C /* promoImage3.png */,
+				845041BD1F83939800B7AE2C /* promoImage4.png */,
+				845041BF1F8393E600B7AE2C /* promoImage5.png */,
+				845041C11F83941C00B7AE2C /* promoImage6.png */,
+				845041C31F83944C00B7AE2C /* promoImage7.png */,
+				845041B31F8375B300B7AE2C /* promoImage8.png */,
+			);
+			name = MoreApps;
+			sourceTree = "<group>";
+		};
+		845041D61F83A48200B7AE2C /* Coloring Page */ = {
+			isa = PBXGroup;
+			children = (
+				845041E31F83AB4E00B7AE2C /* shutterstock_281143067-[Converted]1xx.jpg */,
+				845041E41F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg */,
+				845041E51F83AB4E00B7AE2C /* shutterstock_327716645-[Converted].jpg */,
+				845041E61F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg */,
+				845041E71F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png */,
+				845041E81F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg */,
+				845041E91F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg */,
+				845041EA1F83AB4E00B7AE2C /* shutterstock_396296125-[Converted].jpg */,
+				845041EB1F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg */,
+				845041EC1F83AB4E00B7AE2C /* shutterstock_400313902-[Converted].jpg */,
+				845041ED1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg */,
+				845041EE1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg */,
+				845041EF1F83AB4E00B7AE2C /* shutterstock_478145179-[Converted].jpg */,
+				845041F01F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg */,
+				845041D71F83A48200B7AE2C /* xxxSemiworks-1.png */,
+				845041D81F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg */,
+				845041D91F83A48200B7AE2C /* xxxshutterstock_508600018-[Converted].jpg */,
+				845041DA1F83A48200B7AE2C /* xxxshutterstock_616091735.jpg */,
+				845041DB1F83A48200B7AE2C /* xxxworks3.png */,
+				845041DC1F83A48200B7AE2C /* xxxworks6.png */,
+			);
+			path = "Coloring Page";
+			sourceTree = "<group>";
+		};
+		84963F491F79339B00391086 /* NewSwiftVC */ = {
+			isa = PBXGroup;
+			children = (
+				845041B51F83763C00B7AE2C /* Reachability.swift */,
+				845041A21F836E0700B7AE2C /* MoreViewController.swift */,
+				84963F4A1F7933ED00391086 /* NewViewController.swift */,
+			);
+			name = NewSwiftVC;
+			sourceTree = "<group>";
+		};
+		84A87C401F7B7EE2004A0F51 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84A87C411F7B7F21004A0F51 /* UIViewModel.swift */,
+				8406551E1F825905007DFC9D /* DataMGMT.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84A87C431F7BB4FD004A0F51 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				84A87C461F7BB594004A0F51 /* MenuViewCell.swift */,
+				84A87C471F7BB594004A0F51 /* MenuViewCell.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		84A87C4D1F7BC455004A0F51 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				845041B71F838D4F00B7AE2C /* cross.png */,
+				845041A41F836F9300B7AE2C /* MoreApps */,
+				84A87C4E1F7BC455004A0F51 /* Animals.png */,
+				84A87C4F1F7BC455004A0F51 /* Birds.png */,
+				84A87C501F7BC455004A0F51 /* Christmas.png */,
+				84A87C511F7BC455004A0F51 /* Comics.png */,
+				84A87C521F7BC455004A0F51 /* Culture.png */,
+				84A87C531F7BC455004A0F51 /* Fashion.png */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8E9BF1931F6D527F0051D734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84BAA5401F851F780048FB63 /* WebKit.framework */,
+				84BAA53E1F851F700048FB63 /* CFNetwork.framework */,
+				8E9BF1941F6D527F0051D734 /* CoreData.framework */,
+				B473137622193018E996F5FF /* Pods_ColoringBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52BEE9E11E05157700637559 /* ColoringBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BEEA0F1E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBook" */;
+			buildPhases = (
+				2E6350ABE6AABEDF1D37A5F8 /* [CP] Check Pods Manifest.lock */,
+				52BEE9DE1E05157700637559 /* Sources */,
+				52BEE9DF1E05157700637559 /* Frameworks */,
+				52BEE9E01E05157700637559 /* Resources */,
+				7EAE5D06FAA845992BC8EE35 /* [CP] Embed Pods Frameworks */,
+				9FEE8834BD77BF45AB747962 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColoringBook;
+			productName = ColoringBook;
+			productReference = 52BEE9E21E05157700637559 /* ColoringBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52BEE9FA1E05157800637559 /* ColoringBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BEEA121E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBookTests" */;
+			buildPhases = (
+				52BEE9F71E05157800637559 /* Sources */,
+				52BEE9F81E05157800637559 /* Frameworks */,
+				52BEE9F91E05157800637559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52BEE9FD1E05157800637559 /* PBXTargetDependency */,
+			);
+			name = ColoringBookTests;
+			productName = ColoringBookTests;
+			productReference = 52BEE9FB1E05157800637559 /* ColoringBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52BEEA051E05157800637559 /* ColoringBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BEEA151E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBookUITests" */;
+			buildPhases = (
+				52BEEA021E05157800637559 /* Sources */,
+				52BEEA031E05157800637559 /* Frameworks */,
+				52BEEA041E05157800637559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52BEEA081E05157800637559 /* PBXTargetDependency */,
+			);
+			name = ColoringBookUITests;
+			productName = ColoringBookUITests;
+			productReference = 52BEEA061E05157800637559 /* ColoringBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52BEE9DA1E05157700637559 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Odyssey;
+				TargetAttributes = {
+					52BEE9E11E05157700637559 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 2NE6K8Y839;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					52BEE9FA1E05157800637559 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52BEE9E11E05157700637559;
+					};
+					52BEEA051E05157800637559 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52BEE9E11E05157700637559;
+					};
+				};
+			};
+			buildConfigurationList = 52BEE9DD1E05157700637559 /* Build configuration list for PBXProject "ColoringBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52BEE9D91E05157700637559;
+			productRefGroup = 52BEE9E31E05157700637559 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52BEE9E11E05157700637559 /* ColoringBook */,
+				52BEE9FA1E05157800637559 /* ColoringBookTests */,
+				52BEEA051E05157800637559 /* ColoringBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52BEE9E01E05157700637559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842A8A4B1F70EEEB00730DA6 /* Culture1.png in Resources */,
+				842A8A501F70F16000730DA6 /* Birds1.png in Resources */,
+				845041F11F83AB4E00B7AE2C /* shutterstock_281143067-[Converted]1xx.jpg in Resources */,
+				845041A61F83755E00B7AE2C /* promoImage1.png in Resources */,
+				842A8A4A1F70EEEB00730DA6 /* Fashion1.png in Resources */,
+				84A87C541F7BC455004A0F51 /* Animals.png in Resources */,
+				845041DD1F83A48200B7AE2C /* xxxSemiworks-1.png in Resources */,
+				84A87C561F7BC455004A0F51 /* Christmas.png in Resources */,
+				845041BA1F83930E00B7AE2C /* promoImage2.png in Resources */,
+				842A8A491F70EEEB00730DA6 /* Animals2.png in Resources */,
+				845041F21F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg in Resources */,
+				845041C01F8393E600B7AE2C /* promoImage5.png in Resources */,
+				845041B81F838D4F00B7AE2C /* cross.png in Resources */,
+				845041F41F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg in Resources */,
+				845041FE1F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg in Resources */,
+				845041FB1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg in Resources */,
+				845041F81F83AB4E00B7AE2C /* shutterstock_396296125-[Converted].jpg in Resources */,
+				845041C21F83941C00B7AE2C /* promoImage6.png in Resources */,
+				845041BE1F83939800B7AE2C /* promoImage4.png in Resources */,
+				52BEE9F51E05157700637559 /* LaunchScreen.storyboard in Resources */,
+				842A8A481F70EEEB00730DA6 /* Animals1.png in Resources */,
+				845041F31F83AB4E00B7AE2C /* shutterstock_327716645-[Converted].jpg in Resources */,
+				845041C41F83944C00B7AE2C /* promoImage7.png in Resources */,
+				842A8A4E1F70EEEB00730DA6 /* Comics1.png in Resources */,
+				845041F91F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg in Resources */,
+				84A87C491F7BB594004A0F51 /* MenuViewCell.xib in Resources */,
+				84A87C591F7BC455004A0F51 /* Fashion.png in Resources */,
+				845041E11F83A48200B7AE2C /* xxxworks3.png in Resources */,
+				84A87C551F7BC455004A0F51 /* Birds.png in Resources */,
+				84A87C571F7BC455004A0F51 /* Comics.png in Resources */,
+				845041F51F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png in Resources */,
+				845041E01F83A48200B7AE2C /* xxxshutterstock_616091735.jpg in Resources */,
+				845041F61F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg in Resources */,
+				52BEE9F21E05157700637559 /* Assets.xcassets in Resources */,
+				842A8A4D1F70EEEB00730DA6 /* Christmas1.png in Resources */,
+				845041BC1F83937100B7AE2C /* promoImage3.png in Resources */,
+				845041B41F8375B300B7AE2C /* promoImage8.png in Resources */,
+				842A8A4C1F70EEEB00730DA6 /* Culture2.png in Resources */,
+				842A8A471F70EEEB00730DA6 /* Birds2.png in Resources */,
+				844F1A8A1F7276BF003E8919 /* Podfile in Resources */,
+				845041FD1F83AB4E00B7AE2C /* shutterstock_478145179-[Converted].jpg in Resources */,
+				845041FA1F83AB4E00B7AE2C /* shutterstock_400313902-[Converted].jpg in Resources */,
+				845041DF1F83A48200B7AE2C /* xxxshutterstock_508600018-[Converted].jpg in Resources */,
+				8E825E891F7D1C5500DD7D0E /* Color_Palette_Name.txt in Resources */,
+				845041FC1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg in Resources */,
+				845041DE1F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg in Resources */,
+				84A87C581F7BC455004A0F51 /* Culture.png in Resources */,
+				52BEE9F01E05157700637559 /* Main.storyboard in Resources */,
+				845041F71F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg in Resources */,
+				845041C81F839DB000B7AE2C /* Fashion3.png in Resources */,
+				845041C71F839DB000B7AE2C /* Fashion2.png in Resources */,
+				845041E21F83A48200B7AE2C /* xxxworks6.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEE9F91E05157800637559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEEA041E05157800637559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E6350ABE6AABEDF1D37A5F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7EAE5D06FAA845992BC8EE35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColoringBook/Pods-ColoringBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FEE8834BD77BF45AB747962 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColoringBook/Pods-ColoringBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52BEE9DE1E05157700637559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A0BD351E07C70D008E1A60 /* TabViewController.swift in Sources */,
+				8E825E8B1F7D2A0D00DD7D0E /* SharingViewController.swift in Sources */,
+				522360CE1E1A49B000EC24C3 /* ColorListViewController.swift in Sources */,
+				52FF6A151E1786D600CA0868 /* ColorPick.swift in Sources */,
+				842A896D1F70EDC400730DA6 /* UIImage+FloodFill.m in Sources */,
+				52BEE9ED1E05157700637559 /* ViewController.m in Sources */,
+				522675FD1E13D54A0009E181 /* ColorView.swift in Sources */,
+				5294D7DA1E1264DB00A35F8B /* WhellController.swift in Sources */,
+				842A896B1F70EDC400730DA6 /* FloodFillImageView.m in Sources */,
+				5294D7D81E123E7600A35F8B /* CircularColor.swift in Sources */,
+				8E825E861F7D1C5500DD7D0E /* DatabaseController.swift in Sources */,
+				8406551F1F825905007DFC9D /* DataMGMT.swift in Sources */,
+				8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */,
+				84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */,
+				84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */,
+				8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */,
+				84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */,
+				5279F34B1E0A777D00782CAB /* SettingsViewController.swift in Sources */,
+				52BEE9EA1E05157700637559 /* AppDelegate.m in Sources */,
+				8E9BF1921F6D525E0051D734 /* ColoringBook.xcdatamodeld in Sources */,
+				52EC16C51E1BB15500AA7204 /* FloodFill.m in Sources */,
+				52EC16C61E1BB15500AA7204 /* ImageCanvas.m in Sources */,
+				842A896C1F70EDC400730DA6 /* LinkedListStack.m in Sources */,
+				845041A31F836E0700B7AE2C /* MoreViewController.swift in Sources */,
+				52FB14EF1E09238E0067BD4B /* TableViewCell.swift in Sources */,
+				8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */,
+				52FB14ED1E0923740067BD4B /* TableViewController.swift in Sources */,
+				5279F3491E0A771700782CAB /* PopUpViewController.swift in Sources */,
+				845041B61F83763C00B7AE2C /* Reachability.swift in Sources */,
+				52A0BD371E07EBC9008E1A60 /* MenuViewController.swift in Sources */,
+				52BEE9E71E05157700637559 /* main.m in Sources */,
+				8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */,
+				52BEEBFE1E0553FF00637559 /* DrawerViewController.m in Sources */,
+				522360CC1E1A393B00EC24C3 /* ColorViewController.m in Sources */,
+				52BEEBFB1E05423600637559 /* PageItemController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEE9F71E05157800637559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BEEA001E05157800637559 /* ColoringBookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BEEA021E05157800637559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BEEA0B1E05157800637559 /* ColoringBookUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52BEE9FD1E05157800637559 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52BEE9E11E05157700637559 /* ColoringBook */;
+			targetProxy = 52BEE9FC1E05157800637559 /* PBXContainerItemProxy */;
+		};
+		52BEEA081E05157800637559 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52BEE9E11E05157700637559 /* ColoringBook */;
+			targetProxy = 52BEEA071E05157800637559 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52BEE9EE1E05157700637559 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BEE9EF1E05157700637559 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52BEE9F31E05157700637559 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BEE9F41E05157700637559 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52BEEA0D1E05157800637559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52BEEA0E1E05157800637559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52BEEA101E05157800637559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07F809D490147B6E03FC805 /* Pods-ColoringBook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2NE6K8Y839;
+				INFOPLIST_FILE = ColoringBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColoringBook/ColoringBook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52BEEA111E05157800637559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB52CB1EE3529423B102848 /* Pods-ColoringBook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2NE6K8Y839;
+				INFOPLIST_FILE = ColoringBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColoringBook/ColoringBook-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		52BEEA131E05157800637559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ColoringBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColoringBook.app/ColoringBook";
+			};
+			name = Debug;
+		};
+		52BEEA141E05157800637559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ColoringBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColoringBook.app/ColoringBook";
+			};
+			name = Release;
+		};
+		52BEEA161E05157800637559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ColoringBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ColoringBook;
+			};
+			name = Debug;
+		};
+		52BEEA171E05157800637559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ColoringBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.ColoringBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ColoringBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52BEE9DD1E05157700637559 /* Build configuration list for PBXProject "ColoringBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BEEA0D1E05157800637559 /* Debug */,
+				52BEEA0E1E05157800637559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BEEA0F1E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BEEA101E05157800637559 /* Debug */,
+				52BEEA111E05157800637559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BEEA121E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BEEA131E05157800637559 /* Debug */,
+				52BEEA141E05157800637559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BEEA151E05157800637559 /* Build configuration list for PBXNativeTarget "ColoringBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BEEA161E05157800637559 /* Debug */,
+				52BEEA171E05157800637559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E9BF1901F6D525E0051D734 /* ColoringBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E9BF1911F6D525E0051D734 /* ColoringBook.xcdatamodel */,
+			);
+			currentVersion = 8E9BF1911F6D525E0051D734 /* ColoringBook.xcdatamodel */;
+			path = ColoringBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 52BEE9DA1E05157700637559 /* Project object */;
+}
