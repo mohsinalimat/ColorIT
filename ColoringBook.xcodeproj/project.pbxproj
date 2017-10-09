@@ -91,6 +91,7 @@
 		84A87C591F7BC455004A0F51 /* Fashion.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C531F7BC455004A0F51 /* Fashion.png */; };
 		84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA53E1F851F700048FB63 /* CFNetwork.framework */; };
 		84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA5401F851F780048FB63 /* WebKit.framework */; };
+		8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */; };
 		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
 		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
 		8E825E861F7D1C5500DD7D0E /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */; };
@@ -221,6 +222,7 @@
 		84A87C531F7BC455004A0F51 /* Fashion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fashion.png; sourceTree = "<group>"; };
 		84BAA53E1F851F700048FB63 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		84BAA5401F851F780048FB63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				8E825E841F7D1C5500DD7D0E /* customWhellView.swift */,
 				8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */,
 				8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */,
+				8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */,
 			);
 			name = swiftCode;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				8406551F1F825905007DFC9D /* DataMGMT.swift in Sources */,
 				8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */,
 				84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */,
+				8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */,
 				84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */,
 				8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */,
 				84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */,
