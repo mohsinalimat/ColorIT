@@ -290,14 +290,21 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         if selectedIndex != indexPath && selectedIndex != nil && indexPath.row==0{
-            coloredImageView.image = processVintageImage(blendImage(no: 1))
+            coloredImageView.image = blendImage(no: 1)
         }
         else if selectedIndex != indexPath && selectedIndex != nil && indexPath.row==1{
             coloredImageView.image = blendImage(no: 2)
         }
-        else{
-            coloredImageView.image = blendImage(no: 1)
+        else if selectedIndex != indexPath && selectedIndex != nil && indexPath.row==2{
+            coloredImageView.image = blendImage(no: 3)
         }
+        else if selectedIndex != indexPath && selectedIndex != nil && indexPath.row==3{
+            coloredImageView.image = blendImage(no: 4)
+        }
+        else if selectedIndex != indexPath && selectedIndex != nil && indexPath.row==4{
+            coloredImageView.image = blendImage(no: 5)
+        }
+        
         selectedIndex=indexPath
         collectionView.reloadData()
         
@@ -334,10 +341,19 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         let textureImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
         //textureImageView.frame = cell.frame
         if indexPath.row==0{
-            textureImageView.image = #imageLiteral(resourceName: "wall")
+            textureImageView.image = #imageLiteral(resourceName: "stone-wall")
         }
-        else{
-            textureImageView.image = #imageLiteral(resourceName: "paper")
+        else if indexPath.row==1{
+            textureImageView.image = #imageLiteral(resourceName: "wall-white")
+        }
+        else if indexPath.row==2{
+            textureImageView.image = #imageLiteral(resourceName: "knitted")
+        }
+        else if indexPath.row==3{
+            textureImageView.image = #imageLiteral(resourceName: "leather")
+        }
+        else if indexPath.row==4{
+            textureImageView.image = #imageLiteral(resourceName: "wood-1")
         }
         
         cell.addSubview(textureImageView)
@@ -356,19 +372,19 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         coloredImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height))
         if no==1{
             
-            #imageLiteral(resourceName: "paper").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
+            #imageLiteral(resourceName: "stone-wall").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
         }
         else if no==2{
-            #imageLiteral(resourceName: "wall").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
+            #imageLiteral(resourceName: "wall-white").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
         }
         else if no==3{
-            #imageLiteral(resourceName: "paper").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
+            #imageLiteral(resourceName: "knitted").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
         }
         else if no==4{
-            #imageLiteral(resourceName: "paper").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
+            #imageLiteral(resourceName: "leather").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
         }
         else{
-            #imageLiteral(resourceName: "paper").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
+            #imageLiteral(resourceName: "wood-1").draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .multiply, alpha: 1.0)
         }
         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
