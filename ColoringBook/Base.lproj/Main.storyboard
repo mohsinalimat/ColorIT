@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6A9-uy-owB">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -456,25 +456,23 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90c-55-8zO">
-                                <rect key="frame" x="234" y="362" width="300" height="300"/>
+                                <rect key="frame" x="45" y="355" width="678" height="474"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-gB-ruY" customClass="FloodFillImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <rect key="frame" x="228" y="62" width="223" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="Ioz-Xr-aVh"/>
-                                            <constraint firstAttribute="height" constant="300" id="fHw-Ob-QaO"/>
+                                            <constraint firstAttribute="height" constant="300" id="eC0-NV-ZTd"/>
+                                            <constraint firstAttribute="width" constant="223" id="nvN-PG-020"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Fq7-gB-ruY" secondAttribute="trailing" id="7pR-zp-Ayr"/>
-                                    <constraint firstAttribute="height" constant="300" id="8Eu-jg-S50"/>
-                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="leading" secondItem="90c-55-8zO" secondAttribute="leading" id="INa-Zs-dlk"/>
-                                    <constraint firstAttribute="width" constant="300" id="NgU-zN-OOu"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fq7-gB-ruY" secondAttribute="bottom" id="cK6-as-ous"/>
-                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="top" secondItem="90c-55-8zO" secondAttribute="top" id="sUO-2O-XUH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fq7-gB-ruY" secondAttribute="trailing" constant="227" id="0Lb-2C-gms"/>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="centerX" secondItem="90c-55-8zO" secondAttribute="centerX" id="45b-YL-dLp"/>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="top" secondItem="90c-55-8zO" secondAttribute="top" constant="62" id="MDs-hf-dnj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fq7-gB-ruY" secondAttribute="bottom" constant="112" id="cdp-Ki-tD5"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="DpP-0y-h7H" id="gPU-bA-jq3"/>
@@ -483,11 +481,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="90c-55-8zO" firstAttribute="centerY" secondItem="Cqv-bh-Ops" secondAttribute="centerY" id="R0b-z1-3j7"/>
-                            <constraint firstItem="90c-55-8zO" firstAttribute="centerX" secondItem="Cqv-bh-Ops" secondAttribute="centerX" id="Y9g-fa-MAU"/>
+                            <constraint firstItem="90c-55-8zO" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leadingMargin" constant="25" id="BT2-L8-bRa"/>
+                            <constraint firstItem="90c-55-8zO" firstAttribute="top" secondItem="Cqv-bh-Ops" secondAttribute="top" constant="355" id="RGL-AV-hEv"/>
+                            <constraint firstItem="90c-55-8zO" firstAttribute="centerX" secondItem="elp-9T-XeB" secondAttribute="centerX" id="hrJ-V5-Ua9"/>
                             <constraint firstAttribute="trailing" secondItem="elp-9T-XeB" secondAttribute="trailing" id="htV-07-vnp"/>
                             <constraint firstItem="elp-9T-XeB" firstAttribute="top" secondItem="ZKQ-EO-bks" secondAttribute="bottom" constant="8" id="rNY-Wc-WiR"/>
                             <constraint firstItem="elp-9T-XeB" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leading" id="z0H-E0-vvJ"/>
+                            <constraint firstItem="OFY-bf-6t9" firstAttribute="top" secondItem="90c-55-8zO" secondAttribute="bottom" constant="195" id="za9-rv-pVa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -498,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQ1-Ql-fZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="1510.7946026986508"/>
+            <point key="canvasLocation" x="115.625" y="1510.546875"/>
         </scene>
         <!--Sharing View Controller-->
         <scene sceneID="Y4d-0i-whd">

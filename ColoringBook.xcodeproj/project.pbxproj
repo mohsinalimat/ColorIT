@@ -110,6 +110,7 @@
 		84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA5401F851F780048FB63 /* WebKit.framework */; };
 		84EB4C941F8CA83C000ABE65 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB4C931F8CA83C000ABE65 /* Icon.png */; };
 		84EB4C961F8CF439000ABE65 /* lock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB4C951F8CF439000ABE65 /* lock2.png */; };
+		8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */; };
 		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
 		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
 		8E825E861F7D1C5500DD7D0E /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */; };
@@ -259,6 +260,7 @@
 		84BAA5401F851F780048FB63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		84EB4C931F8CA83C000ABE65 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		84EB4C951F8CF439000ABE65 /* lock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock2.png; sourceTree = "<group>"; };
+		8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };

@@ -44,6 +44,8 @@
     editImageView.tolorance = 0 ;
     [editImageView setImage:img];
     editImageView.scrollView = scrollView ;
+    scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.width);
+    scrollView.center = self.view.center ;
     scrollView.minimumZoomScale = 1.0 ;
     scrollView.maximumZoomScale = 10.0 ;
     
@@ -78,6 +80,13 @@
     [[UIApplication sharedApplication].keyWindow bringSubviewToFront:wheelController.view];
 }
 
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.width);
+    scrollView.center = self.view.center ;
+
+}
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender
 {
