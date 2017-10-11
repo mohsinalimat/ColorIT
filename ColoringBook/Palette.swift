@@ -13,13 +13,14 @@ import UIKit
     
     @IBInspectable var counterColor: UIColor = UIColor.red
     var shadow: UIColor = UIColor.clear
+    var activation = false
     var colorArray = [UIColor]()
     var diffArray = [CGFloat]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    convenience init(frame: CGRect, a: String, b:String, c:String, d:String, e:String, f:String, g:String, h:String){
+    convenience init(frame: CGRect, a: String, b:String, c:String, d:String, e:String, f:String, g:String, h:String, activation: Bool = false){
         
         self.init(frame: frame)
         colorArray.removeAll()
@@ -31,7 +32,7 @@ import UIKit
         colorArray.append(UIColor.init(hexString: f)!)
         colorArray.append(UIColor.init(hexString: g)!)
         colorArray.append(UIColor.init(hexString: h)!)
-        
+        self.activation = activation
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -95,12 +96,16 @@ import UIKit
         
         
         print("asdf \(radius/2 - arcWidth/2)")
-        /*let path = UIBezierPath(arcCenter: center, radius: bounds.width/2, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi*2), clockwise: true)
-         //let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 50)
-         path.lineWidth = arcWidth
-         //shadow = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
-         shadow.setFill()
-         path.fill()*/
+        
+        /*if activation==true{
+            let path = UIBezierPath(arcCenter: center, radius: bounds.width/2, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi*2), clockwise: true)
+            //let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 50)
+            path.lineWidth = arcWidth
+            shadow = UIColor(red: 0, green: 1, blue: 1, alpha: 0.6)
+            shadow.setStroke()
+            path.stroke()
+        }*/
+        
         
         
         for index in 0..<colorArray.count {

@@ -26,10 +26,19 @@ import UIKit
         // 1
         let radiusBorder: CGFloat = max(bounds.width, bounds.height)
         // 2
-        let arcWidthBorder: CGFloat = 70//86
+        let arcWidthBorder: CGFloat = 76//86
+        
+        
+        //colorPickDownBorder----------------
+        var path = UIBezierPath(rect: CGRect(x: center.x-43, y: 8.5, width: 86, height: 13.5))
+        //path.lineWidth = 2.0
+        
+        counterColor.darker(by: 20)?.setFill()
+        path.fill()
+        //----------------------
         
         // 3
-        let path = UIBezierPath(arcCenter: center, radius: radiusBorder/2 - arcWidthBorder/2, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        path = UIBezierPath(arcCenter: center, radius: radiusBorder/2 - arcWidthBorder/2, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         path.lineWidth = arcWidthBorder
         counterColor.setStroke()
@@ -43,7 +52,7 @@ import UIKit
         let yPosition = bounds.height/2 - arcWidthBorder/2
         let centerMain = CGPoint(x: bounds.width/2, y: yPosition)
         
-        let mainPath = UIBezierPath(arcCenter: centerMain, radius: 10, startAngle: sAngle, endAngle: eAngle, clockwise: true)
+        let mainPath = UIBezierPath(arcCenter: centerMain, radius: 8, startAngle: sAngle, endAngle: eAngle, clockwise: true)
         
         mainPath.lineWidth = arcBorder
         counterColor.setStroke()

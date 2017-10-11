@@ -14,7 +14,7 @@ let π:CGFloat = CGFloat(Double.pi)
 @IBDesignable class ColorView: UIView {
     
     @IBInspectable var counterColor: UIColor = UIColor.red
-    @IBInspectable var shadow: UIColor!
+    var shadow: UIColor = UIColor.black
     var colorArray = [UIColor]()
     var diffArray = [CGFloat]()
     
@@ -76,12 +76,14 @@ let π:CGFloat = CGFloat(Double.pi)
         
         
         print("asdf \(radius/2 - arcWidth/2)")
-        let path = UIBezierPath(arcCenter: center, radius: bounds.width/2, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi*2), clockwise: true)
+        let path = UIBezierPath(arcCenter: center, radius: bounds.width/2-5, startAngle: CGFloat(0), endAngle:CGFloat(Double.pi*2), clockwise: true)
         
         path.lineWidth = arcWidth
         
-        shadow.setFill()
+        UIColor.white.darker(by: 5)?.setFill()
         path.fill()
+        
+        
         
         
         for index in 0..<colorArray.count {

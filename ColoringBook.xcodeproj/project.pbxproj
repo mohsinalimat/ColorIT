@@ -333,6 +333,7 @@
 				8E825E841F7D1C5500DD7D0E /* customWhellView.swift */,
 				8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */,
 				8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */,
+				8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */,
 			);
 			name = swiftCode;
 			sourceTree = "<group>";
@@ -918,6 +919,7 @@
 				8406551F1F825905007DFC9D /* DataMGMT.swift in Sources */,
 				8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */,
 				84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */,
+				8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */,
 				84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */,
 				8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */,
 				84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */,

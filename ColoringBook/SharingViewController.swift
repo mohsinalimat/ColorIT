@@ -12,7 +12,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     let buttonHeight:CGFloat = 60.0
     let textureButtonHeight:CGFloat = 80.0
-    var vintageSliderValue:CGFloat = 0.5
+    var vintageSliderValue:CGFloat = 0.0
     let buttonDistance = {(view:CGFloat,numberOfBtn:CGFloat,btnSize:CGFloat)->CGFloat in
         return (view-(numberOfBtn*btnSize))/(numberOfBtn+1.0)
     }
@@ -20,6 +20,18 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
      return (self.view.frame.size.width-(4*buttonHeight))/(4.0+1.0)
      }*/
     let blendEffects:[CGBlendMode] = [.normal, .multiply, .screen, .overlay, .darken, .lighten, .colorDodge, .colorBurn, .softLight, .hardLight, .difference, .exclusion, .hue, .saturation, .color, .luminosity, .clear, .copy, .sourceIn, .sourceOut, .sourceAtop, .destinationOver, .destinationIn, .destinationOut, .destinationAtop, .xor, .plusDarker, .plusLighter]
+    enum contourList {
+        case black
+        case white
+        case none
+    }
+    enum textureList{
+        case none
+        case bricks
+        case paper
+    }
+    var contoureName = contourList.none
+    var textureName = textureList.none
     var coloredImage = UIImage()
     var coloredImageView = UIImageView()
     var containerView = UIView()
@@ -236,52 +248,28 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         textureMode = .vignette
     }
-    var blendIndx1 = 0
-    var blendIndx2 = 0
+    
     
     func contourEffect(_ sender: UIButton){
-        if blendIndx1 >= blendEffects.count{
-            blendIndx2+=1
-            blendIndx1 = 0
+        if sender.tag==1{
+            contoureName = contourList.none
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
-        if blendIndx2 >= blendEffects.count{
-            blendIndx2 = 0
+        else if sender.tag==2{
+            contoureName = contourList.white
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
-        let vSize: CGSize = coloredImageView.frame.size
-        UIGraphicsBeginImageContextWithOptions(vSize, false, 0)
-        //coloredImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .normal, alpha: 1.0)
-        coloredImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height))
-        setImage(image: #imageLiteral(resourceName: "Birds1.png")).draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .screen, alpha: 1.0)
-        
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        coloredImageView.image = newImage
-        UIGraphicsEndImageContext()
-        blendIndx1+=1
+        else{
+            contoureName = contourList.black
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+        }
         
         
-        /*if let filter = CIFilter(name: "CIColorInvert") {
-         let beginImage = CIImage(image: coloredImage)
-         filter.setValue(beginImage, forKey: kCIInputImageKey)
-         let inverseImage = UIImage(ciImage: filter.outputImage!)
-         
-         coloredImageView.image = setImage(image: inverseImage)
-         
-         let vSize: CGSize = coloredImageView.frame.size
-         UIGraphicsBeginImageContextWithOptions(vSize, false, 0)
-         //coloredImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: .normal, alpha: 1.0)
-         coloredImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: blendEffects[blendIndx1], alpha: 1.0)
-         inverseImage.draw(in: CGRect(x: 0, y: 0, width: vSize.width, height: vSize.height), blendMode: blendEffects[blendIndx2], alpha: 1.0)
-         
-         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-         coloredImageView.image = newImage
-         UIGraphicsEndImageContext()
-         blendIndx1+=1
-         }*/
     }
     func vintageSliderValueDidChange (_ sender: UISlider) {
         
         vintageSliderValue=CGFloat(sender.value)
-        coloredImageView.image = processVintageImage(blendImage(no: 1))
+        coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
     }
     var selectedIndex:Foundation.IndexPath!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -339,7 +327,6 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         cell.backgroundColor = UIColor.init(red: 0.55, green: 0.55, blue: 0.6, alpha: 1)
         let textureImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
-        //textureImageView.frame = cell.frame
         if indexPath.row==0{
             textureImageView.image = #imageLiteral(resourceName: "stone-wall")
         }
