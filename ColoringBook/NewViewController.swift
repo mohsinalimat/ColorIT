@@ -56,7 +56,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         let animalImages = [#imageLiteral(resourceName: "Animals1.png"),#imageLiteral(resourceName: "Animals2.png")]
         let fasionImages = [#imageLiteral(resourceName: "Fashion1.png"),#imageLiteral(resourceName: "Fashion2.png"),#imageLiteral(resourceName: "Fashion3.png")]
         let cultureImages = [#imageLiteral(resourceName: "Culture1.png"),#imageLiteral(resourceName: "Culture2.png"),#imageLiteral(resourceName: "Culture3.png"),#imageLiteral(resourceName: "Culture4.png"),#imageLiteral(resourceName: "Culture5.png"), #imageLiteral(resourceName: "Culture6.png")]
-        let christmasImages = [#imageLiteral(resourceName: "Christmas1.png")]
+        let christmasImages = [#imageLiteral(resourceName: "Christmas1.png"),#imageLiteral(resourceName: "Christmas2.png"),#imageLiteral(resourceName: "Christmas3.png"),#imageLiteral(resourceName: "Christmas4.png"),#imageLiteral(resourceName: "Christmas5.png")]
         let comoicsImages = [#imageLiteral(resourceName: "shutterstock_390780931-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_327716645-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_328071368-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_396296125-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_449997736-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_398779984-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_285644417-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_389612521-[Converted].png"),#imageLiteral(resourceName: "shutterstock_496343161-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_478145179-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_400313902-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_450844078-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_281143067-[Converted]1xx.jpg"),#imageLiteral(resourceName: "Comics2.png")]
         
         dataDictionary["Birds"] = birdsImages
@@ -114,8 +114,10 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     
     @IBAction func colorItButtonAction(_ sender: UIButton, forEvent event: UIEvent)
     {
-      
         
+        pagerView(scrollView, didSelectItemAt: scrollView.currentIndex)
+      
+        /* OLD
         
             if self.upperViewHolder.center.y < self.view.frame.minY
             {
@@ -143,7 +145,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         //performSegue(withIdentifier: "toColor", sender: self)
         
         
-    
+    */
     }
     
     
@@ -321,6 +323,12 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         
     }
     
+    // MARK: - Starting Image Picking
+    var startingImagesProductKeys  = [String]()
+    
+    
+    
+    
     // MARK: - View Controller's Lifecycle
 
     override func viewDidLoad() {
@@ -382,7 +390,8 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "toColor"
-        { test = 1
+        {
+            test = 1
             if let target = segue.destination as? ColorViewController
             {
                 target.dataImage = startingImages[scrollView.currentIndex]
@@ -390,6 +399,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                 //target.newvc = self
                 
             }
+            
         }
         
         
@@ -401,6 +411,8 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     
     
     // MARK: - FSPager View Delegates 
+    
+    var currentProductKey = ""
     
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
         return startingImages.count
@@ -427,7 +439,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
             
         }
         //--------------Clearing Imageviews--------------------------------------
-        if index > 0
+        if (index > 0) && (currentProductKey != "Draft")
         {
             let lockImageView = UIImageView()
             lockImageView.frame = CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height)
@@ -441,7 +453,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     }
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool
     {
-        return false
+        return true
     }
     
     
@@ -453,12 +465,180 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     
     func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool
     {
-        return false
+        return true
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int)
     {
-        
+        if (index == 0) || (currentProductKey == "Draft")
+        {
+            if self.upperViewHolder.center.y < self.view.frame.minY
+            {
+                // If downViewHolder at down .
+                
+                print("here")
+                UIView.animate(withDuration: 0.5 , animations: {
+                    self.upperViewHolder.frame = CGRect(x: 0, y: 0 , width: self.upperViewHolderFrameCopy.width, height: self.upperViewHolderFrameCopy.height)
+                    self.downViewHolder.frame = CGRect(x: 0, y: self.downViewHolderFrameCopy.minY , width: self.downViewHolderFrameCopy.width, height: self.downViewHolderFrameCopy.height)
+                    
+                } , completion :{(_:Bool) in
+                    UIView.animate(withDuration: 0.25, animations:{
+                        self.upDownButton.rotate(angle: 180)
+                    } ,completion : {(_:Bool)in self.performSegue(withIdentifier: "toColor", sender: self) })
+                    
+                })
+                
+            }
+            else
+            {
+                performSegue(withIdentifier: "toColor", sender: self)
+            }
+        }
+        else
+        {
+            
+            if self.upperViewHolder.center.y < self.view.frame.minY
+            {
+                // If downViewHolder at down .
+                
+                print("here")
+                UIView.animate(withDuration: 0.5 , animations: {
+                    self.upperViewHolder.frame = CGRect(x: 0, y: 0 , width: self.upperViewHolderFrameCopy.width, height: self.upperViewHolderFrameCopy.height)
+                    self.downViewHolder.frame = CGRect(x: 0, y: self.downViewHolderFrameCopy.minY , width: self.downViewHolderFrameCopy.width, height: self.downViewHolderFrameCopy.height)
+                    
+                } , completion :{(_:Bool) in
+                    UIView.animate(withDuration: 0.25, animations:{
+                        self.upDownButton.rotate(angle: 180)
+                    } ,completion : {(_:Bool) in
+                        
+                        //------------------------------------------------------------------------
+                        if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3") == false{
+                            
+                            if ReachabilityX.isConnectedToNetwork() == true
+                            {
+                                self.purchaseMyProduct(product: self.iapProducts[2])
+                            }
+                                
+                            else
+                            {
+                                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3") == false
+                                {
+                                    DispatchQueue.main.async
+                                        {
+                                            
+                                            // Alert Box
+                                            let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
+                                            
+                                            // create IAP option
+                                            let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
+                                                
+                                                
+                                                UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
+                                                            message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
+                                                            delegate: nil,
+                                                            cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                                                
+                                                
+                                            }
+                                            alert.addAction(iapAction)
+                                            
+                                            
+                                            
+                                            // Cancel Action
+                                            let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet ", comment: "title"), style: .cancel){
+                                                (UIAlerAction) -> Void in
+                                                
+                                                
+                                                
+                                            }
+                                            alert.addAction(cancelAction)
+                                            
+                                            self.present(alert, animated: true, completion: nil)
+                                            
+                                    }
+                                }
+                                
+                                
+                            }
+                        }
+                        else{
+                            
+                            //print("0")
+                            //purchaseMyProduct(product: iapProducts[1])
+                            self.performSegue(withIdentifier: "toColor", sender: self)
+                        }
+                        //---------------------------------------------------------------------
+                        
+                    })
+                    
+                })
+                
+            }
+            else
+            {
+                //------------------------------------------------------------------------
+                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3") == false{
+                    
+                    if ReachabilityX.isConnectedToNetwork() == true
+                    {
+                        purchaseMyProduct(product: iapProducts[2])
+                    }
+                        
+                    else
+                    {
+                        if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3") == false
+                        {
+                            DispatchQueue.main.async
+                                {
+                                    
+                                    // Alert Box
+                                    let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
+                                    
+                                    // create IAP option
+                                    let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
+                                        
+                                        
+                                        UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
+                                                    message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
+                                                    delegate: nil,
+                                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                                        
+                                        
+                                    }
+                                    alert.addAction(iapAction)
+                                    
+                                    
+                                    
+                                    // Cancel Action
+                                    let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet ", comment: "title"), style: .cancel){
+                                        (UIAlerAction) -> Void in
+                                        
+                                        
+                                        
+                                    }
+                                    alert.addAction(cancelAction)
+                                    
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                else{
+                    
+                    //print("0")
+                    //purchaseMyProduct(product: iapProducts[1])
+                    performSegue(withIdentifier: "toColor", sender: self)
+                }
+                //---------------------------------------------------------------------
+                
+            }
+            
+           
+        }
+         scrollView.deselectItem(at: index, animated: true)
     }
     func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int)
     {
@@ -611,6 +791,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                         
                         if ReachabilityX.isConnectedToNetwork() == true
                         {
+                            print("Here I Am ")
                             purchaseMyProduct(product: iapProducts[0])
                         }
                             
@@ -658,8 +839,10 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                     }
                     else{
                         
-                        print("0")
-                        purchaseMyProduct(product: iapProducts[0])
+                        UIAlertView(title: NSLocalizedString("Thank You !", comment: "title"),
+                                    message: NSLocalizedString("This feature is already purchased .", comment: "title"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
                     }
                     //---------------------------------------------------------------------
                 }
@@ -683,10 +866,10 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                                     {
                                         
                                         // Alert Box
-                                        let alert = UIAlertController(title: NSLocalizedString("Unlock All Categories !", comment: "title"), message:NSLocalizedString("You can color any photo of any categories forever!", comment: "title"), preferredStyle: .alert )
+                                        let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
                                         
                                         // create IAP option
-                                        let iapAction = UIAlertAction(title: NSLocalizedString("Buy All Categories: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
+                                        let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
                                             
                                             
                                             UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
@@ -719,8 +902,10 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                     }
                     else{
                         
-                        print("0")
-                        purchaseMyProduct(product: iapProducts[1])
+                        UIAlertView(title: NSLocalizedString("Thank You !", comment: "title"),
+                                    message: NSLocalizedString("This feature is already purchased .", comment: "title"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
                     }
                     //---------------------------------------------------------------------
                     
@@ -788,9 +973,19 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                     {
                         
                         print("4")
+                        if ReachabilityX.isConnectedToNetwork()
+                        {
+                            SKPaymentQueue.default().add(self)
+                            SKPaymentQueue.default().restoreCompletedTransactions()
+                        }
+                        else
+                        {
+                            UIAlertView(title: NSLocalizedString("Sorry !", comment: "title"),
+                                        message: NSLocalizedString("No internet connection vailable .", comment: "title"),
+                                        delegate: nil,
+                                        cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                        }
                         
-                        SKPaymentQueue.default().add(self)
-                        SKPaymentQueue.default().restoreCompletedTransactions()
                     }
                     //------------------------------------------------------------------------------
                 }
@@ -912,91 +1107,139 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                 }
                 
                 //---------------------------------------------------------------------------------
-                
-
-            }
-            // MARK: - Row 2
-            if indexPath.row == 2{
-                
-                
-                
-                //-------------------------------------------------------
-                
-                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
+                // MARK: - Row 2
+                if indexPath.row == 2{
                     
-                    if ReachabilityX.isConnectedToNetwork() == true{
+                    
+                    
+                    //-------------------------------------------------------
+                    
+                    if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
                         
-                        //                        let someText:String = "Try this amazing SCANNER app and save your time by scanning & managing all your documents."
+                        if ReachabilityX.isConnectedToNetwork() == true{
+                            
+                            //                        let someText:String = "Try this amazing SCANNER app and save your time by scanning & managing all your documents."
+                            DispatchQueue.main.async(execute: {
+                                let objectsToShare:URL = URL(string: "https://itunes.apple.com/US/app/id1201209424")!
+                                let sharedObjects:[AnyObject] = [objectsToShare as AnyObject]
+                                let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
+                                self.present(activityViewController, animated: true, completion: nil)
+                            })
+                        }
+                            
+                        else{
+                            
+                            if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
+                                DispatchQueue.main.async {
+                                    
+                                    // Alert Box
+                                    let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
+                                    
+                                    // create IAP option
+                                    let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
+                                        
+                                        
+                                        UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
+                                                    message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
+                                                    delegate: nil,
+                                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                                    }
+                                    alert.addAction(iapAction)
+                                    
+                                    
+                                    
+                                    // Cancel Action
+                                    let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
+                                        (UIAlerAction) -> Void in
+                                        
+                                        
+                                        
+                                    }
+                                    alert.addAction(cancelAction)
+                                    
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                }
+                            }
+                            
+                            
+                        }
+                        
+                        
+                        
+                    }
+                    else{
                         DispatchQueue.main.async(execute: {
+                            //                    let someText:String = "Try this amazing SCANNER app and save your time by scanning & managing all your documents"
                             let objectsToShare:URL = URL(string: "https://itunes.apple.com/US/app/id1201209424")!
                             let sharedObjects:[AnyObject] = [objectsToShare as AnyObject]
                             let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
                             self.present(activityViewController, animated: true, completion: nil)
                         })
+                        
                     }
+                    
+                    //------------------------------------------------------------------
+                }
+                // MARK: - Row 3
+                if indexPath.row == 3{
+                    
+                    //-------------------------------------------------------------------
+                    
+                    if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
                         
-                    else{
-                        
-                        if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
-                            DispatchQueue.main.async {
-                                
-                                // Alert Box
-                                let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
-                                
-                                // create IAP option
-                                let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
-                                    
-                                    
-                                    UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
-                                                message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
-                                                delegate: nil,
-                                                cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
-                                }
-                                alert.addAction(iapAction)
-                                
-                                
-                                
-                                // Cancel Action
-                                let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
-                                    (UIAlerAction) -> Void in
-                                    
-                                    
-                                    
-                                }
-                                alert.addAction(cancelAction)
-                                
-                                self.present(alert, animated: true, completion: nil)
-                                
+                        if  ReachabilityX.isConnectedToNetwork(){
+                            
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(URL(string : "https://itunes.apple.com/us/app/id1262745364")!, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(URL(string : "https://itunes.apple.com/us/app/id1262745364")!)
                             }
                         }
-                       
+                            
+                        else{
+                            
+                            if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
+                                DispatchQueue.main.async {
+                                    
+                                    // Alert Box
+                                    let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
+                                    
+                                    // create IAP option
+                                    let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
+                                        
+                                        
+                                        UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
+                                                    message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
+                                                    delegate: nil,
+                                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                                        
+                                        
+                                        
+                                    }
+                                    alert.addAction(iapAction)
+                                    
+                                    
+                                    
+                                    // Cancel Action
+                                    let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
+                                        (UIAlerAction) -> Void in
+                                        
+                                        
+                                        
+                                    }
+                                    alert.addAction(cancelAction)
+                                    
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                }
+                            }
+                            
+                            
+                        }
                         
                     }
-                    
-                    
-                    
-                }
-                else{
-                    DispatchQueue.main.async(execute: {
-                        //                    let someText:String = "Try this amazing SCANNER app and save your time by scanning & managing all your documents"
-                        let objectsToShare:URL = URL(string: "https://itunes.apple.com/US/app/id1201209424")!
-                        let sharedObjects:[AnyObject] = [objectsToShare as AnyObject]
-                        let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
-                        self.present(activityViewController, animated: true, completion: nil)
-                    })
-                    
-                }
-                
-                 //------------------------------------------------------------------
-            }
-            // MARK: - Row 3
-            if indexPath.row == 3{
-                
-                //-------------------------------------------------------------------
-                
-                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
-                    
-                    if  ReachabilityX.isConnectedToNetwork(){
+                    else{
                         
                         if #available(iOS 10.0, *) {
                             UIApplication.shared.open(URL(string : "https://itunes.apple.com/us/app/id1262745364")!, options: [:], completionHandler: nil)
@@ -1004,60 +1247,12 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                             UIApplication.shared.openURL(URL(string : "https://itunes.apple.com/us/app/id1262745364")!)
                         }
                     }
-                        
-                    else{
-                        
-                        if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false{
-                            DispatchQueue.main.async {
-                                
-                                // Alert Box
-                                let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
-                                
-                                // create IAP option
-                                let iapAction = UIAlertAction(title: NSLocalizedString("Offline Usage + Remove Ads: 2.99", comment: "title"), style: .default){(UIAlerAction) -> Void in
-                                    
-                                    
-                                    UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
-                                                message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
-                                                delegate: nil,
-                                                cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
-                                    
-                                    
-                                    
-                                }
-                                alert.addAction(iapAction)
-                                
-                                
-                                
-                                // Cancel Action
-                                let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
-                                    (UIAlerAction) -> Void in
-                                    
-                                    
-                                    
-                                }
-                                alert.addAction(cancelAction)
-                                
-                                self.present(alert, animated: true, completion: nil)
-                                
-                            }
-                        }
-                        
-                        
-                    }
-                    
+                    //-------------------------------------------------------------------
                 }
-                else{
-                    
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(URL(string : "https://itunes.apple.com/us/app/id1262745364")!, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(URL(string : "https://itunes.apple.com/us/app/id1262745364")!)
-                    }
-                }
-                //-------------------------------------------------------------------
+
+
             }
-            // MARK: - Section 2 : Settings Table
+                        // MARK: - Section 2 : Settings Table
             if indexPath.section == 2
             {
                 // MARK: - Row 0
@@ -1363,6 +1558,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                         let dataBase = DataMGMT.extractImagesFromDraft()
                         self.startingImages = dataBase.images
                         self.myArtWork = dataBase.data
+                        self.currentProductKey = "Draft"
                         self.scrollView.reloadData()
                         self.upDownButtonAction(UIButton(), forEvent: UIEvent())
                     }
@@ -1375,6 +1571,9 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                 })
                 
                 startingImages =  dataDictionary[menu[indexPath.section].rowNames[indexPath.row]]!
+                currentProductKey = "nonConsumablePurchaseMade\(indexPath.row + 3)"
+                // First Category Product key is "nonConsumablePurchaseMade3"
+                
                 self.scrollView.reloadData()
                 upDownButtonAction(UIButton(), forEvent: UIEvent())
             }
@@ -1387,6 +1586,13 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     /* InApp Variables */
     let removeAdsOfflineUsage = "id1"
     let unlockAllCategories = "id2"
+    let unlockBirds = "id2"
+    let unlockAnimals = "id3"
+    let unlockFashion = "id4"
+    let unlockCulture = "id5"
+    let unlockChristmas  = "id6"
+    let unlockComics = "id7"
+    
     
     
     /* Delegate Variables */
@@ -1399,13 +1605,17 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     var nonConsumablePurchaseMade2 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade2")
     var nonConsumablePurchaseMade3 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3")
     var nonConsumablePurchaseMade4 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade4")
+    var nonConsumablePurchaseMade5 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade5")
+    var nonConsumablePurchaseMade6 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade6")
+    var nonConsumablePurchaseMade7 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade7")
+    var nonConsumablePurchaseMade8 = UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade8")
     
     // MARK: - FETCH AVAILABLE IAP PRODUCTS
     func fetchAvailableProducts()  {
         print("func fetchAvailableProducts()")
         // Put here your IAP Products ID's
         let productIdentifiers = NSSet(objects:
-            removeAdsOfflineUsage, unlockAllCategories
+            removeAdsOfflineUsage, unlockAllCategories , unlockBirds, unlockAnimals ,unlockFashion,unlockCulture,unlockChristmas,unlockComics
         )
         
         productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
@@ -1421,11 +1631,12 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         print("queue.transactions======\(queue.transactions)")
         print("queue.transactions.count======\(queue.transactions.count)")
         
+        var atleastOneProductDidRestored = false
         for transaction in queue.transactions{
             
             print("transaction======\(transaction)")
             if(transaction.transactionState == SKPaymentTransactionState.restored){
-                
+                atleastOneProductDidRestored = true
                 print("transaction.transactionState========\(transaction.transactionState)")
                 
                 
@@ -1440,24 +1651,52 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                     UserDefaults.standard.set(nonConsumablePurchaseMade2, forKey: "nonConsumablePurchaseMade2")
                     
                 }
+                else if transaction.payment.productIdentifier=="id3"{
+                    nonConsumablePurchaseMade3 = true
+                    UserDefaults.standard.set(nonConsumablePurchaseMade3, forKey: "nonConsumablePurchaseMade3")
                     
-               
+                }
+                else if transaction.payment.productIdentifier=="id4"{
+                    nonConsumablePurchaseMade4 = true
+                    UserDefaults.standard.set(nonConsumablePurchaseMade4, forKey: "nonConsumablePurchaseMade4")
+                    
+                }
+                else if transaction.payment.productIdentifier=="id5"{
+                    nonConsumablePurchaseMade5 = true
+                    UserDefaults.standard.set(nonConsumablePurchaseMade5, forKey: "nonConsumablePurchaseMade5")
+                    
+                }
+                else if transaction.payment.productIdentifier=="id6"{
+                    nonConsumablePurchaseMade6 = true
+                    UserDefaults.standard.set(nonConsumablePurchaseMade6, forKey: "nonConsumablePurchaseMade6")
+                    
+                }
+                else if transaction.payment.productIdentifier=="id7"{
+                    nonConsumablePurchaseMade7 = true
+                    UserDefaults.standard.set(nonConsumablePurchaseMade7, forKey: "nonConsumablePurchaseMade7")
+                    
+                }
                 
-                
-                
+
                 SKPaymentQueue.default().finishTransaction(transaction)
                 
-                
             }
-            
-            
-            
+ 
         }
         
+        if atleastOneProductDidRestored
+        {
+            UIAlertView(title: NSLocalizedString("Restoring!!!", comment: "title"),
+                        message: NSLocalizedString("You've successfully restored your purchase!", comment: "message"),
+                        delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+        }
+        else
+        {
+            UIAlertView(title: NSLocalizedString("Sorry !!!", comment: "title"),
+                        message: NSLocalizedString("You didn't purchase anything .", comment: "message"),
+                        delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+        }
         
-        UIAlertView(title: NSLocalizedString("Restoring!!!", comment: "title"),
-                    message: NSLocalizedString("You've successfully restored your purchase!", comment: "message"),
-                    delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
     }
     
     
@@ -1495,6 +1734,16 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
             numberFormatter.locale = secondProd.priceLocale
             _ = numberFormatter.string(from: secondProd.price)
             print("secondProd.productIdentifier=\(secondProd.productIdentifier)")
+            
+            // ------------------------------------
+            
+            // 2nd IAP Product (Non-Consumable) ------------------------------
+            let thirdProd = response.products[1] as SKProduct
+            
+            // Get its price from iTunes Connect
+            numberFormatter.locale = thirdProd.priceLocale
+            _ = numberFormatter.string(from: thirdProd.price)
+            print("secondProd.productIdentifier=\(thirdProd.productIdentifier)")
             
             // ------------------------------------
             
@@ -1561,7 +1810,8 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                         
                         
                         // The Non-Consumable product (Premium) has been purchased!
-                    } else if productID == "id2" {
+                    }
+                    else if productID == "id2" {
                         
                         // Save your purchase locally (needed only for Non-Consumable IAP)
                         nonConsumablePurchaseMade2 = true
@@ -1573,6 +1823,84 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                                     delegate: nil,
                                     cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
                     }
+                    else if productID == "id3" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade3 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade3, forKey: "nonConsumablePurchaseMade3")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                    else if productID == "id4" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade4 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade4, forKey: "nonConsumablePurchaseMade4")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                    else if productID == "id5" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade5 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade5, forKey: "nonConsumablePurchaseMade5")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                    else if productID == "id6" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade6 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade6, forKey: "nonConsumablePurchaseMade6")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                    else if productID == "id7" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade7 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade7, forKey: "nonConsumablePurchaseMade7")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                    else if productID == "id8" {
+                        
+                        // Save your purchase locally (needed only for Non-Consumable IAP)
+                        nonConsumablePurchaseMade8 = true
+                        UserDefaults.standard.set(nonConsumablePurchaseMade8, forKey: "nonConsumablePurchaseMade8")
+                        
+                        
+                        UIAlertView(title: NSLocalizedString("InAppPurchase", comment: "title"),
+                                    message: NSLocalizedString("You've successfully unlocked this feature!", comment: "message"),
+                                    delegate: nil,
+                                    cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                    }
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                     else{

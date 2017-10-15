@@ -44,10 +44,11 @@
     editImageView.tolorance = 0 ;
     [editImageView setImage:img];
     editImageView.scrollView = scrollView ;
-    scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.width);
-    scrollView.center = self.view.center ;
     scrollView.minimumZoomScale = 1.0 ;
     scrollView.maximumZoomScale = 10.0 ;
+    scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, self.view.frame.size.width - 20);
+    editImageView.frame = scrollView.frame;
+    scrollView.center = self.view.center ;
     
     wheelController = ((WhellController *) [self.storyboard instantiateViewControllerWithIdentifier: @"whellVC"]);
     wheelController.imageView = editImageView ;
@@ -83,8 +84,9 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width , self.view.frame.size.width);
-    scrollView.center = self.view.center ;
+    
+    
+    //scrollView.backgroundColor = [UIColor blueColor];
 
 }
 
