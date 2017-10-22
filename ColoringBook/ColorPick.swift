@@ -8,8 +8,8 @@
 
 import UIKit
 
-@IBDesignable class ColorPick: UIView {
-    @IBInspectable var counterColor: UIColor = UIColor.red
+class ColorPick: UIView {
+    var counterColor: UIColor = UIColor.red
     
     
     override func draw(_ rect: CGRect) {
@@ -26,11 +26,21 @@ import UIKit
         // 1
         let radiusBorder: CGFloat = max(bounds.width, bounds.height)
         // 2
-        let arcWidthBorder: CGFloat = 76//86
-        
+        //let arcWidthBorder: CGFloat = 76//86
+        var arcWidthBorder: CGFloat = 76
+        if !HelperMethods.isIphone(){
+            arcWidthBorder = 168
+        }
         
         //colorPickDownBorder----------------
-        var path = UIBezierPath(rect: CGRect(x: center.x-43, y: 8.5, width: 86, height: 13.5))
+        var path : UIBezierPath!
+        if HelperMethods.isIphone(){
+            path = UIBezierPath(rect: CGRect(x: center.x-43, y: 8.5, width: 86, height: 13.5))
+        }
+        else{
+            path = UIBezierPath(rect: CGRect(x: center.x-95, y: 18.5, width: 190, height: 13.5))
+        }
+        
         //path.lineWidth = 2.0
         
         counterColor.darker(by: 20)?.setFill()
@@ -47,12 +57,19 @@ import UIKit
         let sAngle: CGFloat = π / 3
         let eAngle: CGFloat = (π / 3) - 0.00000000000001
         
-        let arcBorder: CGFloat = 13
+        var arcBorder: CGFloat = 13
         
         let yPosition = bounds.height/2 - arcWidthBorder/2
         let centerMain = CGPoint(x: bounds.width/2, y: yPosition)
         
-        let mainPath = UIBezierPath(arcCenter: centerMain, radius: 8, startAngle: sAngle, endAngle: eAngle, clockwise: true)
+        var circleRadius = 8.0
+        var smallCircle = 3.0
+        if !HelperMethods.isIphone(){
+            circleRadius = 18.0
+            smallCircle = 8.0
+            arcBorder = 28
+        }
+        let mainPath = UIBezierPath(arcCenter: centerMain, radius: CGFloat(circleRadius), startAngle: sAngle, endAngle: eAngle, clockwise: true)
         
         mainPath.lineWidth = arcBorder
         counterColor.setStroke()
@@ -61,7 +78,7 @@ import UIKit
         // 2
         let aBorder: CGFloat = 3
         // 3
-        let dPath = UIBezierPath(arcCenter: centerMain, radius: 5, startAngle: sAngle, endAngle: eAngle, clockwise: true)
+        let dPath = UIBezierPath(arcCenter: centerMain, radius: CGFloat(circleRadius-smallCircle), startAngle: sAngle, endAngle: eAngle, clockwise: true)
         
         dPath.lineWidth = aBorder
         UIColor.white.setStroke()

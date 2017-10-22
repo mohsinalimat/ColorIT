@@ -12,6 +12,10 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var labelPalNum: UILabel!
     @IBOutlet weak var labelPalName: UILabel!
+    @IBOutlet weak var saturatinolbl: UILabel!
+    @IBOutlet weak var brightnesslbl: UILabel!
+    @IBOutlet weak var colorlbl: UILabel!
+    @IBOutlet weak var savebtn: UIButton!
     @IBOutlet weak var customMiddleView: UIView!
     @IBOutlet weak var textFieldPal: UITextField!
     @IBOutlet weak var customColorView: customWhellView!
@@ -29,7 +33,7 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
     var colorValue : CGFloat = 0.3
     var saturatValue : CGFloat = 0.5
     var brightValue : CGFloat = 0.5
-    var activePalette = Int64()
+    var activePalette = Int()
     enum mode {
         case newMode
         case editMode
@@ -39,11 +43,60 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        if !HelperMethods.isIphone(){
+            
+            customColorView.frame = CGRect(x: self.view.center.x-500/2, y: 100, width: 500, height: 500)
+            customColorPick.frame = CGRect(x: self.view.center.x-500/2, y: 100, width: 500, height: 500)
+            customMiddleView.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            labelPalNum.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            labelPalName.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            textFieldPal.frame = CGRect(x: 0, y: 170/2-60/2, width: 170, height: 60)
+            customMiddleView.layer.cornerRadius = 85.0
+            labelPalName.layer.cornerRadius = 85.0
+            labelPalNum.layer.cornerRadius = 85.0
+            labelPalNum.font = UIFont(name: "Baskerville-Bold", size: 130)
+            labelPalName.font = UIFont(name: "Baskerville-Bold", size: 24)
+            textFieldPal.font = UIFont(name: "Baskerville-Bold", size: 24)
+            brightSlider.frame = CGRect(x: 50, y: 650, width: self.view.frame.width-100, height: 60)
+            SaturatSlider.frame = CGRect(x: 50, y: 700, width: self.view.frame.width-100, height: 60)
+            colorSlider.frame = CGRect(x: 50, y: 750, width: self.view.frame.width-100, height: 60)
+            saturatinolbl.frame = CGRect(x: self.view.frame.width - 170, y: 640, width: 120, height: 30)
+            colorlbl.frame = CGRect(x: self.view.frame.width - 170, y: 690, width: 120, height: 30)
+            brightnesslbl.frame = CGRect(x: self.view.frame.width - 170, y: 740, width: 120, height: 30)
+            colorlbl.font = UIFont(name: "Baskerville", size: 24)
+            saturatinolbl.font = UIFont(name: "Baskerville", size: 24)
+            brightnesslbl.font = UIFont(name: "Baskerville", size: 24)
+            savebtn.frame = CGRect(x: self.view.frame.width/2 - 250, y: self.view.frame.height - 95, width: 500, height: 65)
+        }
+        else{
+            customColorView.frame = CGRect(x: self.view.center.x-225/2, y: 80, width: 225, height: 225)
+            customColorPick.frame = CGRect(x: self.view.center.x-225/2, y: 80, width: 225, height: 225)
+            customMiddleView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            labelPalNum.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            labelPalName.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            textFieldPal.frame = CGRect(x: 0, y: 80/2-30/2, width: 80, height: 30)
+            customMiddleView.layer.cornerRadius = 40.0
+            labelPalName.layer.cornerRadius = 40.0
+            labelPalNum.layer.cornerRadius = 40.0
+        
+            brightSlider.frame = CGRect(x: 25, y: 340, width: self.view.frame.width-50, height: 30)
+            SaturatSlider.frame = CGRect(x: 25, y: 380, width: self.view.frame.width-50, height: 30)
+            colorSlider.frame = CGRect(x: 25, y: 420, width: self.view.frame.width-50, height: 30)
+            saturatinolbl.frame = CGRect(x: self.view.frame.width - 135, y: 330, width: 85, height: 30)
+            colorlbl.frame = CGRect(x: self.view.frame.width - 135, y: 370, width: 85, height: 30)
+            brightnesslbl.frame = CGRect(x: self.view.frame.width - 135, y: 410, width: 85, height: 30)
+            savebtn.frame = CGRect(x: self.view.frame.width/2 - 112.5, y: self.view.frame.height - 75, width: 225, height: 55)
+        }
+        
+        customMiddleView.center = customColorView.center
         createView()
         //print(generatedWheels[0].number)
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     func createView(){
         //customColorView.colorArray.removeAll()
         if Palettemode == .newMode{
@@ -57,12 +110,18 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             customColorView.colorArray.append(UIColor.white)
             customColorView.colorArray.append(UIColor.white)
             
-            labelPalNum.text = "\(80+1+generatedWheels.count)"
+            labelPalNum.text = "\(numberOfWheels+generatedWheels.count)"
         }
         else{
             customColorView.colorArray = customColorArray
-            labelPalNum.text = "\(activePalette+1)"
-            labelPalName.text = "\(generatedWheels[activePalette-80].name)"
+            if activePalette<=79{
+                labelPalNum.text = "\(activePalette+1)"
+            }
+            else{
+                labelPalNum.text = "\(activePalette)"
+            }
+            
+            labelPalName.text = "\(generatedWheels[activePalette-numberOfWheels].name)"
         }
         textFieldPal.isHidden=true
         
@@ -147,12 +206,12 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             }
         }
         if Palettemode == .newMode{
-            DatabaseController.setValueToDataBase(no: Int64(80+generatedWheels.count), name: labelPalName.text!, col1: customColorView.colorArray[0].toHexString(), col2: customColorView.colorArray[1].toHexString(), col3: customColorView.colorArray[2].toHexString(), col4: customColorView.colorArray[3].toHexString(), col5: customColorView.colorArray[4].toHexString(), col6: customColorView.colorArray[5].toHexString(), col7: customColorView.colorArray[6].toHexString(), col8: customColorView.colorArray[7].toHexString())
+            DatabaseController.setValueToDataBase(no: Int64(numberOfWheels+generatedWheels.count), name: labelPalName.text!, col1: customColorView.colorArray[0].toHexString(), col2: customColorView.colorArray[1].toHexString(), col3: customColorView.colorArray[2].toHexString(), col4: customColorView.colorArray[3].toHexString(), col5: customColorView.colorArray[4].toHexString(), col6: customColorView.colorArray[5].toHexString(), col7: customColorView.colorArray[6].toHexString(), col8: customColorView.colorArray[7].toHexString())
         }
         else{
             //Edit color Palette ; Update Database
             print(activePalette)
-            DatabaseController.editDataFromDatabase(number: activePalette, name: labelPalName.text!, col1: customColorView.colorArray[0].toHexString(), col2: customColorView.colorArray[1].toHexString(), col3: customColorView.colorArray[2].toHexString(), col4: customColorView.colorArray[3].toHexString(), col5: customColorView.colorArray[4].toHexString(), col6: customColorView.colorArray[5].toHexString(), col7: customColorView.colorArray[6].toHexString(), col8: customColorView.colorArray[7].toHexString())
+            DatabaseController.editDataFromDatabase(number: Int64(activePalette), name: labelPalName.text!, col1: customColorView.colorArray[0].toHexString(), col2: customColorView.colorArray[1].toHexString(), col3: customColorView.colorArray[2].toHexString(), col4: customColorView.colorArray[3].toHexString(), col5: customColorView.colorArray[4].toHexString(), col6: customColorView.colorArray[5].toHexString(), col7: customColorView.colorArray[6].toHexString(), col8: customColorView.colorArray[7].toHexString())
         }
         
     }
@@ -164,7 +223,7 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
         if Palettemode == .editMode{
             //Delete color Palette ; Update Database
             print(activePalette)
-            DatabaseController.deleteDataFromDatabase(number: generatedWheels[activePalette-80].number, arrayIndx: activePalette)
+            DatabaseController.deleteDataFromDatabase(number: generatedWheels[activePalette-numberOfWheels].number, arrayIndx: Int64(activePalette))
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -202,7 +261,7 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
         tapped=true
         if let touch = touches.first {
             let position = touch.location(in: self.view)
-            if incDecOverload(first: plusMinusOverload(first: customColorView.center, second: CGPoint(x: 125,y: 125), option: 0),second: position,option: 1) && incDecOverload(first: plusMinusOverload(first: customColorView.center, second: CGPoint(x: 125,y: 125), option: 1),second: position,option: 0){
+            if incDecOverload(first: plusMinusOverload(first: customColorView.center, second: CGPoint(x: customColorView.frame.size.width/2,y: customColorView.frame.size.width/2), option: 0),second: position,option: 1) && incDecOverload(first: plusMinusOverload(first: customColorView.center, second: CGPoint(x: customColorView.frame.size.width/2,y: customColorView.frame.size.width/2), option: 1),second: position,option: 0){
                 
                 print("POSITION: \(position)")
                 let target = customColorView.center
@@ -267,7 +326,7 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             if let touch = touches.first {
                 let position = touch.location(in: self.view)
                 let distance = (pow(customColorView.center.x - position.x,2) + pow(customColorView.center.y - position.y,2))
-                if distance < pow(80/2,2){
+                if distance < pow(customMiddleView.frame.size.width/2,2){
                     
                     lblTapped()
                     

@@ -99,6 +99,7 @@
     
     
     UIImage *img = _dataImage ;
+    //UIImage *imgNew = _dataImage ;
     
     editImageView.tolorance = 0 ;
     [editImageView setImage:img];
@@ -111,8 +112,15 @@
     
     wheelController = ((WhellController *) [self.storyboard instantiateViewControllerWithIdentifier: @"whellVC"]);
     wheelController.imageView = editImageView ;
-    wheelController.view.frame = CGRectMake(0, 0, 200, self.view.frame.size.height);//self.view.frame;
-    wheelController.view.center = CGPointMake(self.view.center.x, 2 * self.view.center.y + wheelController.view.frame.size.height/2 - 175);//200
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        wheelController.view.frame = CGRectMake(self.view.center.x-250, self.view.frame.size.height - 370, 500, self.view.frame.size.height);//self.view.frame;
+        //wheelController.view.center = CGPointMake(self.view.center.x, self.view.frame.size.height);//2 * self.view.center.y + wheelController.view.frame.size.height/2 - 175);//200
+    }
+    else{
+        wheelController.view.frame = CGRectMake(self.view.center.x-112.5, self.view.frame.size.height - 200, 225, self.view.frame.size.height);//self.view.frame;
+        
+        //wheelController.view.center = CGPointMake(self.view.center.x, wheelController.view.frame.size.height+112.5);//200
+    }
 
     
     [self.view addSubview:wheelController.view];
@@ -132,10 +140,16 @@
     [wheelController.view removeFromSuperview];
     wheelController = ((WhellController *) [self.storyboard instantiateViewControllerWithIdentifier: @"whellVC"]);
     wheelController.imageView = editImageView ;
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        wheelController.view.frame = CGRectMake(self.view.center.x-250, self.view.frame.size.height - 370, 500, self.view.frame.size.height);//self.view.frame;
+        //wheelController.view.center = CGPointMake(self.view.center.x, wheelController.view.frame.size.height+250);//2 * self.view.center.y + wheelController.view.frame.size.height/2 - 175);//200
+    }
+    else{
+        wheelController.view.frame = CGRectMake(self.view.center.x-112.5, self.view.frame.size.height - 200, 225, self.view.frame.size.height);//self.view.frame;
+        
+        //wheelController.view.center = CGPointMake(self.view.center.x, wheelController.view.frame.size.height+112.5);//200
+    }
     
-    wheelController.view.frame = CGRectMake(0, 0, 200, self.view.frame.size.height);//self.view.frame;
- 
-    wheelController.view.center = CGPointMake(self.view.center.x, 2 * self.view.center.y + wheelController.view.frame.size.height/2 - 175);//200
 
     
     [self.view addSubview:wheelController.view];
@@ -191,6 +205,7 @@
 {
     sharingView = ((SharingViewController *) [self.storyboard instantiateViewControllerWithIdentifier: @"SharingViewController"]);
     sharingView.coloredImage = editImageView.image;
+    sharingView.coloredImageNew = _dataImage;
     
     [NewViewController helloNewVC : editImageView.image];
     

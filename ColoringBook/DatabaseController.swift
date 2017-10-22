@@ -114,7 +114,7 @@ class DatabaseController{
                 
                 try context.save()
                 
-                generatedWheels[number-80] = customWheels(number: number , name: name , col1: col1 , col2: col2 , col3: col3 , col4: col4 , col5: col5 , col6: col6 , col7: col7 , col8: col8 )
+                generatedWheels[number-Int64(numberOfWheels)] = customWheels(number: number , name: name , col1: col1 , col2: col2 , col3: col3 , col4: col4 , col5: col5 , col6: col6 , col7: col7 , col8: col8 )
             }
         }
         catch{
@@ -142,7 +142,7 @@ class DatabaseController{
                     print("Error \(error)")
                 }
                 print("asdf\(number)")
-                generatedWheels.remove(at: arrayIndx-80)
+                generatedWheels.remove(at: arrayIndx-Int64(numberOfWheels))
                 //print("asdf\(generatedWheels.count)")
                 //print("asdf\(generatedWheels[1])")
                 

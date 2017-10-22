@@ -72,7 +72,10 @@ import UIKit
         print(radius)
         
         // 3
-        let arcWidth: CGFloat = 60//76
+        var arcWidth: CGFloat = 60
+        if !HelperMethods.isIphone(){
+            arcWidth = 160
+        }
         
         // 4
         //let startAngle: CGFloat = π / 3

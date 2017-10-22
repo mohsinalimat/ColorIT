@@ -119,11 +119,16 @@
 		8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */; };
 		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
 		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
+		8E7FBBDD1F9719BA002EE36D /* Photo 8-20-17, 5 36 36 PM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FBBDC1F9719BA002EE36D /* Photo 8-20-17, 5 36 36 PM.jpg */; };
+		8E7FBBE31F972FA2002EE36D /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7FBBE21F972FA2002EE36D /* FBSDKMessengerShareKit.framework */; };
+		8E7FBBE51F974870002EE36D /* share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FBBE41F974870002EE36D /* share.swift */; };
 		8E825E861F7D1C5500DD7D0E /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */; };
 		8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E831F7D1C5500DD7D0E /* CustomWhellViewController.swift */; };
 		8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E841F7D1C5500DD7D0E /* customWhellView.swift */; };
 		8E825E891F7D1C5500DD7D0E /* Color_Palette_Name.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */; };
 		8E825E8B1F7D2A0D00DD7D0E /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */; };
+		8E9884151F8E2047000C550C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E9884141F8E2047000C550C /* GoogleService-Info.plist */; };
+		8E9884171F8E35B2000C550C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9884161F8E35B2000C550C /* AdSupport.framework */; };
 		8E9BF1921F6D525E0051D734 /* ColoringBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E9BF1901F6D525E0051D734 /* ColoringBook.xcdatamodeld */; };
 		8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9BF1941F6D527F0051D734 /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -275,11 +280,16 @@
 		8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8E7FBBDC1F9719BA002EE36D /* Photo 8-20-17, 5 36 36 PM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Photo 8-20-17, 5 36 36 PM.jpg"; sourceTree = "<group>"; };
+		8E7FBBE21F972FA2002EE36D /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		8E7FBBE41F974870002EE36D /* share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
 		8E825E821F7D1C5500DD7D0E /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		8E825E831F7D1C5500DD7D0E /* CustomWhellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWhellViewController.swift; sourceTree = "<group>"; };
 		8E825E841F7D1C5500DD7D0E /* customWhellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customWhellView.swift; sourceTree = "<group>"; };
 		8E825E851F7D1C5500DD7D0E /* Color_Palette_Name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Color_Palette_Name.txt; sourceTree = "<group>"; };
 		8E825E8A1F7D2A0C00DD7D0E /* SharingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
+		8E9884141F8E2047000C550C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E9884161F8E35B2000C550C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8E9BF1911F6D525E0051D734 /* ColoringBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColoringBook.xcdatamodel; sourceTree = "<group>"; };
 		8E9BF1941F6D527F0051D734 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B473137622193018E996F5FF /* Pods_ColoringBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColoringBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,10 +302,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9884171F8E35B2000C550C /* AdSupport.framework in Frameworks */,
 				84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */,
 				84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */,
 				84BD33F51F961B8D0097769A /* GoogleMobileAds.framework in Frameworks */,
 				8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */,
+				8E7FBBE31F972FA2002EE36D /* FBSDKMessengerShareKit.framework in Frameworks */,
 				716EF98EBF4EDE7FEA280979 /* Pods_ColoringBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +405,7 @@
 				52BEE9F11E05157700637559 /* Assets.xcassets */,
 				52BEE9F31E05157700637559 /* LaunchScreen.storyboard */,
 				52BEE9F61E05157700637559 /* Info.plist */,
+				8E9884141F8E2047000C550C /* GoogleService-Info.plist */,
 				52BEE9E51E05157700637559 /* Supporting Files */,
 				84A87C431F7BB4FD004A0F51 /* XIBs */,
 				84A87C401F7B7EE2004A0F51 /* Models */,
@@ -463,6 +476,7 @@
 			children = (
 				84EB4C951F8CF439000ABE65 /* lock2.png */,
 				84EB4C931F8CA83C000ABE65 /* Icon.png */,
+				8E7FBBDC1F9719BA002EE36D /* Photo 8-20-17, 5 36 36 PM.jpg */,
 				845041D61F83A48200B7AE2C /* Coloring Page */,
 				845041A41F836F9300B7AE2C /* PromoImages */,
 				84A87C4D1F7BC455004A0F51 /* MenuSettingsIcons */,
@@ -639,6 +653,7 @@
 				84A87C411F7B7F21004A0F51 /* UIViewModel.swift */,
 				8406551E1F825905007DFC9D /* DataMGMT.swift */,
 				84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */,
+				8E7FBBE41F974870002EE36D /* share.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -673,6 +688,8 @@
 		8E9BF1931F6D527F0051D734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E7FBBE21F972FA2002EE36D /* FBSDKMessengerShareKit.framework */,
+				8E9884161F8E35B2000C550C /* AdSupport.framework */,
 				84BAA5401F851F780048FB63 /* WebKit.framework */,
 				84BAA53E1F851F700048FB63 /* CFNetwork.framework */,
 				8E9BF1941F6D527F0051D734 /* CoreData.framework */,
@@ -821,12 +838,14 @@
 				844EB6B11F8A3F4A005366FC /* more.png in Resources */,
 				842A8A491F70EEEB00730DA6 /* Animals2.png in Resources */,
 				845041F21F83AB4E00B7AE2C /* shutterstock_285644417-[Converted].jpg in Resources */,
+				8E9884151F8E2047000C550C /* GoogleService-Info.plist in Resources */,
 				845041C01F8393E600B7AE2C /* promoImage5.png in Resources */,
 				844EB6A91F8A3EAF005366FC /* give-us-review.png in Resources */,
 				84EB4C961F8CF439000ABE65 /* lock2.png in Resources */,
 				844EB6B71F8A3FD6005366FC /* Twitter.png in Resources */,
 				84EC017D1F920536007920F4 /* Christmas1.png in Resources */,
 				845041B81F838D4F00B7AE2C /* cross.png in Resources */,
+				8E7FBBDD1F9719BA002EE36D /* Photo 8-20-17, 5 36 36 PM.jpg in Resources */,
 				845041F41F83AB4E00B7AE2C /* shutterstock_328071368-[Converted].jpg in Resources */,
 				845041FE1F83AB4E00B7AE2C /* shutterstock_496343161-[Converted].jpg in Resources */,
 				845041FB1F83AB4E00B7AE2C /* shutterstock_449997736-[Converted].jpg in Resources */,
@@ -965,6 +984,7 @@
 				8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */,
 				84F3607C1F9392680036E01A /* IntegerExtensionForRandom.swift in Sources */,
 				84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */,
+				8E7FBBE51F974870002EE36D /* share.swift in Sources */,
 				8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */,
 				84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */,
 				5279F34B1E0A777D00782CAB /* SettingsViewController.swift in Sources */,
@@ -1147,6 +1167,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ColoringBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.photovault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1173,6 +1194,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ColoringBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.photovault;
 				PRODUCT_NAME = "$(TARGET_NAME)";

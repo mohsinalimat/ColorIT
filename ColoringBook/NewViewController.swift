@@ -418,6 +418,15 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         super.viewDidLoad()
        
         setupUpperViewHolder()
+        
+        
+        
+        //self.extendedLayoutIncludesOpaqueBars = true
+        //print(upperViewHolder.frame)
+        //print(upperViewHolder.center)
+        //print(self.view.center)
+        
+        //downViewHolder.center = CGPoint(x: 0, y: 0)
         buildDataDictionary()
         NewViewController.selfCopy = self
         self.fetchAvailableProducts()

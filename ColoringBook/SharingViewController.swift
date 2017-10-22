@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Foundation
+import FacebookShare
+import FBSDKMessengerShareKit
 
 class SharingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let buttonHeight:CGFloat = 60.0
-    let textureButtonHeight:CGFloat = 80.0
+    var buttonHeight:CGFloat = 60.0
+    var textureButtonHeight:CGFloat = 80.0
     var vintageSliderValue:CGFloat = 0.0
     let buttonDistance = {(view:CGFloat,numberOfBtn:CGFloat,btnSize:CGFloat)->CGFloat in
         return (view-(numberOfBtn*btnSize))/(numberOfBtn+1.0)
@@ -27,12 +30,20 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     enum textureList{
         case none
-        case bricks
-        case paper
+        case knit
+        case leath
+        case stonwall
+        case wallred2
+        case wallred
+        case wallwhit
+        case wall
+        case wood1
+        case wood
     }
     var contoureName = contourList.none
     var textureName = textureList.none
     var coloredImage = UIImage()
+    var coloredImageNew = UIImage()
     var coloredImageView = UIImageView()
     var containerView = UIView()
     var textureView = UIView()
@@ -47,6 +58,12 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     var textureMode = textures.contour
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !HelperMethods.isIphone(){
+            buttonHeight = 80.0
+        }
+        textureButtonHeight = self.view.frame.height/6.0
+        
         
         createView()
         // Do any additional setup after loading the view.
@@ -65,18 +82,22 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         let shareButton1 = UIButton(frame: CGRect(x: buttonDistance(self.view.frame.size.width,4.0,buttonHeight), y: -20, width: buttonHeight, height: buttonHeight))
         shareButton1.backgroundColor=UIColor.clear
         shareButton1.setImage(#imageLiteral(resourceName: "facebook"), for: .normal)
+        shareButton1.addTarget(self, action: #selector(uploadToFB), for: .touchUpInside)
         containerView.addSubview(shareButton1)
         let shareButton2 = UIButton(frame: CGRect(x: 2*buttonDistance(self.view.frame.size.width,4.0,buttonHeight)+buttonHeight, y: -20, width: buttonHeight, height: buttonHeight))
         shareButton2.backgroundColor=UIColor.clear
-        shareButton2.setImage(#imageLiteral(resourceName: "instagram"), for: .normal)
+        shareButton2.setImage(#imageLiteral(resourceName: "linkedin"), for: .normal)
+        shareButton2.addTarget(self, action: #selector(uploadToMessenger), for: .touchUpInside)
         containerView.addSubview(shareButton2)
         let shareButton3 = UIButton(frame: CGRect(x: 3*buttonDistance(self.view.frame.size.width,4.0,buttonHeight)+2*buttonHeight, y: -20, width: buttonHeight, height: buttonHeight))
         shareButton3.backgroundColor=UIColor.clear
-        shareButton3.setImage(#imageLiteral(resourceName: "linkedin"), for: .normal)
+        shareButton3.setImage(#imageLiteral(resourceName: "instagram"), for: .normal)
+        shareButton3.addTarget(self, action: #selector(uploadToInstagram), for: .touchUpInside)
         containerView.addSubview(shareButton3)
         let shareButton4 = UIButton(frame: CGRect(x: 4*buttonDistance(self.view.frame.size.width,4.0,buttonHeight)+3*buttonHeight, y: -20, width: buttonHeight, height: buttonHeight))
         shareButton4.backgroundColor=UIColor.clear
         shareButton4.setImage(#imageLiteral(resourceName: "twitter"), for: .normal)
+        shareButton4.addTarget(self, action: #selector(airdrop), for: .touchUpInside)
         containerView.addSubview(shareButton4)
         
         let items = ["Texture", "Contour", "Vignette"]
@@ -85,7 +106,13 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         // Set up Frame and SegmentedControl
         let frame = containerView.frame
-        customSC.frame = CGRect(x: 0, y: 90, width: frame.width, height: 40)
+        if HelperMethods.isIphone(){
+            customSC.frame = CGRect(x: 0, y: 90, width: frame.width, height: 40)
+        }
+        else{
+            customSC.frame = CGRect(x: 0, y: 120, width: frame.width, height: 60)
+        }
+        
         
         // Style the Segmented Control
         customSC.layer.cornerRadius = 5.0  // Don't let background bleed
@@ -110,6 +137,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         
     }
+    
     func changeContainerView(sender: UISegmentedControl) {
         //println("Change color handler is called.")
         print("Changing Color to ")
@@ -170,7 +198,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
             vignetteView.removeFromSuperview()
         }
         if textureMode != .texture{
-            textureView = UIView(frame: CGRect(x: 0, y: self.containerView.frame.size.height/2, width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
+            textureView = UIView(frame: CGRect(x: 0, y: buttonDistance(self.containerView.frame.size.height-(HelperMethods.isIphone() ? 130 : 180),1.0,self.containerView.frame.size.height/2)+(HelperMethods.isIphone() ? 130 : 180), width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
             textureView.backgroundColor=UIColor.yellow
             containerView.addSubview(textureView)
             
@@ -199,7 +227,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
             vignetteView.removeFromSuperview()
         }
         if textureMode != .contour{
-            contourView = UIView(frame: CGRect(x: 0, y: self.containerView.frame.size.height/2, width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
+            contourView = UIView(frame: CGRect(x: 0, y: buttonDistance(self.containerView.frame.size.height-(HelperMethods.isIphone() ? 130 : 180),1.0,self.containerView.frame.size.height/2)+(HelperMethods.isIphone() ? 130 : 180)/*self.containerView.frame.size.height/2*/, width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
             contourView.backgroundColor=UIColor.white
             containerView.addSubview(contourView)
             
@@ -233,7 +261,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
             textureView.removeFromSuperview()
         }
         if textureMode != .vignette{
-            vignetteView = UIView(frame: CGRect(x: 0, y: self.containerView.frame.size.height/2, width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
+            vignetteView = UIView(frame: CGRect(x: 0, y: buttonDistance(self.containerView.frame.size.height-(HelperMethods.isIphone() ? 130 : 180),1.0,self.containerView.frame.size.height/2)+(HelperMethods.isIphone() ? 130 : 180), width: self.view.frame.size.width, height: self.containerView.frame.size.height/2))
             vignetteView.backgroundColor=UIColor.white
             containerView.addSubview(vignetteView)
             
@@ -253,15 +281,15 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     func contourEffect(_ sender: UIButton){
         if sender.tag==1{
             contoureName = contourList.none
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         else if sender.tag==2{
             contoureName = contourList.white
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         else{
             contoureName = contourList.black
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         
         
@@ -269,27 +297,56 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     func vintageSliderValueDidChange (_ sender: UISlider) {
         
         vintageSliderValue=CGFloat(sender.value)
-        coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+        coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
     }
     var selectedIndex:Foundation.IndexPath!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         
          if selectedIndex != indexPath && indexPath.row==0{
             textureName = textureList.none
-             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==1{
-            textureName = textureList.bricks
-             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            textureName = textureList.knit
+             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
-         else{
-            textureName = textureList.paper
-             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         else if selectedIndex != indexPath && indexPath.row==2{
+            textureName = textureList.leath
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
+         else if selectedIndex != indexPath && indexPath.row==3{
+            textureName = textureList.stonwall
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==4{
+            textureName = textureList.wallred2
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==5{
+            textureName = textureList.wallred
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==6{
+            textureName = textureList.wallwhit
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==7{
+            textureName = textureList.wall
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==8{
+            textureName = textureList.wood1
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+         else if selectedIndex != indexPath && indexPath.row==9{
+            textureName = textureList.wood
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+         }
+        
         selectedIndex=indexPath
         collectionView.reloadData()
         
@@ -328,11 +385,33 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
             textureImageView.image = #imageLiteral(resourceName: "white")
         }
         else if indexPath.row==1{
+            textureImageView.image = #imageLiteral(resourceName: "knitted")
+        }
+        else if indexPath.row==2{
+            textureImageView.image = #imageLiteral(resourceName: "leather")
+        }
+        else if indexPath.row==3{
+            textureImageView.image = #imageLiteral(resourceName: "Stone-Wall")
+        }
+        else if indexPath.row==4{
+            textureImageView.image = #imageLiteral(resourceName: "wall-red-brick-2")
+        }
+        else if indexPath.row==5{
+            textureImageView.image = #imageLiteral(resourceName: "wall-red-brick")
+        }
+        else if indexPath.row==6{
+            textureImageView.image = #imageLiteral(resourceName: "wall-white")
+        }
+        else if indexPath.row==7{
             textureImageView.image = #imageLiteral(resourceName: "wall")
         }
-        else{
-            textureImageView.image = #imageLiteral(resourceName: "paper")
+        else if indexPath.row==8{
+            textureImageView.image = #imageLiteral(resourceName: "wood-1")
         }
+        else if indexPath.row==9{
+            textureImageView.image = #imageLiteral(resourceName: "wood")
+        }
+        
         
         cell.addSubview(textureImageView)
         return cell

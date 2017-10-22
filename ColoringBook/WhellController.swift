@@ -23,6 +23,7 @@ class WhellController: UIViewController {
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var labelPalNum: UILabel!
     @IBOutlet weak var labelPalName: UILabel!
+    
     var ButtonTapped = false
     var angle: CGFloat = 0.0
     var selectedColor: UIColor = UIColor.red
@@ -31,6 +32,36 @@ class WhellController: UIViewController {
     var previousPos:CGPoint = CGPoint(x: 0, y: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !HelperMethods.isIphone(){
+            
+            colorView.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+            colorPick.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+            
+            middleView.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            labelPalNum.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            labelPalName.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+            middleView.layer.cornerRadius = 85.0
+            labelPalName.layer.cornerRadius = 85.0
+            labelPalNum.layer.cornerRadius = 85.0
+            labelPalNum.font = UIFont(name: "Baskerville-Bold", size: 130)
+            labelPalName.font = UIFont(name: "Baskerville-Bold", size: 130)
+        }
+        else{
+            
+            colorView.frame = CGRect(x: 0, y: 0, width: 225, height: 225)
+            colorPick.frame = CGRect(x: 0, y: 0, width: 225, height: 225)
+            middleView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            labelPalNum.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            labelPalName.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            middleView.layer.cornerRadius = 40.0
+            labelPalName.layer.cornerRadius = 40.0
+            labelPalNum.layer.cornerRadius = 40.0
+        }
+        
+        middleView.layer.masksToBounds = true
+        middleView.center = colorView.center
+        //colorView.center = CGPoint(x: self.view.center.x, y: 0)
         //colorView.layer.cornerRadius = 100
         colorView.colorArray.append(UIColor.red)
         colorView.colorArray.append(UIColor.green)
@@ -42,7 +73,9 @@ class WhellController: UIViewController {
         colorView.colorArray.append(UIColor.purple)
             
             
-            imageView.newcolor = selectedColor
+        imageView.newcolor = selectedColor
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         //----------------Reset----------
@@ -131,6 +164,7 @@ class WhellController: UIViewController {
         else if palette==27{
             colorPaletteSelection(a: "#801144", b: "#ff2288", c: "#8d55ad", d: "#59376d", e: "#cf7bff", f: "#188c9f", g: "#12616c", h: "#22e1ff")
         }
+            
         else if palette==28{
             colorPaletteSelection(a: "#d1ecb2", b: "#b4ed76", c: "#a5ca7f", d: "#80f500", e: "#63c500", f: "#559f00", g: "#457515", h: "#2a440c")
         }
@@ -290,6 +324,9 @@ class WhellController: UIViewController {
         else if palette==80{
             colorPaletteSelection(a: "#f4ffad", b: "#f8ff54", c: "#ffc000", d: "#fef29b", e: "#fff250", f: "#f8e71c", g: "#ceda47", h: "#daca00")
         }
+        else if palette==81{
+            
+        }
         else{
             
             //custom generated wheels
@@ -307,19 +344,36 @@ class WhellController: UIViewController {
             
             /*colorPaletteSelection(a: "#801144", b: "#ff2288", c: "#8d55ad", d: "#59376d", e: "#cf7bff", f: "#188c9f", g: "#12616c", h: "#22e1ff")*/
         }
-        if palette <= 80 {
-            let text = try! String(contentsOfFile: Bundle.main.path(forResource: "Color_Palette_Name", ofType: "txt")!) // Reading File
+        
+        if palette <= numberOfWheels {
+            if palette==numberOfWheels{
+                
+            }
+            else{
+                let text = try! String(contentsOfFile: Bundle.main.path(forResource: "Color_Palette_Name", ofType: "txt")!) // Reading File
             let lineArray = text.components(separatedBy: "\n") // Separating Lines
             labelPalName.text = "\(lineArray[palette-1])"
+            }
+            
         }
         else{
-            labelPalName.text = "\(generatedWheels[palette-81].name)"
+            labelPalName.text = "\(generatedWheels[palette-(numberOfWheels+1)].name)"
         }
-        if (labelPalName.text?.characters.count)!<=9{
-            labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
+        if HelperMethods.isIphone(){
+            if (labelPalName.text?.characters.count)!<=9{
+                labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
+            }
+            else{
+                labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 12)
+            }
         }
         else{
-            labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 12)
+            if (labelPalName.text?.characters.count)!<=9{
+                labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 32)
+            }
+            else{
+                labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 24)
+            }
         }
         labelPalNum.text = "\(palette)"
         ButtonTapped=false
@@ -340,7 +394,7 @@ class WhellController: UIViewController {
             
             //let position = touch.location(in: self.view)
             let distance = (pow(colorView.center.x - position.x,2) + pow(colorView.center.y - position.y,2))
-            if distance < pow(80/2,2){
+            if distance < pow((HelperMethods.isIphone() ? 80 : 170)/2,2){
                 UIView.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
                     
                     self.colorView.transform = self.colorView.transform.rotated(by: 2)
@@ -452,7 +506,7 @@ class WhellController: UIViewController {
             if let touch = touches.first {
                 let position = touch.location(in: self.view)
                 let distance = (pow(colorView.center.x - position.x,2) + pow(colorView.center.y - position.y,2))
-                if distance < pow(80/2,2){
+                if distance < pow((HelperMethods.isIphone() ? 80 : 170)/2,2){
                     //createPaletteView
                     
                     //let colorListViewController = self.storyboard!.instantiateViewController(withIdentifier: "ColorListViewController") as! ColorListViewController
@@ -973,6 +1027,12 @@ class WhellController: UIViewController {
                 selectedColor = colorView.colorArray[6]
             }
         }
+    }
+    @IBAction func undoButton(_ sender: UIButton){
+        print("undo")
+    }
+    @IBAction func redoButton(_ sender: UIButton){
+        print("redo")
     }
     func colorPaletteSelection(a: String, b:String, c:String, d:String, e:String, f:String, g:String, h:String){
         colorView.colorArray.removeAll()
