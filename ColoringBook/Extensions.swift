@@ -72,3 +72,8 @@ extension UIColor {
         }
     }
 }
+extension String{
+    func localize()->String{
+        return NSLocalizedString("\(self)", comment: "title")
+    }
+}

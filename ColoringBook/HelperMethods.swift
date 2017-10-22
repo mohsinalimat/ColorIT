@@ -11,15 +11,35 @@ class HelperMethods{
     
     
     static func customFilters(image: UIImage, contourName: SharingViewController.contourList, textureName: SharingViewController.textureList, size: CGSize, sliderValue: CGFloat) -> UIImage{
-    
         //Textures
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        if textureName == .bricks{
+        if textureName == .knit{
+            #imageLiteral(resourceName: "knitted").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .leath{
+             #imageLiteral(resourceName: "leather").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .stonwall{
+            #imageLiteral(resourceName: "Stone-Wall").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .wallred2{
+            #imageLiteral(resourceName: "wall-red-brick-2").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .wallred{
+            #imageLiteral(resourceName: "wall-red-brick").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .wallwhit{
+            #imageLiteral(resourceName: "wall-white").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .wall{
             #imageLiteral(resourceName: "wall").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
         }
-        else if textureName == .paper{
-             #imageLiteral(resourceName: "paper").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        else if textureName == .wood1{
+            #imageLiteral(resourceName: "wood-1").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
+        }
+        else if textureName == .wood{
+            #imageLiteral(resourceName: "wood").draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .multiply, alpha: 1.0)
         }
         else if textureName == .none{
            
@@ -63,6 +83,7 @@ class HelperMethods{
         //super.setImage(newImage as? CIImage ?? CIImage())
         return newImage
     }
+    
     static func processVintageImage(_ image: UIImage, vintageSliderValue: CGFloat) -> UIImage {
         
         guard let inputImage = CIImage(image: image) else { return image }
@@ -83,5 +104,13 @@ class HelperMethods{
         
         return UIImage(cgImage: cgImage!)
     }
+    static func isIphone()->Bool{
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            print("iPhone")
+            return true
+        }
+        return false
+    }
     
 }
+

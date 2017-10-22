@@ -11,9 +11,9 @@ import UIKit
 let numberOfColor = 8
 let π:CGFloat = CGFloat(Double.pi)
 
-@IBDesignable class ColorView: UIView {
+class ColorView: UIView {
     
-    @IBInspectable var counterColor: UIColor = UIColor.red
+    var counterColor: UIColor = UIColor.red
     var shadow: UIColor = UIColor.black
     var colorArray = [UIColor]()
     var diffArray = [CGFloat]()
@@ -52,7 +52,10 @@ let π:CGFloat = CGFloat(Double.pi)
         print(radius)
         
         // 3
-        let arcWidth: CGFloat = 60//76
+        var arcWidth: CGFloat = 60
+        if !HelperMethods.isIphone(){
+            arcWidth = 160
+        }
         
         // 4
         //let startAngle: CGFloat = π / 3

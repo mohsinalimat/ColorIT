@@ -12,13 +12,14 @@
 @interface AppDelegate ()
 
 @end
-
+@import Firebase;
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    application.statusBarHidden = true ; 
+    application.statusBarHidden = true ;
+    [FIRApp configure];
     return YES;
 }
 

@@ -50,7 +50,10 @@ import UIKit
         print(radius)
         
         // 3
-        let arcWidth: CGFloat = 60//76
+        var arcWidth: CGFloat = 60
+        if !HelperMethods.isIphone(){
+            arcWidth = 160
+        }
         
         // 4
         //let startAngle: CGFloat = π / 3
@@ -113,8 +116,12 @@ import UIKit
             }
         }
         
-        
-        path = UIBezierPath(arcCenter: center, radius: 41, startAngle: 0, endAngle: 2*π , clockwise: true)
+        if HelperMethods.isIphone(){
+            path = UIBezierPath(arcCenter: center, radius: 41, startAngle: 0, endAngle: 2*π , clockwise: true)
+        }
+        else{
+            path = UIBezierPath(arcCenter: center, radius: 86, startAngle: 0, endAngle: 2*π , clockwise: true)
+        }
         
         path.lineWidth = 2
         UIColor.gray.setStroke()

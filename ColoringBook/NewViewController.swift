@@ -318,6 +318,11 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         
     }
     
+    
+
+    
+    
+    
     // MARK: - View Controller's Lifecycle
 
     override func viewDidLoad() {
@@ -326,6 +331,8 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         // Do any additional setup after loading the view.
         
         setupUpperViewHolder()
+        
+        
         
         //self.extendedLayoutIncludesOpaqueBars = true
         //print(upperViewHolder.frame)
@@ -347,6 +354,9 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
             setupDownViewHolder()
             didViewAppeared = true
         }
+        
+        //uploadToFB(#imageLiteral(resourceName: "Photo 8-20-17, 5 36 36 PM.jpg"))
+        //uploadToMessenger(#imageLiteral(resourceName: "Photo 8-20-17, 5 36 36 PM.jpg"))
     }
     override func viewWillAppear(_ animated: Bool) {
         //automaticallyAdjustsScrollViewInsets = false
