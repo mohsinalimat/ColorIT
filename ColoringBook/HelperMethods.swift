@@ -10,7 +10,7 @@ import Foundation
 class HelperMethods{
     
     
-    static func customFilters(image: UIImage, contourName: SharingViewController.contourList, textureName: SharingViewController.textureList, size: CGSize, sliderValue: CGFloat) -> UIImage{
+    static func customFilters(image: UIImage, pureImage: UIImage, contourName: SharingViewController.contourList, textureName: SharingViewController.textureList, size: CGSize, sliderValue: CGFloat) -> UIImage{
         //Textures
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
@@ -48,11 +48,11 @@ class HelperMethods{
         //Contours
         if contourName == .black{
             
-            contourFilter(image: #imageLiteral(resourceName: "Birds1.png")).draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .screen, alpha: 1.0)
+            contourFilter(image: pureImage).draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .screen, alpha: 1.0)
         }
         else if contourName == .white{
             
-            contourFilter(image: #imageLiteral(resourceName: "Birds1.png")).draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .plusLighter, alpha: 1.0)
+            contourFilter(image: pureImage).draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .plusLighter, alpha: 1.0)
         }
         else{
             

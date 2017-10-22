@@ -164,6 +164,7 @@ class WhellController: UIViewController {
         else if palette==27{
             colorPaletteSelection(a: "#801144", b: "#ff2288", c: "#8d55ad", d: "#59376d", e: "#cf7bff", f: "#188c9f", g: "#12616c", h: "#22e1ff")
         }
+            
         else if palette==28{
             colorPaletteSelection(a: "#d1ecb2", b: "#b4ed76", c: "#a5ca7f", d: "#80f500", e: "#63c500", f: "#559f00", g: "#457515", h: "#2a440c")
         }

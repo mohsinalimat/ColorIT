@@ -43,6 +43,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     var contoureName = contourList.none
     var textureName = textureList.none
     var coloredImage = UIImage()
+    var coloredImageNew = UIImage()
     var coloredImageView = UIImageView()
     var containerView = UIView()
     var textureView = UIView()
@@ -280,15 +281,15 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     func contourEffect(_ sender: UIButton){
         if sender.tag==1{
             contoureName = contourList.none
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         else if sender.tag==2{
             contoureName = contourList.white
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         else{
             contoureName = contourList.black
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
         }
         
         
@@ -296,7 +297,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
     func vintageSliderValueDidChange (_ sender: UISlider) {
         
         vintageSliderValue=CGFloat(sender.value)
-        coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+        coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
     }
     var selectedIndex:Foundation.IndexPath!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -307,43 +308,43 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         
          if selectedIndex != indexPath && indexPath.row==0{
             textureName = textureList.none
-             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==1{
             textureName = textureList.knit
-             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+             coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==2{
             textureName = textureList.leath
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==3{
             textureName = textureList.stonwall
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==4{
             textureName = textureList.wallred2
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==5{
             textureName = textureList.wallred
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==6{
             textureName = textureList.wallwhit
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==7{
             textureName = textureList.wall
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==8{
             textureName = textureList.wood1
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
          else if selectedIndex != indexPath && indexPath.row==9{
             textureName = textureList.wood
-            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
+            coloredImageView.image = HelperMethods.customFilters(image: coloredImage, pureImage: coloredImageNew, contourName: contoureName, textureName: textureName, size: coloredImageView.frame.size, sliderValue: vintageSliderValue)
          }
         
         selectedIndex=indexPath

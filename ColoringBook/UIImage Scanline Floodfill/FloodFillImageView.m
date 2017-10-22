@@ -28,16 +28,24 @@
     tpoint.x = roundf( tpoint.x * factor ) ;
     tpoint.y = roundf( tpoint.y * factor ) ;
     
-    NSLog(@"%f", factor);
+    
+    
+     NSLog(@"%f", factor);
      NSLog(@"%@", NSStringFromCGPoint(tpoint));
      NSLog(@"%@", NSStringFromCGSize(self.frame.size));
      NSLog(@"%@", NSStringFromCGSize(self.image.size));
-    //Call function to flood fill and get new image with filled color
-    UIImage *image1 = [self.image floodFillFromPoint:tpoint withColor:newcolor andTolerance:tolorance];
     
+    //Call function to flood fill and get new image with filled color
+    
+
+    
+    UIImage *image1 = [self.image floodFillFromPoint:tpoint withColor:newcolor andTolerance:tolorance];
     dispatch_async(dispatch_get_main_queue(), ^(void)
     {
         [self setImage:image1];
+        
     });
+    
+    
 }
 @end

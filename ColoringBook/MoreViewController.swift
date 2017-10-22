@@ -37,7 +37,7 @@ class MoreViewController: UIViewController , FSPagerViewDataSource , FSPagerView
     let iPadImages = [ #imageLiteral(resourceName: "promoImage1") , #imageLiteral(resourceName: "promoImage2") , #imageLiteral(resourceName: "promoImage3") , #imageLiteral(resourceName: "promoImage4") , #imageLiteral(resourceName: "promoImage5") ]
     let iPadUrls = ["https://itunes.apple.com/US/app/id979588667" , "https://itunes.apple.com/US/app/id993420685" , "https://itunes.apple.com/US/app/id1212839079" , "https://itunes.apple.com/US/app/id1191313662" , "https://itunes.apple.com/US/app/id1237148635"  ]
     
-    let images = [ #imageLiteral(resourceName: "promoImage1") , #imageLiteral(resourceName: "promoImage2") , #imageLiteral(resourceName: "promoImage3") ]
+    let images = [ #imageLiteral(resourceName: "promoImage1") , #imageLiteral(resourceName: "promoImage2") , #imageLiteral(resourceName: "promoImage3")]
     let names =  ["a","b","c"]
     //hello
     
@@ -51,7 +51,11 @@ class MoreViewController: UIViewController , FSPagerViewDataSource , FSPagerView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let missingName : String? = "folk"
+        let realName : String? = "John Doe"
+        let existentName : String = missingName ?? realName!
+        print(existentName)
+        print("hello")
         // Create a pager view
         let pagerView = FSPagerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         pagerView.dataSource = self
@@ -256,7 +260,8 @@ class MoreViewController: UIViewController , FSPagerViewDataSource , FSPagerView
         }
     }
     
-    func stopNotifier() {
+    func stopNotifier()
+    {
         print("--- stop notifier")
         reachability?.stopNotifier()
         NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: nil)
