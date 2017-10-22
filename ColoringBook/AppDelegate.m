@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ColoringBook-Swift.h"
-
+@import  Firebase;
 @interface AppDelegate ()
 
 @end
@@ -18,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    application.statusBarHidden = true ; 
+    application.statusBarHidden = true ;
+    //[FIRApp configure];
     return YES;
 }
 

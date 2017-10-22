@@ -9,6 +9,13 @@
 import Foundation
 import SystemConfiguration
 
+class Tuple
+{
+    var image = UIImage()
+    var isSame = false
+}
+
+
 public class ReachabilityX {
     
     class func isConnectedToNetwork() -> Bool {

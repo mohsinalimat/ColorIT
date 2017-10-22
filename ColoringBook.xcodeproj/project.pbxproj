@@ -108,12 +108,14 @@
 		84A87C591F7BC455004A0F51 /* Fashion.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C531F7BC455004A0F51 /* Fashion.png */; };
 		84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA53E1F851F700048FB63 /* CFNetwork.framework */; };
 		84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA5401F851F780048FB63 /* WebKit.framework */; };
+		84BD33F51F961B8D0097769A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD33F41F961B8D0097769A /* GoogleMobileAds.framework */; };
 		84EB4C941F8CA83C000ABE65 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB4C931F8CA83C000ABE65 /* Icon.png */; };
 		84EB4C961F8CF439000ABE65 /* lock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB4C951F8CF439000ABE65 /* lock2.png */; };
 		84EC017D1F920536007920F4 /* Christmas1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC01791F920536007920F4 /* Christmas1.png */; };
 		84EC017E1F920536007920F4 /* Christmas2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC017A1F920536007920F4 /* Christmas2.png */; };
 		84EC017F1F920536007920F4 /* Christmas3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC017B1F920536007920F4 /* Christmas3.png */; };
 		84EC01801F920536007920F4 /* Christmas4.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC017C1F920536007920F4 /* Christmas4.png */; };
+		84F3607C1F9392680036E01A /* IntegerExtensionForRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */; };
 		8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */; };
 		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
 		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
@@ -262,12 +264,14 @@
 		84A87C531F7BC455004A0F51 /* Fashion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fashion.png; sourceTree = "<group>"; };
 		84BAA53E1F851F700048FB63 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		84BAA5401F851F780048FB63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		84BD33F41F961B8D0097769A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		84EB4C931F8CA83C000ABE65 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		84EB4C951F8CF439000ABE65 /* lock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock2.png; sourceTree = "<group>"; };
 		84EC01791F920536007920F4 /* Christmas1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas1.png; sourceTree = "<group>"; };
 		84EC017A1F920536007920F4 /* Christmas2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas2.png; sourceTree = "<group>"; };
 		84EC017B1F920536007920F4 /* Christmas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas3.png; sourceTree = "<group>"; };
 		84EC017C1F920536007920F4 /* Christmas4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas4.png; sourceTree = "<group>"; };
+		84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerExtensionForRandom.swift; sourceTree = "<group>"; };
 		8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			files = (
 				84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */,
 				84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */,
+				84BD33F51F961B8D0097769A /* GoogleMobileAds.framework in Frameworks */,
 				8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */,
 				716EF98EBF4EDE7FEA280979 /* Pods_ColoringBook.framework in Frameworks */,
 			);
@@ -351,6 +356,7 @@
 		52BEE9D91E05157700637559 = {
 			isa = PBXGroup;
 			children = (
+				84D1DB2E1F9473600074120D /* AdMob */,
 				844F1A891F7276BF003E8919 /* Podfile */,
 				8E9BF1901F6D525E0051D734 /* ColoringBook.xcdatamodeld */,
 				52BEE9E41E05157700637559 /* ColoringBook */,
@@ -632,6 +638,7 @@
 			children = (
 				84A87C411F7B7F21004A0F51 /* UIViewModel.swift */,
 				8406551E1F825905007DFC9D /* DataMGMT.swift */,
+				84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -653,6 +660,14 @@
 			);
 			name = MenuSettingsIcons;
 			path = Category;
+			sourceTree = "<group>";
+		};
+		84D1DB2E1F9473600074120D /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				84BD33F41F961B8D0097769A /* GoogleMobileAds.framework */,
+			);
+			name = AdMob;
 			sourceTree = "<group>";
 		};
 		8E9BF1931F6D527F0051D734 /* Frameworks */ = {
@@ -759,6 +774,16 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				fr,
+				it,
+				ja,
+				ko,
+				"pt-PT",
+				ru,
+				vi,
+				"zh-Hans",
 			);
 			mainGroup = 52BEE9D91E05157700637559;
 			productRefGroup = 52BEE9E31E05157700637559 /* Products */;
@@ -938,6 +963,7 @@
 				8E825E881F7D1C5500DD7D0E /* customWhellView.swift in Sources */,
 				84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */,
 				8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */,
+				84F3607C1F9392680036E01A /* IntegerExtensionForRandom.swift in Sources */,
 				84963F4B1F7933ED00391086 /* NewViewController.swift in Sources */,
 				8E825E871F7D1C5500DD7D0E /* CustomWhellViewController.swift in Sources */,
 				84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */,
@@ -1112,6 +1138,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2NE6K8Y839;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CutPaste",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseAnalytics/Frameworks",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseCore/Frameworks",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseInstanceID/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ColoringBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.photovault;
@@ -1130,6 +1164,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2NE6K8Y839;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CutPaste",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseAnalytics/Frameworks",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseCore/Frameworks",
+					"$(PROJECT_DIR)/CutPaste/Pods/FirebaseInstanceID/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ColoringBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odyssey.photovault;

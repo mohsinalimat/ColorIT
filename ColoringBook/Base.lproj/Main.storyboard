@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -430,7 +431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elp-9T-XeB">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FeG-Wy-E0x"/>
                                 </constraints>
@@ -455,38 +456,88 @@
                                 </items>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90c-55-8zO">
-                                <rect key="frame" x="57" y="218" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90c-55-8zO">
+                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-gB-ruY" customClass="FloodFillImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-gB-ruY" customClass="FloodFillImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="centerX" secondItem="90c-55-8zO" secondAttribute="centerX" id="1Mb-pF-Ca8"/>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="leading" secondItem="90c-55-8zO" secondAttribute="leading" id="BMe-5L-SQ3"/>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="centerY" secondItem="90c-55-8zO" secondAttribute="centerY" id="I3D-Wd-Km1"/>
+                                    <constraint firstItem="Fq7-gB-ruY" firstAttribute="top" secondItem="90c-55-8zO" secondAttribute="top" id="K4d-BG-DOT"/>
+                                    <constraint firstAttribute="width" secondItem="90c-55-8zO" secondAttribute="height" multiplier="1:1" id="oO3-qi-D4U"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fq7-gB-ruY" secondAttribute="bottom" id="rB9-Ml-uTQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fq7-gB-ruY" secondAttribute="trailing" id="us5-1e-alF"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="DpP-0y-h7H" id="gPU-bA-jq3"/>
                                 </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRZ-di-fyD" customClass="GADNativeExpressAdView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNp-xT-vVk">
+                                <rect key="frame" x="10" y="676" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5Qr-Ay-Kf6"/>
+                                    <constraint firstAttribute="height" constant="50" id="bMM-FQ-Gz1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="undo"/>
+                                <connections>
+                                    <action selector="undoButton:" destination="DpP-0y-h7H" eventType="touchUpInside" id="wHy-b0-b5S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxl-6i-5lo">
+                                <rect key="frame" x="354" y="676" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="KF9-St-34T"/>
+                                    <constraint firstAttribute="height" constant="50" id="uJK-5r-gRj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="redo"/>
+                                <connections>
+                                    <action selector="redoButton:" destination="DpP-0y-h7H" eventType="touchUpInside" id="8OT-S3-KUA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="elp-9T-XeB" firstAttribute="top" secondItem="qRZ-di-fyD" secondAttribute="bottom" id="29j-ow-Tx4"/>
+                            <constraint firstItem="qRZ-di-fyD" firstAttribute="top" secondItem="ZKQ-EO-bks" secondAttribute="bottom" id="3I7-aJ-6wQ"/>
+                            <constraint firstAttribute="trailing" secondItem="90c-55-8zO" secondAttribute="trailing" id="ADL-p9-ige"/>
+                            <constraint firstItem="90c-55-8zO" firstAttribute="centerY" secondItem="Cqv-bh-Ops" secondAttribute="centerY" id="FgK-73-fWO"/>
+                            <constraint firstItem="DNp-xT-vVk" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leading" constant="10" id="L0O-Gn-laG"/>
+                            <constraint firstItem="90c-55-8zO" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leading" id="RS1-hD-NVl"/>
+                            <constraint firstItem="OFY-bf-6t9" firstAttribute="top" secondItem="DNp-xT-vVk" secondAttribute="bottom" constant="10" id="UXV-UX-lXd"/>
+                            <constraint firstItem="OFY-bf-6t9" firstAttribute="top" secondItem="Mxl-6i-5lo" secondAttribute="bottom" constant="10" id="Z6j-5c-YxT"/>
+                            <constraint firstAttribute="trailing" secondItem="qRZ-di-fyD" secondAttribute="trailing" id="ZLw-CN-g3m"/>
                             <constraint firstAttribute="trailing" secondItem="elp-9T-XeB" secondAttribute="trailing" id="htV-07-vnp"/>
-                            <constraint firstItem="elp-9T-XeB" firstAttribute="top" secondItem="ZKQ-EO-bks" secondAttribute="bottom" constant="8" id="rNY-Wc-WiR"/>
+                            <constraint firstItem="qRZ-di-fyD" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leading" id="mhB-wd-gaM"/>
+                            <constraint firstItem="elp-9T-XeB" firstAttribute="top" secondItem="ZKQ-EO-bks" secondAttribute="bottom" constant="80" id="rNY-Wc-WiR"/>
+                            <constraint firstAttribute="trailing" secondItem="Mxl-6i-5lo" secondAttribute="trailing" constant="10" id="x71-rO-2ci"/>
                             <constraint firstItem="elp-9T-XeB" firstAttribute="leading" secondItem="Cqv-bh-Ops" secondAttribute="leading" id="z0H-E0-vvJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="editImageView" destination="Fq7-gB-ruY" id="Jrk-00-y25"/>
+                        <outlet property="nativeExpressAdView" destination="qRZ-di-fyD" id="mhI-px-2rb"/>
+                        <outlet property="redoBtn" destination="Mxl-6i-5lo" id="Ef5-3T-tqt"/>
                         <outlet property="scrollView" destination="90c-55-8zO" id="rev-Oo-GEM"/>
+                        <outlet property="toolBar" destination="elp-9T-XeB" id="pu1-jE-21c"/>
+                        <outlet property="undoBtn" destination="DNp-xT-vVk" id="7FX-xY-FLj"/>
                         <segue destination="vvV-g8-pDT" kind="presentation" identifier="SharingViewController" modalTransitionStyle="crossDissolve" id="wRY-7l-xWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQ1-Ql-fZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="1510.7946026986508"/>
+            <point key="canvasLocation" x="115.94202898550725" y="1510.5978260869567"/>
         </scene>
         <!--Sharing View Controller-->
         <scene sceneID="Y4d-0i-whd">
@@ -501,7 +552,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29k-tA-TP2">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="8" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9xT-MH-c4z"/>
                                 </constraints>

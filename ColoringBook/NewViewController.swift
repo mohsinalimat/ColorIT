@@ -10,6 +10,7 @@ import UIKit
 import FSPagerView
 import StoreKit
 import MessageUI
+import GoogleMobileAds
 
 
 class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDataSource,FSPagerViewDelegate , UITableViewDelegate , UITableViewDataSource , SKProductsRequestDelegate, SKPaymentTransactionObserver , MFMailComposeViewControllerDelegate{
@@ -50,14 +51,16 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     // MARK: - Data Sources Outlets and Actions
     var startingImages = [#imageLiteral(resourceName: "Birds1.png"),#imageLiteral(resourceName: "Birds2.png"),#imageLiteral(resourceName: "Culture1.png"),#imageLiteral(resourceName: "Culture2.png")]
     var dataDictionary = [String : [UIImage]]()
+    let birdsImages = [#imageLiteral(resourceName: "Birds1.png"),#imageLiteral(resourceName: "Birds2.png")]
+    let animalImages = [#imageLiteral(resourceName: "Animals1.png"),#imageLiteral(resourceName: "Animals2.png")]
+    let fasionImages = [#imageLiteral(resourceName: "Fashion1.png"),#imageLiteral(resourceName: "Fashion2.png"),#imageLiteral(resourceName: "Fashion3.png")]
+    let cultureImages = [#imageLiteral(resourceName: "Culture1.png"),#imageLiteral(resourceName: "Culture2.png"),#imageLiteral(resourceName: "Culture3.png"),#imageLiteral(resourceName: "Culture4.png"),#imageLiteral(resourceName: "Culture5.png"), #imageLiteral(resourceName: "Culture6.png")]
+    let christmasImages = [#imageLiteral(resourceName: "Christmas1.png"),#imageLiteral(resourceName: "Christmas2.png"),#imageLiteral(resourceName: "Christmas3.png"),#imageLiteral(resourceName: "Christmas4.png"),#imageLiteral(resourceName: "Christmas5.png")]
+    let comoicsImages = [#imageLiteral(resourceName: "shutterstock_390780931-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_327716645-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_328071368-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_396296125-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_449997736-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_398779984-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_285644417-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_389612521-[Converted].png"),#imageLiteral(resourceName: "shutterstock_496343161-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_478145179-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_400313902-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_450844078-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_281143067-[Converted]1xx.jpg"),#imageLiteral(resourceName: "Comics2.png")]
+    
     func buildDataDictionary()
     {  // "Birds","Animals","Fashion","Culture","Christmas","Comics"
-        let birdsImages = [#imageLiteral(resourceName: "Birds1.png"),#imageLiteral(resourceName: "Birds2.png")]
-        let animalImages = [#imageLiteral(resourceName: "Animals1.png"),#imageLiteral(resourceName: "Animals2.png")]
-        let fasionImages = [#imageLiteral(resourceName: "Fashion1.png"),#imageLiteral(resourceName: "Fashion2.png"),#imageLiteral(resourceName: "Fashion3.png")]
-        let cultureImages = [#imageLiteral(resourceName: "Culture1.png"),#imageLiteral(resourceName: "Culture2.png"),#imageLiteral(resourceName: "Culture3.png"),#imageLiteral(resourceName: "Culture4.png"),#imageLiteral(resourceName: "Culture5.png"), #imageLiteral(resourceName: "Culture6.png")]
-        let christmasImages = [#imageLiteral(resourceName: "Christmas1.png"),#imageLiteral(resourceName: "Christmas2.png"),#imageLiteral(resourceName: "Christmas3.png"),#imageLiteral(resourceName: "Christmas4.png"),#imageLiteral(resourceName: "Christmas5.png")]
-        let comoicsImages = [#imageLiteral(resourceName: "shutterstock_390780931-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_327716645-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_328071368-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_396296125-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_449997736-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_398779984-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_285644417-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_389612521-[Converted].png"),#imageLiteral(resourceName: "shutterstock_496343161-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_478145179-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_400313902-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_450844078-[Converted].jpg"),#imageLiteral(resourceName: "shutterstock_281143067-[Converted]1xx.jpg"),#imageLiteral(resourceName: "Comics2.png")]
+
         
         dataDictionary["Birds"] = birdsImages
         dataDictionary["Animals"] = animalImages
@@ -324,56 +327,136 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     }
     
     // MARK: - Starting Image Picking
+    // "Birds","Animals","Fashion","Culture","Christmas","Comics"
     var startingImagesProductKeys  = [String]()
+    func statingImagesSetUp()
+    {
+        startingImages = []
+        
+        var freeImages = [birdsImages[0],animalImages[0],fasionImages[0],cultureImages[0],christmasImages[0],comoicsImages[0]]
+        var freeImagesProductKey = ["nonConsumablePurchaseMade3" , "nonConsumablePurchaseMade4" ,"nonConsumablePurchaseMade5" , "nonConsumablePurchaseMade6" ,"nonConsumablePurchaseMade7" ,"nonConsumablePurchaseMade8" ]
+        
+        for _ in freeImages
+        {
+            let A = Int.random(lower: 0, freeImages.count - 1 )
+            let B = Int.random(lower: 0, freeImages.count - 1 )
+            
+            swap(&freeImages[A], &freeImages[B])
+            swap(&freeImagesProductKey[A], &freeImagesProductKey[B])
+        }
+        
+        startingImages += birdsImages.filter{ $0 != birdsImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade3", count: birdsImages.count)
+        startingImages += animalImages.filter{ $0 != animalImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade4", count: animalImages.count)
+        startingImages += fasionImages.filter{ $0 != fasionImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade5", count: fasionImages.count)
+        startingImages += cultureImages.filter{ $0 != cultureImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade6", count: cultureImages.count)
+        startingImages += christmasImages.filter{ $0 != christmasImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade7", count: christmasImages.count)
+        startingImages += comoicsImages.filter{ $0 != comoicsImages[0] }
+        startingImagesProductKeys += [String](repeating: "nonConsumablePurchaseMade8", count: comoicsImages.count)
+        
+        for _ in startingImages
+        {
+            let A = Int.random(lower: 0, freeImages.count - 1 )
+            let B = Int.random(lower: 0, freeImages.count - 1 )
+            
+            swap(&startingImages[A], &startingImages[B])
+            swap(&startingImagesProductKeys[A], &startingImagesProductKeys[B])
+        }
+        
+        
+       // startingImages.
+    }
+    
+    // MARK: - Google AdMob
     
     
+    var bannerHeight: CGFloat = 80
+    var googleInterstitial:GADInterstitial?
     
-    
+    func showNativeAdOn(_ view : UIView)
+    {
+        let banner = GADNativeExpressAdView()
+        banner.frame = CGRect(x: 0, y: 0,
+                              width: view.frame.width, height: 80)
+        //banner.backgroundColor = UIColor.black
+        
+        view.addSubview(banner)
+        banner.rootViewController = self
+        
+        banner.adUnitID = "ca-app-pub-3940256099942544/4270592515"
+        let request = GADRequest()
+        request.testDevices = [ "94bf2cef1fc4c0ca65d3b2806c70123a"  , "9700d0add289a36421ea4776a2eb5e8c"]
+        
+        banner.load(request)
+       
+    }
+    func showBannerAdOn(_ view : UIView)
+    {
+        
+        let  banner = GADBannerView(adSize: kGADAdSizeBanner)
+        //banner.backgroundColor = UIColor.black
+        
+        view.addSubview(banner)
+        banner.rootViewController = self
+        
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        let request = GADRequest()
+        request.testDevices = [ "94bf2cef1fc4c0ca65d3b2806c70123a"  , "9700d0add289a36421ea4776a2eb5e8c"]
+        
+        banner.load(request)
+        
+    }
+
     // MARK: - View Controller's Lifecycle
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        let missingName : String? = "folk"
-        let realName : String? = "John Doe"
-        let existentName : String =  realName ?? missingName!
-        print(existentName)
-        print("hello")
+       
         setupUpperViewHolder()
-        
-        //self.extendedLayoutIncludesOpaqueBars = true
-        //print(upperViewHolder.frame)
-        //print(upperViewHolder.center)
-        //print(self.view.center)
-        
-        //downViewHolder.center = CGPoint(x: 0, y: 0)
         buildDataDictionary()
         NewViewController.selfCopy = self
         self.fetchAvailableProducts()
         prepareTableLabels()
-        
+        showBannerAdOn(self.view)
+ 
     }
     
     var didViewAppeared = false
     override func viewDidAppear(_ animated: Bool) {
-         // Cause It works perfect here . Storyboard load here .
+        // Cause It works perfect here . Storyboard load here .
         if !didViewAppeared
         {   prepareButtons(forButtonNo: 1)
             setupDownViewHolder()
             didViewAppeared = true
         }
+        print("View Did Appear")
+        
+        
+        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        
         //automaticallyAdjustsScrollViewInsets = false
-        print(test)
+        //print(test)
+        print("View Wil Appear")
+        
+        
+        
+        
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
         
         SKPaymentQueue.default().remove(self)
+        
+        print("View Wil DisAppear")
     }
 
     override func didReceiveMemoryWarning() {
@@ -640,6 +723,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         }
          scrollView.deselectItem(at: index, animated: true)
     }
+    
     func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int)
     {
         
@@ -1587,11 +1671,11 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     let removeAdsOfflineUsage = "id1"
     let unlockAllCategories = "id2"
     let unlockBirds = "id2"
-    let unlockAnimals = "id3"
-    let unlockFashion = "id4"
-    let unlockCulture = "id5"
-    let unlockChristmas  = "id6"
-    let unlockComics = "id7"
+    let unlockAnimals = "id4"
+    let unlockFashion = "id5"
+    let unlockCulture = "id6"
+    let unlockChristmas  = "id7"
+    let unlockComics = "id8"
     
     
     
@@ -1651,7 +1735,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                     UserDefaults.standard.set(nonConsumablePurchaseMade2, forKey: "nonConsumablePurchaseMade2")
                     
                 }
-                else if transaction.payment.productIdentifier=="id3"{
+                else if transaction.payment.productIdentifier=="id2"{
                     nonConsumablePurchaseMade3 = true
                     UserDefaults.standard.set(nonConsumablePurchaseMade3, forKey: "nonConsumablePurchaseMade3")
                     

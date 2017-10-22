@@ -10,6 +10,18 @@
 
 #define DEBUG_ANTIALIASING 0
 
+
+
+
+@interface MyPair: NSObject
+
+@property (assign) BOOL flag;
+@property (strong) UIImage *image;
+
+@end
+
+
+
 @implementation UIImage (FloodFill)
 /*
  startPoint : Point from where you want to color. Generaly this is touch point.
@@ -23,13 +35,22 @@
  If You dont want to use tolerance and want to incress performance Than you can change
  compareColor(ocolor, color, tolerance) with just ocolor==color which reduse function call.
  */
+
+
 - (UIImage *) floodFillFromPoint:(CGPoint)startPoint withColor:(UIColor *)newColor andTolerance:(int)tolerance
 {
     return [self floodFillFromPoint:startPoint withColor:newColor andTolerance:tolerance useAntiAlias:YES];
 }
 
+
+
+
+
+
 - (UIImage *) floodFillFromPoint:(CGPoint)startPoint withColor:(UIColor *)newColor andTolerance:(int)tolerance useAntiAlias:(BOOL)antiAlias
 {
+    
+    
     @try
     {
         /*
@@ -86,6 +107,7 @@
         //Convert newColor to RGBA value so we can save it to image.
         int newRed, newGreen, newBlue, newAlpha;
         
+        
         const CGFloat *components = CGColorGetComponents(newColor.CGColor);
         
         /*
@@ -117,6 +139,45 @@
         }
         
         unsigned int ncolor = (newRed << 24) | (newGreen << 16) | (newBlue << 8) | newAlpha;
+        
+        if (compareColor(ocolor, ncolor, tolerance))
+        {
+            newColor = [UIColor whiteColor];
+            components = CGColorGetComponents(newColor.CGColor);
+            
+            /*
+             If you are not getting why I use CGColorGetNumberOfComponents than read following link:
+             http://stackoverflow.com/questions/9238743/is-there-an-issue-with-cgcolorgetcomponents
+             */
+            
+            newRed   = newGreen = newBlue = 0 ;
+            
+            if(CGColorGetNumberOfComponents(newColor.CGColor) == 2)
+            {
+                newRed   = newGreen = newBlue = components[0] * 255;
+                newAlpha = components[1] * 255;
+            }
+            else if (CGColorGetNumberOfComponents(newColor.CGColor) == 4)
+            {
+                if ((bitmapInfo&kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
+                {
+                    newRed   = components[2] * 255;
+                    newGreen = components[1] * 255;
+                    newBlue  = components[0] * 255;
+                    newAlpha = 255;
+                }
+                else
+                {
+                    newRed   = components[0] * 255;
+                    newGreen = components[1] * 255;
+                    newBlue  = components[2] * 255;
+                    newAlpha = 255;
+                }
+            }
+            
+            ncolor = (newRed << 24) | (newGreen << 16) | (newBlue << 8) | newAlpha;
+            
+        }
         
         /*
          We are using stack to store point.
