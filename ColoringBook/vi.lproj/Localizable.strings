@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Nhận Instagram";
+"Get instagram for this feature"="Tải Instagram cho tính năng này";
+"Install"="cài đặt, dựng lên";
+"Not Now"="Không phải bây giờ";
+"Are you sure you want to discard changes?"="Bạn có chắc chắn muốn hủy thay đổi không?";
+"OK"="OK";
+"Cancel"="Hủy";
+"Are you sure you want to delete the palette?"="Bạn có chắc chắn muốn xóa bảng màu không?";
+"Watch a video to create a palette"="Xem video để tạo bảng màu";
+"Color"="Màu";
+"Saturation"="Bão hòa";
+"Brightness"="độ sáng";
+"Save Palette"="Lưu Palette";
+"Texture"="Kết cấu";
+"Contour"="Viền";
+"Vignette"="Vignette";
+"USE OFFLINE?"="Sử dụng ngoại tuyến?";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="Bạn có thể sử dụng ứng dụng này ở Ngoại tuyến ngay bây giờ và xóa tất cả quảng cáo gây phiền nhiễu mãi mãi!";
+"Offline Usage + Remove Ads: 2.99"="Sử dụng diễn đàn+Không có quảng cáo: 69.000đ";
+"No Internet Connection!"="Không có kết nối Internet";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="Mua hàng không thể được thực hiện mà không có internet. Đảm bảo thiết bị của bạn được kết nối với internet.";
+"Use Internet"="Sử dụng Internet";
+"Thank You !"="Cảm ơn bạn!";
+"This feature is already purchased ."="Tính năng này đã được mua.";
+"Sorry !"="Lấy làm tiếc!";
+"No internet connection available ."="Không có kết nối Internet";
+"Restoring!!!"="Khôi phục !!!";
+"You've successfully restored your purchase!"="Bạn đã khôi phục thành công mua hàng của bạn";
+"You didn't purchase anything ."="Bạn đã không mua bất cứ thứ gì.";
+"InAppPurchase"="Mua hàng trong ứng dụng";
+"Purchases are disabled in your device!"="Việc mua hàng bị vô hiệu trong thiết bị của bạn!";
+"You've successfully unlocked this feature!"="Bạn đã mở khóa thành công tính năng này!";
+"NO MAIL ACCOUNT"="Không có tài khoản Email";
+"Please check your mail account settings and try again"="Hãy kiểm tra cài đặt tài khoản Email của bạn và thử lại";
+"Successfully Uploaded !"="Đã tải lên thành công!";
+"Upload Failed !"="Tải lên thất bại !";
+"ARTWORKS"="Tác phẩm nghệ thuật";
+"CATEGORIES"="THỂ LOẠI";
+"My Artworks"="Tác phẩm nghệ thuật của tôi";
+"STORE"="CỬA HÀNG";
+"FEEDBACK"="Phản hồi";
+"FOLLOW US ON"="Theo dõi chúng tôi tại";
+"Offline Usage + Remove Ads"="Sử dụng ngoại tuyến + Loại bỏ Quảng cáo";
+"Buy All Categories"="Mua tất cả các loại";
+"Restore Purchase"="Khôi phục mua hàng";
+"Tell A Friend"="Nói với một người bạn";
+"Contact Us"="Liên hệ chúng tôi";
+"Share App"="Chia sẻ ứng dụng";
+"Write A Review"="Đánh giá";
+"No internet connection!!"="Không có kết nối Internet";
+"You have to be connected with internet data connection to access this option."="Bạn phải kết nối với kết nối dữ liệu internet để truy cập vào tùy chọn này.";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="Bạn có thể sử dụng ứng dụng này ở Ngoại tuyến ngay bây giờ và xóa tất cả quảng cáo gây phiền nhiễu mãi mãi!";

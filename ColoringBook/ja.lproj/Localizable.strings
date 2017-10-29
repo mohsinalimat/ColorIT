@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Instagramを入手する";
+"Get instagram for this feature"="この機能のためにInstagramの取得";
+"Install"="インストール";
+"Not Now"="今はやめろ";
+"Are you sure you want to discard changes?"="変更を破棄してもよろしいですか？";
+"OK"="はい";
+"Cancel"="取消";
+"Are you sure you want to delete the palette?"="パレットを削除してもよろしいですか？";
+"Watch a video to create a palette"="カラーパレットを作成するビデオを見る";
+"Color"="色";
+"Saturation"="飽和";
+"Brightness"="輝度";
+"Save Palette"="パレットを保存";
+"Texture"="テクスチャ";
+"Contour"="輪郭";
+"Vignette"="ビネット";
+"USE OFFLINE?"="オフラインで使用しますか？";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="あなたは今オフラインでこのアプリを使用し、すべての迷惑な広告を永遠に削除することができます！";
+"Offline Usage + Remove Ads: 2.99"="オフライン使用+広告の削除：¥360";
+"No Internet Connection!"="インターネット接続なし";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="インターネットなしで購入することはできません。 お使いのデバイスがインターネットに接続されていることを確認してください。";
+"Use Internet"="インターネットを使用する";
+"Thank You !"="ありがとうございました！";
+"This feature is already purchased ."="この機能は既に購入済みです。";
+"Sorry !"="ごめんなさい！";
+"No internet connection available ."="インターネット接続なし";
+"Restoring!!!"="復元！";
+"You've successfully restored your purchase!"="購入を正常に復元しました";
+"You didn't purchase anything ."="あなたは何も買っていない。";
+"InAppPurchase"="アプリ内購入";
+"Purchases are disabled in your device!"="購入はお使いの端末で無効になっています。";
+"You've successfully unlocked this feature!"="あなたはこの機能を正常にロックを解除しました！";
+"NO MAIL ACCOUNT"="電子メールアカウントはありません";
+"Please check your mail account settings and try again"="メールアカウントの設定を確認してもう一度お試しください";
+"Successfully Uploaded !"="アップロードされました！";
+"Upload Failed !"="アップロードに失敗しました！";
+"ARTWORKS"="アートワーク";
+"CATEGORIES"="カテゴリー";
+"My Artworks"="私の芸術作品";
+"STORE"="格納";
+"FEEDBACK"="フィードバック";
+"FOLLOW US ON"="私たちに従ってください";
+"Offline Usage + Remove Ads"="オフライン使用+広告の削除";
+"Buy All Categories"="すべてのカテゴリを購入する";
+"Restore Purchase"="購入商品を復元する";
+"Tell A Friend"="友達に伝える";
+"Contact Us"="お問い合わせ";
+"Share App"="共有アプリ";
+"Write A Review"="私たちを評価してください";
+"No internet connection!!"="インターネット接続なし";
+"You have to be connected with internet data connection to access this option."="このオプションにアクセスするには、インターネットデータ接続に接続する必要があります。";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="あなたは今オフラインでこのアプリを使用し、すべての迷惑な広告を永遠に削除することができます！";

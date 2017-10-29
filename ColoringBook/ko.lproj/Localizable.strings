@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Instagram 다운로드";
+"Get instagram for this feature"="이 기능의 Instagram 다운로드";
+"Install"="설치";
+"Not Now"="지금은 안돼";
+"Are you sure you want to discard changes?"="변경 사항을 취소 하시겠습니까?";
+"OK"="괜찮아";
+"Cancel"="취소";
+"Are you sure you want to delete the palette?"="팔레트를 삭제 하시겠습니까?";
+"Watch a video to create a palette"="색상 팔레트를 만들려면 비디오보기";
+"Color"="색깔";
+"Saturation"="포화";
+"Brightness"="명도";
+"Save Palette"="팔레트 저장";
+"Texture"="조직";
+"Contour"="윤곽";
+"Vignette"="삽화";
+"USE OFFLINE?"="오프라인으로 사용 하시겠습니까?";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="당신은 지금 오프라인 에서이 응용 프로그램을 사용할 수 & 모든 성가신 광고를 영원히 제거하십시오!";
+"Offline Usage + Remove Ads: 2.99"="오프라인 사용 + 광고 삭제 : $3.29";
+"No Internet Connection!"="인터넷 연결 없음";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="인터넷 없이는 구매할 수 없습니다. 장치가 인터넷에 연결되어 있는지 확인하십시오.";
+"Use Internet"="인터넷 사용";
+"Thank You !"="고맙습니다!";
+"This feature is already purchased ."="이 기능은 이미 구입되었습니다.";
+"Sorry !"="죄송합니다!";
+"No internet connection available ."="인터넷 연결 없음";
+"Restoring!!!"="복원 중 !!!";
+"You've successfully restored your purchase!"="구매를 성공적으로 복구했습니다.";
+"You didn't purchase anything ."="너는 아무것도 사지 않았다.";
+"InAppPurchase"="앱내 구매";
+"Purchases are disabled in your device!"="기기에서 구매가 사용 중지되었습니다.";
+"You've successfully unlocked this feature!"="이 기능을 성공적으로 잠금 해제했습니다.";
+"NO MAIL ACCOUNT"="이메일 계정이 없습니다.";
+"Please check your mail account settings and try again"="메일 계정 설정을 확인하고 다시 시도하십시오.";
+"Successfully Uploaded !"="성공적으로 업로드되었습니다!";
+"Upload Failed !"="업로드하지 못했습니다!";
+"ARTWORKS"="삽화";
+"CATEGORIES"="카테고리";
+"My Artworks"="내 삽화";
+"STORE"="저장";
+"FEEDBACK"="피드백";
+"FOLLOW US ON"="우리를 따라 오세요";
+"Offline Usage + Remove Ads"="오프라인 사용 + 광고 삭제 ";
+"Buy All Categories"="모든 카테고리 구매";
+"Restore Purchase"="구매 재개";
+"Tell A Friend"="친구에게 알리기";
+"Contact Us"="문의하기";
+"Share App"="앱 공유";
+"Write A Review"="등급 부여";
+"No internet connection!!"="인터넷 연결 없음";
+"You have to be connected with internet data connection to access this option."="이 옵션에 액세스하려면 인터넷 데이터 연결로 연결해야합니다.";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="당신은 지금 오프라인 에서이 응용 프로그램을 사용할 수 & 모든 성가신 광고를 영원히 제거하십시오!";

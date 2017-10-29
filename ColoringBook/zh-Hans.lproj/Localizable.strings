@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="获取Instagram";
+"Get instagram for this feature"="获取此功能的instagram";
+"Install"="安装";
+"Not Now"="不是现在";
+"Are you sure you want to discard changes?"="您确定要放弃更改吗？";
+"OK"="好";
+"Cancel"="取消";
+"Are you sure you want to delete the palette?"="您确定要删除调色板吗？";
+"Watch a video to create a palette"="观看视频以创建调色板";
+"Color"="颜色";
+"Saturation"="饱和";
+"Brightness"="亮度";
+"Save Palette"="保存调色板";
+"Texture"="质地";
+"Contour"="轮廓";
+"Vignette"="小插图";
+"USE OFFLINE?"="使用离线？";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="您现在可以使用此应用程序脱机，永远删除所有烦人的广告！";
+"Offline Usage + Remove Ads: 2.99"="离线使用+删除广告：¥18.00";
+"No Internet Connection!"="没有网络连接";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="购买不能没有互联网。 确保您的设备已连接到互联网。";
+"Use Internet"="使用互联网";
+"Thank You !"="谢谢！";
+"This feature is already purchased ."="此功能已经购买。";
+"Sorry !"="抱歉!";
+"No internet connection available ."="没有网络连接";
+"Restoring!!!"="恢复！";
+"You've successfully restored your purchase!"="您已成功恢复购买";
+"You didn't purchase anything ."="你没有购买任何东西。";
+"InAppPurchase"="应用内购买";
+"Purchases are disabled in your device!"="您的设备中已禁用购买！";
+"You've successfully unlocked this feature!"="您已成功解锁此功能！";
+"NO MAIL ACCOUNT"="没有电子邮件帐户";
+"Please check your mail account settings and try again"="请检查您的邮件帐户设置，然后重试";
+"Successfully Uploaded !"="成功上传！";
+"Upload Failed !"="上传失败 ！";
+"ARTWORKS"="艺术品";
+"CATEGORIES"="类别";
+"My Artworks"="我的作品";
+"STORE"="商店";
+"FEEDBACK"="反馈";
+"FOLLOW US ON"="关注我们";
+"Offline Usage + Remove Ads"="离线使用+删除广告";
+"Buy All Categories"="购买所有类别";
+"Restore Purchase"="恢复购买";
+"Tell A Friend"="告诉一个朋友";
+"Contact Us"="联系我们";
+"Share App"="分享应用";
+"Write A Review"="给我们评分";
+"No internet connection!!"="没有网络连接";
+"You have to be connected with internet data connection to access this option."="您必须连接互联网数据连接才能访问此选项。";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="您现在可以使用此应用程序脱机，永远删除所有烦人的广告！";

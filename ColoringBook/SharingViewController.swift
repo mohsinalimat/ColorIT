@@ -100,7 +100,7 @@ class SharingViewController: UIViewController, UICollectionViewDelegate, UIColle
         shareButton4.addTarget(self, action: #selector(airdrop), for: .touchUpInside)
         containerView.addSubview(shareButton4)
         
-        let items = ["Texture", "Contour", "Vignette"]
+        let items = ["Texture".localize(), "Contour".localize(), "Vignette".localize()]
         let customSC = UISegmentedControl(items: items)
         customSC.selectedSegmentIndex = 0
         

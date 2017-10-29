@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Holen Sie sich Instagram";
+"Get instagram for this feature"="Hol dir Instagram für diese Funktion";
+"Install"="Installieren";
+"Not Now"="Nicht jetzt";
+"Are you sure you want to discard changes?"="Sind Sie sicher, dass Sie Änderungen verwerfen möchten?";
+"OK"="OK";
+"Cancel"="Cancel";
+"Are you sure you want to delete the palette?"="Sind Sie sicher, dass Sie die Palette löschen?";
+"Watch a video to create a palette"="Sehen Sie sich ein Video an, um eine Farbpalette zu erstellen";
+"Color"="Farbe";
+"Saturation"="Sättigung";
+"Brightness"="Helligkeit";
+"Save Palette"="Palette speichern";
+"Texture"="Textur";
+"Contour"="Kontur";
+"Vignette"="Vignette";
+"USE OFFLINE?"="Offline verwenden?";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="Sie können diese App jetzt in Offline verwenden und alle lästigen Werbung für immer entfernen!";
+"Offline Usage + Remove Ads: 2.99"="Offline-Nutzung+Anzeigen entfernen: 3,49 €";
+"No Internet Connection!"="Keine Internetverbindung";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="Der Kauf kann nicht ohne Internet erfolgen. Vergewissern Sie sich, dass Ihr Gerät mit dem Internet verbunden ist.";
+"Use Internet"="Internet benutzen";
+"Thank You !"="Danke!";
+"This feature is already purchased ."="Diese Funktion ist bereits gekauft.";
+"Sorry !"="Es tut uns leid!";
+"No internet connection available ."="Keine Internetverbindung";
+"Restoring!!!"="Wiederherstellung !!!";
+"You've successfully restored your purchase!"="Sie haben Ihren Kauf erfolgreich wiederhergestellt";
+"You didn't purchase anything ."="Sie haben nichts gekauft.";
+"InAppPurchase"="In-App-Kauf";
+"Purchases are disabled in your device!"="Käufe sind in Ihrem Gerät deaktiviert!";
+"You've successfully unlocked this feature!"="Sie haben diese Funktion erfolgreich freigeschaltet!";
+"NO MAIL ACCOUNT"="Es gibt kein E-Mail Konto";
+"Please check your mail account settings and try again"="Bitte überprüfen Sie Ihre E-Mail Kontoeinstellungen und versuchen Sie es erneut";
+"Successfully Uploaded !"="Erfolgreich hochgeladen!";
+"Upload Failed !"="Hochladen fehlgeschlagen !";
+"ARTWORKS"="Kunstwerke";
+"CATEGORIES"="KATEGORIEN";
+"My Artworks"="Meine Kunstwerke";
+"STORE"="GESCHÄFT";
+"FEEDBACK"="Feedback";
+"FOLLOW US ON"="Folge uns";
+"Offline Usage + Remove Ads"="Offline-Nutzung+Anzeigen entfernen";
+"Buy All Categories"="Alle Kategorien kaufen";
+"Restore Purchase"="Wiederherstellung des Kaufs";
+"Tell A Friend"="Weiterempfehlen";
+"Contact Us"="Kontaktiere uns";
+"Share App"="App teilen";
+"Write A Review"="Geben Sie Bewertung";
+"No internet connection!!"="Keine Internetverbindung";
+"You have to be connected with internet data connection to access this option."="Sie müssen mit der Internetdatenverbindung verbunden sein, um auf diese Option zuzugreifen.";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="Sie können diese App jetzt in Offline verwenden und alle lästigen Werbung für immer entfernen!";

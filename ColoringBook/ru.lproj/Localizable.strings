@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Получить Instagram";
+"Get instagram for this feature"="Получить Instagram для этой функции";
+"Install"="Устанавливать";
+"Not Now"="Не сейчас";
+"Are you sure you want to discard changes?"="Вы действительно хотите отменить изменения?";
+"OK"="ОК";
+"Cancel"="Отмена";
+"Are you sure you want to delete the palette?"="Вы действительно хотите удалить палитру?";
+"Watch a video to create a palette"="Смотрите видео, чтобы создать палитру";
+"Color"="Цвет";
+"Saturation"="Насыщение";
+"Brightness"="Яркость";
+"Save Palette"="Сохранить палитру";
+"Texture"="Текстура";
+"Contour"="Контур";
+"Vignette"="Виньетка";
+"USE OFFLINE?"="Использовать офлайн?";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="Вы можете использовать это приложение в автономном режиме и удалить всю досадную рекламу навсегда!";
+"Offline Usage + Remove Ads: 2.99"="Офлайн польза+Нет рекламы: 229 р.";
+"No Internet Connection!"="Нет соединения с интернетом";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="Покупка не может быть произведена без Интернета. Убедитесь, что ваше устройство подключено к Интернету.";
+"Use Internet"="Использовать Интернет";
+"Thank You !"="Спасибо!";
+"This feature is already purchased ."="Эта функция уже куплена.";
+"Sorry !"="Сожалею!";
+"No internet connection available ."="Нет соединения с интернетом";
+"Restoring!!!"="Восстановление !!!";
+"You've successfully restored your purchase!"="Вы успешно восстановили свою покупку";
+"You didn't purchase anything ."="Вы ничего не купили.";
+"InAppPurchase"="Покупки в приложении";
+"Purchases are disabled in your device!"="Покупки отключены на вашем устройстве!";
+"You've successfully unlocked this feature!"="Вы успешно разблокировали эту функцию!";
+"NO MAIL ACCOUNT"="У меня нет учетной записи E-мейл";
+"Please check your mail account settings and try again"="Проверьте настройки своей учетной записи E-мейл и повторите попытку.";
+"Successfully Uploaded !"="Успешно загружено!";
+"Upload Failed !"="Загрузка не удалась !";
+"ARTWORKS"="Произведения";
+"CATEGORIES"="КАТЕГОРИИ";
+"My Artworks"="Мои работы";
+"STORE"="МАГАЗИН";
+"FEEDBACK"="Обратная связь";
+"FOLLOW US ON"="Подпишитесь на нас в";
+"Offline Usage + Remove Ads"="Офлайн-использование + Удалить рекламу";
+"Buy All Categories"="Купить все категории";
+"Restore Purchase"="Восстановить покупку";
+"Tell A Friend"="Расскажи другу";
+"Contact Us"="Свяжитесь с нами";
+"Share App"="Поделиться приложением";
+"Write A Review"="Дать оценку";
+"No internet connection!!"="Нет соединения с интернетом";
+"You have to be connected with internet data connection to access this option."="Для доступа к этой опции вам необходимо подключиться к интернет-соединению данных.";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="Вы можете использовать это приложение в автономном режиме и удалить всю досадную рекламу навсегда!";

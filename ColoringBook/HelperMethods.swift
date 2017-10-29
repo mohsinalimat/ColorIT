@@ -111,6 +111,22 @@ class HelperMethods{
         }
         return false
     }
+    static func Alerts(VC: UIViewController, header: String, message: String, btn1Name: String, btn2Name: String, handlerBtn1: @escaping (()->Void)){
     
+        let alert = UIAlertController(title: NSLocalizedString(header, comment: "title"), message: NSLocalizedString(message, comment: "message"), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString(btn1Name, comment: "title"), style: .default, handler: {(action:UIAlertAction) in
+            
+            handlerBtn1()
+            
+        }))
+        
+        alert.addAction( UIAlertAction(title: NSLocalizedString(btn2Name, comment: "title"), style: .cancel,handler: {(action:UIAlertAction) in
+            
+            
+            
+        }))
+        VC.present(alert, animated: true, completion: nil)
+
+    }
 }
 

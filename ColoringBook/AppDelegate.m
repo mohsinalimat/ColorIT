@@ -8,22 +8,53 @@
 
 #import "AppDelegate.h"
 #import "ColoringBook-Swift.h"
-@import  Firebase;
-@interface AppDelegate ()
+#import <Chartboost/Chartboost.h>
+
+@interface AppDelegate () <ChartboostDelegate>
 
 @end
-
+@import Firebase;
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     application.statusBarHidden = true ;
-    //[FIRApp configure];
+    [Chartboost startWithAppId:@"4f21c409cd1cb2fb7000001b" appSignature:@"92e2de2fd7070327bdeb54c15a5295309c6fcd2d" delegate:self];
+    //[Chartboost cacheRewardedVideo:CBLocationHomeScreen];
+    [FIRApp configure];
+    /*NSDate *myDate = [NSDate date];
+    [[NSUserDefaults standardUserDefaults] setObject:myDate forKey:@"startTime"];
+    [[NSUserDefaults standardUserDefaults] synchronize];*/
     return YES;
 }
-
-
+- (void)didInitialize:(BOOL)status {
+    NSLog(@"didInitialize");
+    // chartboost is ready
+    [Chartboost cacheRewardedVideo:CBLocationHomeScreen];
+    
+    // Show an interstitial whenever the app starts up
+    //[Chartboost showInterstitial:CBLocationHomeScreen];
+}
+- (void)didCompleteRewardedVideo:(CBLocation)location withReward:(int)reward {
+    NSLog(@"completed rewarded video view at location %@ with reward amount %d", location, reward);
+}
+- (void)didCacheRewardedVideo:(CBLocation)location{
+    NSLog(@"didCacheRewardedVideo");
+}
+- (void)didCloseRewardedVideo:(CBLocation)location{
+    NSLog(@"didCloseRewardedVideo");
+}
+- (BOOL)shouldDisplayRewardedVideo:(CBLocation)location{
+    NSLog(@"shouldDisplayRewardedVideo");
+    return YES;
+}
+- (void)didFailToLoadRewardedVideo:(CBLocation)location withError:(CBLoadError)error{
+    NSLog(@"didFailToLoadRewardedVideo");
+}
+- (void)didFailToLoadInterstitial:(NSString *)location withError:(CBLoadError)error {
+    NSLog(@"didFailToLoadInterstitial");
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -43,6 +74,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
 
 

@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  ColoringBook
+
+  Created by Odyssey Apps on 10/29/17.
+  Copyright © 2017 Odyssey. All rights reserved.
+*/
+"Get Instagram"="Get Instagram";
+"Get instagram for this feature"="Get instagram for this feature";
+"Install"="Install";
+"Not Now"="Not Now";
+"Are you sure you want to discard changes?"="Are you sure you want to discard changes?";
+"OK"="OK";
+"Cancel"="Cancel";
+"Are you sure you want to delete the palette?"="Are you sure you want to delete the palette?";
+"Watch a video to create a palette"="Watch a video to create a palette";
+"Color"="Color";
+"Saturation"="Saturation";
+"Brightness"="Brightness";
+"Save Palette"="Save Palette";
+"Texture"="Texture";
+"Contour"="Contour";
+"Vignette"="Vignette";
+"USE OFFLINE?"="USE OFFLINE?";
+"You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!"="You can use Coloring Book in Offline now & remove all the annoying Advertisement forever!";
+"Offline Usage + Remove Ads: 2.99"="Offline Usage + Remove Ads: 2.99";
+"No Internet Connection!"="No Internet Connection!";
+"Purchase can't be made without internet! You need to connect with internet and purchase feature from store option"="Purchase can't be made without internet! You need to connect with internet and purchase feature from store option";
+"Use Internet"="Use Internet";
+"Thank You !"="Thank You !";
+"This feature is already purchased ."="This feature is already purchased .";
+"Sorry !"="Sorry !";
+"No internet connection available ."="No internet connection available .";
+"Restoring!!!"="Restoring!!!";
+"You've successfully restored your purchase!"="You've successfully restored your purchase!";
+"You didn't purchase anything ."="You didn't purchase anything .";
+"InAppPurchase"="InAppPurchase";
+"Purchases are disabled in your device!"="Purchases are disabled in your device!";
+"You've successfully unlocked this feature!"="You've successfully unlocked this feature!";
+"NO MAIL ACCOUNT"="NO MAIL ACCOUNT";
+"Please check your mail account settings and try again"="Please check your mail account settings and try again";
+"Successfully Uploaded !"="Successfully Uploaded !";
+"Upload Failed !"="Upload Failed !";
+"ARTWORKS"="ARTWORKS";
+"CATEGORIES"="CATEGORIES";
+"My Artworks"="My Artworks";
+"STORE"="STORE";
+"FEEDBACK"="FEEDBACK";
+"FOLLOW US ON"="FOLLOW US ON";
+"Offline Usage + Remove Ads"="Offline Usage + Remove Ads";
+"Buy All Categories"="Buy All Categories";
+"Restore Purchase"="Restore Purchase";
+"Tell A Friend"="Tell A Friend";
+"Contact Us"="Contact Us";
+"Share App"="Share App";
+"Write A Review"="Write A Review";
+"No internet connection!!"="No internet connection!!";
+"You have to be connected with internet data connection to access this option."="You have to be connected with internet data connection to access this option.";
+"You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!"="You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!";

@@ -637,7 +637,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                                             
                                             
                                             // Cancel Action
-                                            let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet ", comment: "title"), style: .cancel){
+                                            let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
                                                 (UIAlerAction) -> Void in
                                                 
                                                 
@@ -702,7 +702,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                                     
                                     
                                     // Cancel Action
-                                    let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet ", comment: "title"), style: .cancel){
+                                    let cancelAction = UIAlertAction(title: NSLocalizedString("Use Internet", comment: "title"), style: .cancel){
                                         (UIAlerAction) -> Void in
                                         
                                         
@@ -772,21 +772,21 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     // MARK: - Table View Delegates and DataSources
     
     
-    let menuSections = ["ARTWORKS" , "CATEGORIES"]
-    let menuRow1 = ["My Artworks"]
+    let menuSections = ["ARTWORKS".localize() , "CATEGORIES".localize()]
+    let menuRow1 = ["My Artworks".localize()]
     let menuRow1Icons = [UIImage()]
-    let menuRow2 = ["Birds","Animals","Fashion","Culture","Christmas","Comics"]
+    let menuRow2 = ["Birds".localize(),"Animals".localize(),"Fashion".localize(),"Culture".localize(),"Christmas".localize(),"Comics".localize()]
     let menuRow2Icons = [#imageLiteral(resourceName: "Birds.png"),#imageLiteral(resourceName: "Animals.png"),#imageLiteral(resourceName: "Fashion.png"),#imageLiteral(resourceName: "Culture.png"),#imageLiteral(resourceName: "Christmas.png"),#imageLiteral(resourceName: "Comics.png")]
     var menu = [(rowNames : [String], rowIcons : [UIImage])]()
     
     
     
-    let settingSectionHeaders = ["STORE","FEEDBACK","FOLLOW US ON"]
-    let settingRow1 = ["Offline Usage + Remove Ads" , "Buy All Categories" , "Restore Purchase"]
+    let settingSectionHeaders = ["STORE".localize(),"FEEDBACK".localize(),"FOLLOW US ON".localize()]
+    let settingRow1 = ["Offline Usage + Remove Ads".localize() , "Buy All Categories".localize() , "Restore Purchase".localize()]
     let settingRow1Icons = [#imageLiteral(resourceName: "Offline useage + remove ads.png"),UIImage(),#imageLiteral(resourceName: "Restore purchase.png")]
-    let settingRow2 = ["Tell A Friend","Contact Us","Share App","Write A Review"]
+    let settingRow2 = ["Tell A Friend".localize(),"Contact Us".localize(),"Share App".localize(),"Write A Review".localize()]
     let settingRow2Icons = [#imageLiteral(resourceName: "tell-a-friend.png"),#imageLiteral(resourceName: "contactUs.png"),#imageLiteral(resourceName: "share-this-app.png"),#imageLiteral(resourceName: "give-us-review.png"),#imageLiteral(resourceName: "more.png")]
-    let settingRow3 = ["Facebook","Twitter","Instagram","LinkedIn"]
+    let settingRow3 = ["Facebook".localize(),"Twitter".localize(),"Instagram".localize(),"LinkedIn".localize()]
     let settingRow3Icons = [#imageLiteral(resourceName: "Facebook.png"),#imageLiteral(resourceName: "Twitter.png"),#imageLiteral(resourceName: "Instagram.png"),#imageLiteral(resourceName: "LinkedIn.png")]
     var setting = [(rowNames : [String], rowIcons : [UIImage])]()
     
@@ -1074,7 +1074,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                         else
                         {
                             UIAlertView(title: NSLocalizedString("Sorry !", comment: "title"),
-                                        message: NSLocalizedString("No internet connection vailable .", comment: "title"),
+                                        message: NSLocalizedString("No internet connection available .", comment: "title"),
                                         delegate: nil,
                                         cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
                         }
@@ -1785,7 +1785,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
         }
         else
         {
-            UIAlertView(title: NSLocalizedString("Sorry !!!", comment: "title"),
+            UIAlertView(title: NSLocalizedString("Sorry !", comment: "title"),
                         message: NSLocalizedString("You didn't purchase anything .", comment: "message"),
                         delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
         }

@@ -58,11 +58,11 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             labelPalNum.font = UIFont(name: "Baskerville-Bold", size: 130)
             labelPalName.font = UIFont(name: "Baskerville-Bold", size: 24)
             textFieldPal.font = UIFont(name: "Baskerville-Bold", size: 24)
-            brightSlider.frame = CGRect(x: 50, y: 650, width: self.view.frame.width-100, height: 60)
+            colorSlider.frame = CGRect(x: 50, y: 650, width: self.view.frame.width-100, height: 60)
             SaturatSlider.frame = CGRect(x: 50, y: 700, width: self.view.frame.width-100, height: 60)
-            colorSlider.frame = CGRect(x: 50, y: 750, width: self.view.frame.width-100, height: 60)
-            saturatinolbl.frame = CGRect(x: self.view.frame.width - 170, y: 640, width: 120, height: 30)
-            colorlbl.frame = CGRect(x: self.view.frame.width - 170, y: 690, width: 120, height: 30)
+            brightSlider.frame = CGRect(x: 50, y: 750, width: self.view.frame.width-100, height: 60)
+            colorlbl.frame = CGRect(x: self.view.frame.width - 170, y: 640, width: 120, height: 30)
+            saturatinolbl.frame = CGRect(x: self.view.frame.width - 170, y: 690, width: 120, height: 30)
             brightnesslbl.frame = CGRect(x: self.view.frame.width - 170, y: 740, width: 120, height: 30)
             colorlbl.font = UIFont(name: "Baskerville", size: 24)
             saturatinolbl.font = UIFont(name: "Baskerville", size: 24)
@@ -80,21 +80,34 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             labelPalName.layer.cornerRadius = 40.0
             labelPalNum.layer.cornerRadius = 40.0
         
-            brightSlider.frame = CGRect(x: 25, y: 340, width: self.view.frame.width-50, height: 30)
+            colorSlider.frame = CGRect(x: 25, y: 340, width: self.view.frame.width-50, height: 30)
             SaturatSlider.frame = CGRect(x: 25, y: 380, width: self.view.frame.width-50, height: 30)
-            colorSlider.frame = CGRect(x: 25, y: 420, width: self.view.frame.width-50, height: 30)
-            saturatinolbl.frame = CGRect(x: self.view.frame.width - 135, y: 330, width: 85, height: 30)
-            colorlbl.frame = CGRect(x: self.view.frame.width - 135, y: 370, width: 85, height: 30)
+            brightSlider.frame = CGRect(x: 25, y: 420, width: self.view.frame.width-50, height: 30)
+            colorlbl.frame = CGRect(x: self.view.frame.width - 135, y: 330, width: 85, height: 30)
+            saturatinolbl.frame = CGRect(x: self.view.frame.width - 135, y: 370, width: 85, height: 30)
             brightnesslbl.frame = CGRect(x: self.view.frame.width - 135, y: 410, width: 85, height: 30)
             savebtn.frame = CGRect(x: self.view.frame.width/2 - 112.5, y: self.view.frame.height - 75, width: 225, height: 55)
         }
-        
+        colorlbl.text = "Color".localize()
+        saturatinolbl.text = "Saturation".localize()
+        brightnesslbl.text = "Brightness".localize()
+        savebtn.setTitle("Save Palette".localize(), for: .normal)
         customMiddleView.center = customColorView.center
         createView()
         //print(generatedWheels[0].number)
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        rewardedAdd()
+    }
+    func rewardedAdd(){
+        /*if Chartboost.hasRewardedVideo(CBLocationHomeScreen) == true{
+         Chartboost.showRewardedVideo(CBLocationHomeScreen)
+         }
+         else{
+         Chartboost.cacheRewardedVideo(CBLocationHomeScreen)
+         }*/
+        Chartboost.showRewardedVideo(CBLocationHomeScreen)
         
     }
     func createView(){
@@ -216,7 +229,10 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func cancelButton(_ sender: UIBarButtonItem){
-        self.dismiss(animated: true, completion: nil)
+        HelperMethods.Alerts(VC: self, header: "", message: "Are you sure you want to discard changes?", btn1Name: "OK", btn2Name: "Cancel") {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     @IBAction func DeleteButton(_ sender: UIBarButtonItem){
         
@@ -225,8 +241,10 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
             print(activePalette)
             DatabaseController.deleteDataFromDatabase(number: generatedWheels[activePalette-numberOfWheels].number, arrayIndx: Int64(activePalette))
         }
+        HelperMethods.Alerts(VC: self, header: "", message: "Are you sure you want to delete the palette?", btn1Name: "OK", btn2Name: "Cancel") {
+            self.dismiss(animated: true, completion: nil)
+        }
         
-        self.dismiss(animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

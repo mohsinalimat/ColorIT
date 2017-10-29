@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 import Firebase
+
 var appLaunched = true
 let numberOfWheels = 81
-class ColorListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
+class ColorListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate{
     
     var collectionView: UICollectionView!
     let defaults = UserDefaults.standard
@@ -51,8 +52,9 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        
+        //rewardedAdd()
     }
     override func viewWillDisappear(_ animated: Bool) {
         timer.invalidate()
@@ -120,33 +122,39 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         //palette=0
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func addPalette(_ sender: UIBarButtonItem) {
         
         if let launchDate = defaults.object(forKey:  "startTime") as? Date
         {
             let terminationDuration = Date().timeIntervalSince(launchDate)
-            if terminationDuration <= 300 //300
+            if terminationDuration <= 0 //300
             {
+                self.collectionView?.selectItem(at: IndexPath(row: 80, section: 0), animated: true, scrollPosition: .centeredVertically)
                 print("WAIT")
             }
             else{
                 //asdf.text = ""
                 timerLabel.text = ""
                 defaults.removeObject(forKey: "startTime")
+                
                 defaults.set(Date(), forKey: "startTime")
+                //rewardedAdd()
                 performSegue(withIdentifier: "CustomWhellViewController", sender: self)
+                
             }
             
         }
         else{
             //asdf.text = ""
             defaults.set(Date(), forKey: "startTime")
+            //rewardedAdd()
             performSegue(withIdentifier: "CustomWhellViewController", sender: self)
+            
         }
 
         
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
@@ -178,7 +186,9 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         else{
             palette = indexPath.row%(numberOfWheels+generatedWheels.count)+1//indexPath.row+1
             print(palette)
-            Analytics.logEvent("WheelNo", parameters: [AnalyticsParameterItemID: "\(palette)"])
+            //Analytics.logEvent("WheelNo1", parameters: nil)
+            //Analytics.logEvent("WheelOne", parameters: nil)
+            Analytics.logEvent("Wheel\(palette)", parameters: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -606,7 +616,7 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
                 paletteName.text = ""
             }
             else{
-                paletteName.text = "Watch a video\nto create a\npalette"
+                paletteName.text = "Watch a video to create a palette".localize()
             }
             
             

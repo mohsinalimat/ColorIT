@@ -73,18 +73,21 @@ extension  SharingViewController
         
         if UIApplication.shared.canOpenURL(appUrl! as URL)
         {
-            /*let controller = UIActivityViewController(activityItems: [self.coloredImageView.image!], applicationActivities: nil)
-            controller.excludedActivityTypes = [UIActivityType.print, UIActivityType.assignToContact, UIActivityType.message]
-            
-            self.present(controller, animated: true, completion: nil)*/
             UIApplication.shared.open(appUrl!)
             
         } else {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(URL(string :"https://itunes.apple.com/US/app/id979588667")!)
-            } else {
-                UIApplication.shared.openURL(URL(string :"https://itunes.apple.com/US/app/id979588667")!)
-            }
+            
+            //-----------------------
+            HelperMethods.Alerts(VC: self, header: "Get Instagram", message: "Get instagram for this feature", btn1Name: "Install", btn2Name: "Not Now", handlerBtn1: { () -> Void in
+                
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(URL(string :"https://itunes.apple.com/us/app/instagram/id389801252?mt=8")!)
+                }
+                else {
+                    UIApplication.shared.openURL(URL(string :"https://itunes.apple.com/us/app/instagram/id389801252?mt=8")!)
+                }
+            })
+            //-------------------------
         }
     }
 

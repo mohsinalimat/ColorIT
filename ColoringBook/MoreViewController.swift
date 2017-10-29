@@ -298,7 +298,7 @@ class MoreViewController: UIViewController , FSPagerViewDataSource , FSPagerView
             DispatchQueue.main.async {
                 
                 // Alert Box
-                let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use CutPaste in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
+                let alert = UIAlertController(title: NSLocalizedString("USE OFFLINE?", comment: "title"), message:NSLocalizedString("You can use ColoringBook in Offline now & remove all the annoying Advertisement forever!", comment: "title"), preferredStyle: .alert )
                 //        alert.popoverPresentationController?.sourceView = self.view
                 //        alert.popoverPresentationController?.sourceRect = CGRect(x: sSize.width*0.9, y: sSize.height - bottomSpace*0.85, width: 0, height: 0)
                 
@@ -316,7 +316,7 @@ class MoreViewController: UIViewController , FSPagerViewDataSource , FSPagerView
                     
                     
                     UIAlertView(title: NSLocalizedString("No Internet Connection!", comment: "title"),
-                                message: NSLocalizedString("Purchase can't be made without internet! First, you need to connect with internet. Then press 'Share' button and select 'Offline Usage + Remove Ads : $2.99' option.", comment: "title"),
+                                message: NSLocalizedString("Purchase can't be made without internet! You need to connect with internet and purchase feature from store option", comment: "title"),
                                 delegate: nil,
                                 cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
                     

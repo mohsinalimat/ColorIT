@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fb-messenger-api</string>
+		<string>instagram</string>
 		<string>fbshareextension</string>
 		<string>fbapi</string>
 		<string>fbauth2</string>
