@@ -10,10 +10,13 @@ import UIKit
 import CoreData
 import Firebase
 
+
 var appLaunched = true
 let numberOfWheels = 81
 class ColorListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate{
+    var reachability: Reachability?
     
+    var IAPNetCheckBool:Int!
     var collectionView: UICollectionView!
     let defaults = UserDefaults.standard
     var timer = Timer()
@@ -33,11 +36,14 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         if !HelperMethods.isIphone(){
             timerLabel.frame = CGRect(x: 500/2 - 170/2, y: 500/2 - 170/2, width: 170, height: 170)
         }
-        
+        self.setupReachability(useHostName: false, useClosures: true)
+        self.startNotifier()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
+        
+        
         self.collectionView?.selectItem(at: IndexPath(row: palette-1, section: 0), animated: false, scrollPosition: .centeredVertically)
         if let _ = defaults.object(forKey:  "startTime") as? Date
         {
@@ -55,6 +61,8 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidAppear(_ animated: Bool) {
         //rewardedAdd()
+        //UnityAds.show(self, placementId: "rewardedVideo")
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         timer.invalidate()
@@ -93,6 +101,7 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         //layout.itemSize = CGSize(width: 10, height: 10)
+        
         layout.scrollDirection = .vertical
         if (UIDevice.current.userInterfaceIdiom == .phone)
         {
@@ -108,7 +117,10 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsVerticalScrollIndicator = false
+        //self.collectionView.contentOffset = CGPoint(x: 0, y: 100)
         view.addSubview(collectionView)
+        print(collectionView.contentSize)
+        
         
         /*for i in 0..<3
          {
@@ -124,54 +136,25 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func addPalette(_ sender: UIBarButtonItem) {
-        
-        if let launchDate = defaults.object(forKey:  "startTime") as? Date
+        if self.IAPNetCheckBool == 1
         {
-            let terminationDuration = Date().timeIntervalSince(launchDate)
-            if terminationDuration <= 0 //300
-            {
-                self.collectionView?.selectItem(at: IndexPath(row: 80, section: 0), animated: true, scrollPosition: .centeredVertically)
-                print("WAIT")
-            }
-            else{
-                //asdf.text = ""
-                timerLabel.text = ""
-                defaults.removeObject(forKey: "startTime")
-                
-                defaults.set(Date(), forKey: "startTime")
-                //rewardedAdd()
-                performSegue(withIdentifier: "CustomWhellViewController", sender: self)
-                
-            }
             
-        }
-        else{
-            //asdf.text = ""
-            defaults.set(Date(), forKey: "startTime")
-            //rewardedAdd()
-            performSegue(withIdentifier: "CustomWhellViewController", sender: self)
-            
-        }
-
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
-        if indexPath.row%80 == 0 && indexPath.row != 0{
             if let launchDate = defaults.object(forKey:  "startTime") as? Date
             {
                 let terminationDuration = Date().timeIntervalSince(launchDate)
-                if terminationDuration <= 300
+                if terminationDuration <= 300 //300
                 {
+                    self.collectionView?.selectItem(at: IndexPath(row: 80, section: 0), animated: true, scrollPosition: .centeredVertically)
                     print("WAIT")
                 }
                 else{
                     //asdf.text = ""
                     timerLabel.text = ""
                     defaults.removeObject(forKey: "startTime")
+                    
                     defaults.set(Date(), forKey: "startTime")
+                    //rewardedAdd()
+                   
                     performSegue(withIdentifier: "CustomWhellViewController", sender: self)
                 }
                 
@@ -179,7 +162,63 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
             else{
                 //asdf.text = ""
                 defaults.set(Date(), forKey: "startTime")
+                //rewardedAdd()
+                
                 performSegue(withIdentifier: "CustomWhellViewController", sender: self)
+                
+            }
+        }
+        
+        else
+        {
+            UIAlertView(title: NSLocalizedString("No internet connection!!", comment: "title"),
+            message: NSLocalizedString("You have to be connected with internet data connection to access this option.", comment: "title"),
+            delegate: nil,
+            cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+        
+        
+        }
+
+    
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        //let makeWheel = (numberOfItemsPerSection / (numberOfWheels+generatedWheels.count))-2
+        if ((indexPath.row==80 ? true : (indexPath.row+1==numberOfWheels+generatedWheels.count) ? false : (indexPath.row+1-generatedWheels.count)%numberOfWheels == 0) && indexPath.row != 0){
+            if self.IAPNetCheckBool == 1
+            {
+                if let launchDate = defaults.object(forKey:  "startTime") as? Date
+                {
+                    let terminationDuration = Date().timeIntervalSince(launchDate)
+                    if terminationDuration <= 300
+                    {
+                        print("WAIT")
+                    }
+                    else{
+                        //asdf.text = ""
+                        timerLabel.text = ""
+                        defaults.removeObject(forKey: "startTime")
+                        defaults.set(Date(), forKey: "startTime")
+                        
+                        performSegue(withIdentifier: "CustomWhellViewController", sender: self)
+                    }
+                    
+                }
+                else{
+                    //asdf.text = ""
+                    defaults.set(Date(), forKey: "startTime")
+                    performSegue(withIdentifier: "CustomWhellViewController", sender: self)
+                }
+            }
+            else
+            {
+                UIAlertView(title: NSLocalizedString("No internet connection!!", comment: "title"),
+                            message: NSLocalizedString("You have to be connected with internet data connection to access this option.", comment: "title"),
+                            delegate: nil,
+                            cancelButtonTitle: NSLocalizedString("OK", comment: "title")).show()
+                
+                
             }
             
         }
@@ -684,7 +723,7 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         let contentHeight = scrollView.contentSize.height
         
         if offsetY > contentHeight - scrollView.frame.size.height {
-            numberOfItemsPerSection *= 2
+            numberOfItemsPerSection += numberOfWheels+generatedWheels.count
             self.collectionView.reloadData()
         }
     }
@@ -711,4 +750,88 @@ class ColorListViewController: UIViewController, UICollectionViewDelegate, UICol
         self.present(secondViewController, animated: true, completion: nil)
     }
     
+    
+    //INTERNET CONNECTION CHECK
+    
+    func setupReachability(useHostName: Bool, useClosures: Bool) {
+        let hostName = "google.com"
+        //        hostNameLabel.text = useHostName ? hostName : "No host name"
+        //
+        //        print("--- set up with host name: \(hostNameLabel.text!)")
+        
+        let reachability = useHostName ? Reachability(hostname: hostName) : Reachability()
+        self.reachability = reachability
+        
+        if useClosures {
+            reachability?.whenReachable = { reachability in
+                self.updateLabelColourWhenReachable(reachability)
+            }
+            reachability?.whenUnreachable = { reachability in
+                self.updateLabelColourWhenNotReachable(reachability)
+            }
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(NewViewController.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: reachability)
+        }
+    }
+    
+    
+    func startNotifier() {
+        print("--- start notifier")
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            //            networkStatus.textColor = .red
+            //            networkStatus.text = "Unable to start\nnotifier"
+            
+            return
+        }
+    }
+    
+    func stopNotifier()
+    {
+        print("--- stop notifier")
+        reachability?.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: nil)
+        reachability = nil
+    }
+    
+    
+    
+    func updateLabelColourWhenReachable(_ reachability: Reachability) {
+        print("\(reachability.description) - \(reachability.currentReachabilityString)")
+        
+        IAPNetCheckBool = 1
+        
+        if reachability.isReachableViaWiFi {
+            
+        }
+        else {
+            
+        }
+        
+    }
+    
+    
+    
+    func updateLabelColourWhenNotReachable(_ reachability: Reachability) {
+        print("\(reachability.description) - \(reachability.currentReachabilityString)")
+        IAPNetCheckBool = 2
+        
+    }
+    
+    
+    func reachabilityChanged(_ note: Notification) {
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable {
+            updateLabelColourWhenReachable(reachability)
+        } else {
+            updateLabelColourWhenNotReachable(reachability)
+        }
+    }
+    
+    
+    deinit {
+        stopNotifier()
+    }
 }

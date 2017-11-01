@@ -95,10 +95,19 @@ class CustomWhellViewController: UIViewController, UITextFieldDelegate {
         customMiddleView.center = customColorView.center
         createView()
         //print(generatedWheels[0].number)
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.customVC = self
+        if Palettemode == .newMode{
+            rewardedAdd()
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
-        rewardedAdd()
+        
+        
+        
+    }
+    func unityRewardAd(){
+        UnityAds.show(self, placementId: "rewardedVideo")
     }
     func rewardedAdd(){
         /*if Chartboost.hasRewardedVideo(CBLocationHomeScreen) == true{

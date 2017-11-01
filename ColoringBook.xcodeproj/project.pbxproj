@@ -116,6 +116,7 @@
 		84EC017F1F920536007920F4 /* Christmas3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC017B1F920536007920F4 /* Christmas3.png */; };
 		84EC01801F920536007920F4 /* Christmas4.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EC017C1F920536007920F4 /* Christmas4.png */; };
 		84F3607C1F9392680036E01A /* IntegerExtensionForRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */; };
+		8E4829D41FA8A2B900E5495E /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4829D31FA8A2B900E5495E /* UnityAds.framework */; };
 		8E4E82701F8A01B600C9FAA7 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */; };
 		8E70DC1E1F6F8ED2002842BF /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC1D1F6F8ED2002842BF /* Palette.swift */; };
 		8E70DC241F6FD2D4002842BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70DC231F6FD2D3002842BF /* Extensions.swift */; };
@@ -283,6 +284,7 @@
 		84EC017B1F920536007920F4 /* Christmas3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas3.png; sourceTree = "<group>"; };
 		84EC017C1F920536007920F4 /* Christmas4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas4.png; sourceTree = "<group>"; };
 		84F3607B1F9392680036E01A /* IntegerExtensionForRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerExtensionForRandom.swift; sourceTree = "<group>"; };
+		8E4829D31FA8A2B900E5495E /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		8E4E826F1F8A01B600C9FAA7 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		8E70DC1D1F6F8ED2002842BF /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		8E70DC231F6FD2D3002842BF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */,
 				84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */,
 				84BD33F51F961B8D0097769A /* GoogleMobileAds.framework in Frameworks */,
+				8E4829D41FA8A2B900E5495E /* UnityAds.framework in Frameworks */,
 				8E9BF1951F6D527F0051D734 /* CoreData.framework in Frameworks */,
 				8E7FBBE31F972FA2002EE36D /* FBSDKMessengerShareKit.framework in Frameworks */,
 				716EF98EBF4EDE7FEA280979 /* Pods_ColoringBook.framework in Frameworks */,
@@ -716,6 +719,7 @@
 		8E9BF1931F6D527F0051D734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E4829D31FA8A2B900E5495E /* UnityAds.framework */,
 				8E883FD01F9E23D1004B9477 /* UIKit.framework */,
 				8E883FCE1F9E23C7004B9477 /* CoreGraphics.framework */,
 				8E883FCC1F9E23C0004B9477 /* Foundation.framework */,

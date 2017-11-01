@@ -11,3 +11,4 @@
 #import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h>
+#import <UnityAds/UnityAds.h>

@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import "ColoringBook-Swift.h"
 #import <Chartboost/Chartboost.h>
+#import "UnityAds/UnityAds.h"
 
-@interface AppDelegate () <ChartboostDelegate>
+@interface AppDelegate () <ChartboostDelegate, UnityAdsDelegate>
+
+
+
 
 @end
 @import Firebase;
@@ -21,11 +25,15 @@
     // Override point for customization after application launch.
     application.statusBarHidden = true ;
     [Chartboost startWithAppId:@"4f21c409cd1cb2fb7000001b" appSignature:@"92e2de2fd7070327bdeb54c15a5295309c6fcd2d" delegate:self];
+    [UnityAds initialize:@"1088169" delegate:self];
+    
+    
     //[Chartboost cacheRewardedVideo:CBLocationHomeScreen];
     [FIRApp configure];
     /*NSDate *myDate = [NSDate date];
     [[NSUserDefaults standardUserDefaults] setObject:myDate forKey:@"startTime"];
     [[NSUserDefaults standardUserDefaults] synchronize];*/
+    
     return YES;
 }
 - (void)didInitialize:(BOOL)status {
@@ -44,6 +52,9 @@
 }
 - (void)didCloseRewardedVideo:(CBLocation)location{
     NSLog(@"didCloseRewardedVideo");
+    
+    
+    //[UnityAds show:customVC placementId:@"video"];
 }
 - (BOOL)shouldDisplayRewardedVideo:(CBLocation)location{
     NSLog(@"shouldDisplayRewardedVideo");
@@ -51,10 +62,13 @@
 }
 - (void)didFailToLoadRewardedVideo:(CBLocation)location withError:(CBLoadError)error{
     NSLog(@"didFailToLoadRewardedVideo");
+    [_customVC unityRewardAd];
 }
 - (void)didFailToLoadInterstitial:(NSString *)location withError:(CBLoadError)error {
     NSLog(@"didFailToLoadInterstitial");
 }
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

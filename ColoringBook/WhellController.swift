@@ -375,7 +375,7 @@ class WhellController: UIViewController {
                 labelPalName.font = UIFont(name: "HelveticaNeue-Bold", size: 24)
             }
         }
-        labelPalNum.text = "\(palette)"
+        labelPalNum.text = palette<=numberOfWheels ? "\(palette)" : "\(palette-1)"
         ButtonTapped=false
         selectedColor = colorView.colorArray[0]
         imageView.newcolor = selectedColor
