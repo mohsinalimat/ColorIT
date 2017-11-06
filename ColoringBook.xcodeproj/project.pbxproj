@@ -100,12 +100,6 @@
 		84A87C421F7B7F21004A0F51 /* UIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A87C411F7B7F21004A0F51 /* UIViewModel.swift */; };
 		84A87C481F7BB594004A0F51 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A87C461F7BB594004A0F51 /* MenuViewCell.swift */; };
 		84A87C491F7BB594004A0F51 /* MenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C471F7BB594004A0F51 /* MenuViewCell.xib */; };
-		84A87C541F7BC455004A0F51 /* Animals.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C4E1F7BC455004A0F51 /* Animals.png */; };
-		84A87C551F7BC455004A0F51 /* Birds.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C4F1F7BC455004A0F51 /* Birds.png */; };
-		84A87C561F7BC455004A0F51 /* Christmas.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C501F7BC455004A0F51 /* Christmas.png */; };
-		84A87C571F7BC455004A0F51 /* Comics.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C511F7BC455004A0F51 /* Comics.png */; };
-		84A87C581F7BC455004A0F51 /* Culture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C521F7BC455004A0F51 /* Culture.png */; };
-		84A87C591F7BC455004A0F51 /* Fashion.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A87C531F7BC455004A0F51 /* Fashion.png */; };
 		84BAA53F1F851F700048FB63 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA53E1F851F700048FB63 /* CFNetwork.framework */; };
 		84BAA5411F851F780048FB63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BAA5401F851F780048FB63 /* WebKit.framework */; };
 		84BD33F51F961B8D0097769A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD33F41F961B8D0097769A /* GoogleMobileAds.framework */; };
@@ -261,12 +255,6 @@
 		84A87C411F7B7F21004A0F51 /* UIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewModel.swift; sourceTree = "<group>"; };
 		84A87C461F7BB594004A0F51 /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		84A87C471F7BB594004A0F51 /* MenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewCell.xib; sourceTree = "<group>"; };
-		84A87C4E1F7BC455004A0F51 /* Animals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Animals.png; sourceTree = "<group>"; };
-		84A87C4F1F7BC455004A0F51 /* Birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birds.png; sourceTree = "<group>"; };
-		84A87C501F7BC455004A0F51 /* Christmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Christmas.png; sourceTree = "<group>"; };
-		84A87C511F7BC455004A0F51 /* Comics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comics.png; sourceTree = "<group>"; };
-		84A87C521F7BC455004A0F51 /* Culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Culture.png; sourceTree = "<group>"; };
-		84A87C531F7BC455004A0F51 /* Fashion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fashion.png; sourceTree = "<group>"; };
 		84BAA53E1F851F700048FB63 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		84BAA5401F851F780048FB63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		84BD33F41F961B8D0097769A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -488,12 +476,6 @@
 		844EB69B1F8A3305005366FC /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				84A87C4E1F7BC455004A0F51 /* Animals.png */,
-				84A87C4F1F7BC455004A0F51 /* Birds.png */,
-				84A87C501F7BC455004A0F51 /* Christmas.png */,
-				84A87C511F7BC455004A0F51 /* Comics.png */,
-				84A87C521F7BC455004A0F51 /* Culture.png */,
-				84A87C531F7BC455004A0F51 /* Fashion.png */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -829,11 +811,9 @@
 				845041A61F83755E00B7AE2C /* promoImage1.png in Resources */,
 				842A8A4A1F70EEEB00730DA6 /* Fashion1.png in Resources */,
 				84EB4C941F8CA83C000ABE65 /* Icon.png in Resources */,
-				84A87C541F7BC455004A0F51 /* Animals.png in Resources */,
 				844EB6A51F8A3DED005366FC /* Restore purchase.png in Resources */,
 				845041DD1F83A48200B7AE2C /* xxxSemiworks-1.png in Resources */,
 				844EB6B31F8A3F99005366FC /* Facebook.png in Resources */,
-				84A87C561F7BC455004A0F51 /* Christmas.png in Resources */,
 				845041BA1F83930E00B7AE2C /* promoImage2.png in Resources */,
 				844EB6B11F8A3F4A005366FC /* more.png in Resources */,
 				842A8A491F70EEEB00730DA6 /* Animals2.png in Resources */,
@@ -863,12 +843,9 @@
 				844EB6AD1F8A3EEC005366FC /* share-this-app.png in Resources */,
 				845041F91F83AB4E00B7AE2C /* shutterstock_398779984-[Converted].jpg in Resources */,
 				84A87C491F7BB594004A0F51 /* MenuViewCell.xib in Resources */,
-				84A87C591F7BC455004A0F51 /* Fashion.png in Resources */,
 				84EC017E1F920536007920F4 /* Christmas2.png in Resources */,
 				844EB6B91F8A3FF4005366FC /* LinkedIn.png in Resources */,
 				845041E11F83A48200B7AE2C /* xxxworks3.png in Resources */,
-				84A87C551F7BC455004A0F51 /* Birds.png in Resources */,
-				84A87C571F7BC455004A0F51 /* Comics.png in Resources */,
 				845041F51F83AB4E00B7AE2C /* shutterstock_389612521-[Converted].png in Resources */,
 				845041E01F83A48200B7AE2C /* xxxshutterstock_616091735.jpg in Resources */,
 				845041F61F83AB4E00B7AE2C /* shutterstock_390780931-[Converted].jpg in Resources */,
@@ -888,7 +865,6 @@
 				845041FC1F83AB4E00B7AE2C /* shutterstock_450844078-[Converted].jpg in Resources */,
 				845041DE1F83A48200B7AE2C /* xxxshutterstock_489522169-[Converted].jpg in Resources */,
 				84EC01801F920536007920F4 /* Christmas4.png in Resources */,
-				84A87C581F7BC455004A0F51 /* Culture.png in Resources */,
 				52BEE9F01E05157700637559 /* Main.storyboard in Resources */,
 				845041F71F83AB4E00B7AE2C /* shutterstock_395905720-[Converted].jpg in Resources */,
 				845041C81F839DB000B7AE2C /* Fashion3.png in Resources */,

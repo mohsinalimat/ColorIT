@@ -11,12 +11,15 @@
 
 @implementation FloodFillImageView
 
-@synthesize tolorance,newcolor,scrollView;
+@synthesize tolorance,newcolor,scrollView,stackColorUR,stackTouchLocationUR,redoColorStack,redoTouchLocation;
 
 
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
+    
+    
     //Get touch Point
     NSLog(@"I am here ");
     CGPoint tpoint = [[[event allTouches] anyObject] locationInView:self];
@@ -43,7 +46,10 @@
     dispatch_async(dispatch_get_main_queue(), ^(void)
     {
         [self setImage:image1];
-        
+        [stackColorUR addObject:newcolor];
+        [stackTouchLocationUR addObject:[NSValue valueWithCGPoint:tpoint]];
+        [redoColorStack removeAllObjects];
+        [redoTouchLocation removeAllObjects];
     });
     
     

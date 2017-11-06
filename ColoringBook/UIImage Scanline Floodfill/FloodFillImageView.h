@@ -12,7 +12,12 @@
 
 
 @interface FloodFillImageView : UIImageView
+
 @property int tolorance;
 @property  UIScrollView *scrollView ;
 @property (strong, nonatomic)  UIColor *newcolor;
+@property NSMutableArray* stackColorUR; 
+@property NSMutableArray* stackTouchLocationUR;
+@property NSMutableArray* redoColorStack ;
+@property NSMutableArray* redoTouchLocation ;
 @end

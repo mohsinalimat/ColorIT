@@ -122,7 +122,7 @@
         }
         else if (CGColorGetNumberOfComponents(newColor.CGColor) == 4)
         {
-            if ((bitmapInfo&kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
+            if ((bitmapInfo & kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
             {
                 newRed   = components[2] * 255;
                 newGreen = components[1] * 255;

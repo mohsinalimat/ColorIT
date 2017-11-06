@@ -102,6 +102,11 @@
     //UIImage *imgNew = _dataImage ;
     
     editImageView.tolorance = 0 ;
+    editImageView.stackColorUR = [[NSMutableArray alloc]init];
+    editImageView.stackTouchLocationUR = [[NSMutableArray alloc]init];
+    editImageView.redoColorStack = [[NSMutableArray alloc]init];
+    editImageView.redoTouchLocation = [[NSMutableArray alloc]init];
+    
     [editImageView setImage:img];
     editImageView.scrollView = scrollView ;
     scrollView.minimumZoomScale = 1.0 ;
@@ -183,6 +188,27 @@
 {
     printf("Undo\n");
     
+    int stackSize = (int) editImageView.stackColorUR.count ;
+    if ( stackSize > 0 )
+    {
+        
+        
+        UIColor *tempColor = editImageView.stackColorUR.lastObject;
+        [editImageView.stackColorUR removeLastObject];
+        CGPoint  tempPoint = [editImageView.stackTouchLocationUR.lastObject CGPointValue];
+        [editImageView.stackTouchLocationUR removeLastObject];
+        
+        UIImage *image1 = [editImageView.image floodFillFromPoint:tempPoint withColor: tempColor andTolerance: 0];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void)
+        {
+            [editImageView setImage:image1];
+            [editImageView.redoColorStack addObject:tempColor];
+            [editImageView.redoTouchLocation addObject:[NSValue valueWithCGPoint:tempPoint]];
+        });
+        
+    }
+    
     
     
     
@@ -194,12 +220,37 @@
 - (IBAction)redoButton:(UIButton *)sender
 {
     printf("Redo\n");
-    
+    int stackSize = (int) editImageView.redoColorStack.count ;
+    if ( stackSize > 0 )
+    {
+        
+        
+        UIColor *tempColor = editImageView.redoColorStack.lastObject;
+        [editImageView.redoColorStack removeLastObject];
+        CGPoint  tempPoint = [editImageView.redoTouchLocation.lastObject CGPointValue];
+        [editImageView.redoTouchLocation removeLastObject];
+        
+        UIImage *image1 = [editImageView.image floodFillFromPoint:tempPoint withColor: tempColor andTolerance: 0];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void)
+                       {
+                           [editImageView setImage:image1];
+                           [editImageView.stackColorUR addObject:tempColor];
+                           [editImageView.stackTouchLocationUR addObject:[NSValue valueWithCGPoint:tempPoint]];
+                       });
+        
+    }
     
     
     
     
 }
+
+
+
+
+
+
 
 - (IBAction)saveImage:(UIBarButtonItem *)sender
 {
@@ -241,6 +292,8 @@
     
     [self presentViewController:activityVC animated:YES completion:nil];
 }
+
+
 
 - (UIColor*)getRandomColor
 {

@@ -11,6 +11,7 @@ import FSPagerView
 import StoreKit
 import MessageUI
 import GoogleMobileAds
+import CoreImage
 
 
 class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDataSource,FSPagerViewDelegate , UITableViewDelegate , UITableViewDataSource , SKProductsRequestDelegate, SKPaymentTransactionObserver , MFMailComposeViewControllerDelegate{
@@ -416,10 +417,72 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        /*
+         
+         int newRed, newGreen, newBlue, newAlpha;
+         
+         
+         const CGFloat *components = CGColorGetComponents(newColor.CGColor);
+         
+         /*
+         If you are not getting why I use CGColorGetNumberOfComponents than read following link:
+         http://stackoverflow.com/questions/9238743/is-there-an-issue-with-cgcolorgetcomponents
+         */
+         
+         if(CGColorGetNumberOfComponents(newColor.CGColor) == 2)
+         {
+         newRed   = newGreen = newBlue = components[0] * 255;
+         newAlpha = components[1] * 255;
+         }
+         else if (CGColorGetNumberOfComponents(newColor.CGColor) == 4)
+         {
+         if ((bitmapInfo&kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
+         {
+         newRed   = components[2] * 255;
+         newGreen = components[1] * 255;
+         newBlue  = components[0] * 255;
+         newAlpha = 255;
+         }
+         else
+         {
+         newRed   = components[0] * 255;
+         newGreen = components[1] * 255;
+         newBlue  = components[2] * 255;
+         newAlpha = 255;
+         }
+         }
+        */
+        
+        let cgcolor = UIColor.blue.cgColor
+        var newRed : CGFloat = 0 ,  newGreen : CGFloat = 0 , newBlue : CGFloat = 0 , newAlpha : CGFloat = 0
+        let components = cgcolor.components
+        print(components!)
+        
+       
+        if cgcolor.numberOfComponents == 2
+        {
+            newRed   = components![0]
+            newGreen = components![0]
+            newBlue  = components![0]
+            newAlpha = components![1]
+        }
+        else if cgcolor.numberOfComponents == 4
+        {
+            
+            
+            print(cgcolor.colorSpace?.model)
+            
+                
+            
+        }
+            
+        
+    
+        
+        
        
         setupUpperViewHolder()
-        
-        
         
         //self.extendedLayoutIncludesOpaqueBars = true
         //print(upperViewHolder.frame)
@@ -613,7 +676,7 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
                                 
                             else
                             {
-                                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade3") == false
+                                if UserDefaults.standard.bool(forKey: "nonConsumablePurchaseMade1") == false
                                 {
                                     DispatchQueue.main.async
                                         {
@@ -775,8 +838,8 @@ class NewViewController: UIViewController , UIScrollViewDelegate , FSPagerViewDa
     let menuSections = ["ARTWORKS" , "CATEGORIES"]
     let menuRow1 = ["My Artworks"]
     let menuRow1Icons = [UIImage()]
-    let menuRow2 = ["Birds","Animals","Fashion","Culture","Christmas","Comics"]
-    let menuRow2Icons = [#imageLiteral(resourceName: "Birds.png"),#imageLiteral(resourceName: "Animals.png"),#imageLiteral(resourceName: "Fashion.png"),#imageLiteral(resourceName: "Culture.png"),#imageLiteral(resourceName: "Christmas.png"),#imageLiteral(resourceName: "Comics.png")]
+    let menuRow2 = ["Animal","Aquatic","Bird","Culture","Fantasy","Fun","Geometric","Girls", "Machinist","Mandala"]
+    let menuRow2Icons = [#imageLiteral(resourceName: "animal-2"),#imageLiteral(resourceName: "aquatic"),#imageLiteral(resourceName: "bird"),#imageLiteral(resourceName: "culture"),#imageLiteral(resourceName: "fantasy"),#imageLiteral(resourceName: "fun"),#imageLiteral(resourceName: "geometric"),#imageLiteral(resourceName: "girls"),#imageLiteral(resourceName: "machinist"),#imageLiteral(resourceName: "mandala")]
     var menu = [(rowNames : [String], rowIcons : [UIImage])]()
     
     
